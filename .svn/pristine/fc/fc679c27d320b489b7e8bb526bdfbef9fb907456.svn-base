@@ -1,0 +1,53 @@
+/* ================ Attendance Correction */
+.ac-box{
+  margin-left: 20px !important;
+  margin-right: 20px! important;
+}
+.ac-container{
+  position: relative;
+  clear: both;
+  display: flex;
+}
+.ac-left-container {
+  width: 65%;
+  float: left;
+  background-color: white;
+}
+.ac-right-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  /*   overflow-y: auto; */
+
+  width: 35%;
+  float: right;
+  background-color: white;
+}
+.ac-right-box {
+  display: block;
+  flex-direction: row-reverse;
+  margin-right: 20px;
+
+ margin-top: 0% !important;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+}
+.ac-title {
+  background: url('../../../../../assets/img/box-title.gif') repeat-x left top;
+
+  padding: 8px 10px;
+  font: 12px/1.0em Verdana, Arial, Tahome;
+  color: #333333;
+  font-weight: 600;
+}
+.ac-box {
+  display: block;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+  flex-direction: row;
+}
+.fr{
+  float: right;
+  }
+/* section end */

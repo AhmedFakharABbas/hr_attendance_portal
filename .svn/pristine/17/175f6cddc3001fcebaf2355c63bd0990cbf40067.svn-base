@@ -1,0 +1,131 @@
+.ac-title {
+  background: url("../../../../assets/img/box-title.gif") repeat left top;
+  padding: 8px 10px 8px 10px;
+  font: 12px/1em Verdana, Arial, Tahome;
+  color: #333333;
+  font-weight: 600;
+}
+.ac-title-with-input {
+  background: url("../../../../assets/img/box-title.gif") repeat left top;
+  padding: 0px 10px 17px 10px;
+  font: 12px/1em Verdana, Arial, Tahome;
+  color: #333333;
+  font-weight: 600;
+}
+.title-text {
+  position: relative;
+  top: 8px;
+}
+.ac-content {
+  background: url("../../../../assets/img/box-shadow.gif") repeat-x left top;
+  padding: 5px;
+}
+.ac-table {
+  width: 100%;
+  overflow: auto;
+  max-height: 330px;
+}
+.ac-box {
+  display: block;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+  flex-direction: row;
+}
+.ac-title-withoutpic {
+  font: 12px/1em Verdana, Arial, Tahome;
+  color: #333333;
+  font-weight: 600;
+}
+.grayborder {
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}
+textarea {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #e7e7e7;
+  outline: none;
+}
+.ac-footer {
+  background: #e6e6e6;
+  padding: 2px 10px 4px;
+}
+#ac-button-list {
+  margin: 3px 0;
+  text-align: right;
+}
+
+#ac-button-list a,
+.ac-button-list a,
+#ac-button-list font,
+.ac-button-list font,
+#ac-button,
+a#ac-button,
+a.ac-button {
+  position: relative;
+  padding: 4px 6px 4px 6px;
+  border: 1px solid var(--unnamed-color-ffffff);
+  background: transparent linear-gradient(180deg, #ededed 0%, #fafafa 100%) 0%
+    0% no-repeat padding-box;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  color: #3080ea;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+#ac-button-list a:hover,
+.ac-button-list a:hover,
+#ac-button a:hover,
+.ac-button a:hover,
+a.ac-button:hover,
+a#ac-button:hover {
+  border: 1px solid #a6daee;
+  padding: 4px 6px 4px 6px;
+  background: transparent linear-gradient(0deg, #f1fafe 0%, #bde9fb 100%) 0% 0%
+    no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+  color: #343434;
+  text-decoration: none;
+  font-size: 12px;
+}
+.PendingStatus {
+  color: #ffa922;
+}
+.employeeName {
+  color: #007bff;
+}
+.pending {
+  color: #ffa922;
+}
+
+.approved {
+  color: #729b61;
+}
+
+.disapproved {
+  color: #f35e46;
+}
+mat-header-cell,
+mat-cell {
+  justify-content: left;
+}
+mat-table {
+  cursor: pointer;
+}
+.mat-header-cell,
+.mat-cell {
+  padding: 10px 0px 10px 4px !important;
+}
+::ng-deep .mat-sort-header-arrow {
+  margin: 0 0 0 0px !important;
+}
+.mat-header-cell {
+  color: #007bff !important;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 1.3;
+}

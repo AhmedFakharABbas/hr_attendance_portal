@@ -1,0 +1,685 @@
+<div class="w-100">
+  <div class="ac-left-box">
+    <form
+      [formGroup]="attendanceCorrectionForm"
+      #formDirective="ngForm"
+      (ngSubmit)="onSubmitAttendaceCorrection(formDirective)"
+    >
+      <div
+        class="ac-title collapsed"
+        data-toggle="collapse"
+        data-target="#attendanceCorrection"
+        aria-expanded="true"
+      >
+        Attendace Correction
+        <span class="fr"><i class="fas icon-up fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show" id="attendanceCorrection">
+        <div class="p-1 pb-3">
+          <div *ngIf="componentType.type != 'Emp-form'" class="d-flex my-1">
+            <p class="w-25 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Employee Code </mat-label>
+                <input formControlName="employee_id" matInput placeholder="" />
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Date</mat-label>
+                <input
+                  (dateChange)="onRosterDateChange()"
+                  formControlName="roster_date"
+                  matInput
+                  [matDatepicker]="rosterDateChangePicker"
+                  readonly
+                />
+                <mat-icon matSuffix (click)="rosterDateChangePicker.open()"
+                  >calendar_today</mat-icon
+                >
+                <mat-datepicker #rosterDateChangePicker></mat-datepicker>
+              </mat-form-field>
+            </p>
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time In</mat-label>
+              <input
+                readonly
+                type="time"
+                formControlName="auto_fill_time_in"
+                matInput
+                placeholder=""
+              />
+              <mat-icon matSuffix>access_time</mat-icon>
+            </mat-form-field>
+          </p> -->
+
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Time In</mat-label>
+                <input
+                  matInput
+                  formControlName="auto_fill_time_in"
+                  [ngxTimepicker]="autoFillTimeIn"
+                  [disableClick]="true"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker
+                #autoFillTimeIn
+              ></ngx-material-timepicker>
+            </p>
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Time Out</mat-label>
+                <input
+                  matInput
+                  formControlName="auto_fill_time_out"
+                  [ngxTimepicker]="autoFillTimeOut"
+                  [disableClick]="true"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker
+                #autoFillTimeOut
+              ></ngx-material-timepicker>
+            </p>
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time Out</mat-label>
+              <input
+                readonly
+                type="time"
+                formControlName="auto_fill_time_out"
+                matInput
+                placeholder=""
+              />
+              <mat-icon matSuffix>access_time</mat-icon>
+            </mat-form-field>
+          </p> -->
+          </div>
+
+          <div *ngIf="componentType.type == 'Emp-form'" class="d-flex my-1">
+            <!-- <mat-icon matSuffix>access_time</mat-icon> -->
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time Correction In</mat-label>
+              <input
+                type="time"
+                formControlName="time_in"
+                matInput
+                placeholder=""
+              />
+
+            </mat-form-field>
+          </p> -->
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Time Correction In</mat-label>
+                <input
+                  matInput
+                  formControlName="time_in"
+                  [ngxTimepicker]="timeIn"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker #timeIn></ngx-material-timepicker>
+            </p>
+            <!-- <mat-icon matSuffix>access_time</mat-icon> -->
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time Correction Out</mat-label>
+              <input
+                type="time"
+                formControlName="time_out"
+                matInput
+                placeholder=""
+              />
+
+            </mat-form-field>
+          </p> -->
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Time Correction Out </mat-label>
+                <input
+                  matInput
+                  formControlName="time_out"
+                  [ngxTimepicker]="timeOut"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker #timeOut></ngx-material-timepicker>
+            </p>
+            <p class="w-100 mx-1">&nbsp;</p>
+          </div>
+          <div class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Brief Reason</mat-label>
+                <input
+                  [readonly]="
+                    componentType.type == 'hr-form' ||
+                    componentType.type == 'lm-form'
+                  "
+                  formControlName="reason"
+                  matInput
+                  placeholder=""
+                />
+                <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
+              </mat-form-field>
+            </p>
+          </div>
+          <!-- Line Mangager section   -->
+          <div *ngIf="componentType.type != 'Emp-form'" class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>LM Date</mat-label>
+                <input
+                  formControlName="lm_date"
+                  matInput
+                  [matDatepicker]="lmPicker"
+                  readonly
+                />
+                <mat-icon matSuffix (click)="lmPicker.open()"
+                  >calendar_today</mat-icon
+                >
+                <mat-datepicker #lmPicker></mat-datepicker>
+              </mat-form-field>
+            </p>
+
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label> LM Time In</mat-label>
+              <input
+                type="time"
+                formControlName="lm_time_in"
+                matInput
+                placeholder=""
+              />
+
+            </mat-form-field>
+          </p> -->
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>LM Time In</mat-label>
+                <input
+                  matInput
+                  formControlName="lm_time_in"
+                  [ngxTimepicker]="lmTimeIn"
+                  [disableClick]="componentType.type != 'lm-form'"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker #lmTimeIn></ngx-material-timepicker>
+            </p>
+            <!-- <mat-icon matSuffix>access_time</mat-icon> -->
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>LM Time Out</mat-label>
+              <input
+                type="time"
+                formControlName="lm_time_out"
+                matInput
+                placeholder=""
+              />
+
+            </mat-form-field>
+          </p> -->
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>LM Time Out</mat-label>
+                <input
+                  matInput
+                  formControlName="lm_time_out"
+                  [ngxTimepicker]="lmTimeOut"
+                  [disableClick]="componentType.type != 'lm-form'"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker #lmTimeOut></ngx-material-timepicker>
+            </p>
+          </div>
+
+          <div *ngIf="componentType.type != 'Emp-form'" class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>LM Remarks</mat-label>
+                <input
+                  [readonly]="componentType.type != 'lm-form'"
+                  formControlName="lm_comments"
+                  matInput
+                  placeholder=""
+                />
+                <!-- <mat-icon matSuffix>edit_note</mat-icon> -->
+              </mat-form-field>
+            </p>
+          </div>
+
+          <!-- HR Section start -->
+
+          <div *ngIf="componentType.type == 'hr-form'" class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>HR Date</mat-label>
+                <input
+                  formControlName="hr_date"
+                  matInput
+                  [matDatepicker]="hrDpicker"
+                  readonly
+                />
+                <mat-icon matSuffix (click)="hrDpicker.open()"
+                  >calendar_today</mat-icon
+                >
+                <mat-datepicker #hrDpicker></mat-datepicker>
+              </mat-form-field>
+            </p>
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label> HR Time In</mat-label>
+              <input
+                type="time"
+                formControlName="hr_time_in"
+                matInput
+                placeholder=""
+              />
+
+            </mat-form-field>
+          </p> -->
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>HR Time In</mat-label>
+                <input
+                  matInput
+                  formControlName="hr_time_in"
+                  [ngxTimepicker]="hrTimeIn"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker #hrTimeIn></ngx-material-timepicker>
+            </p>
+            <!-- <p class="w-100 mx-1">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>HR Time Out</mat-label>
+              <input
+                type="time"
+                formControlName="hr_time_out"
+                matInput
+                placeholder=""
+              />
+            </mat-form-field>
+          </p> -->
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>HR Time Out</mat-label>
+                <input
+                  matInput
+                  formControlName="hr_time_out"
+                  [ngxTimepicker]="hrTimeOut"
+                  readonly
+                />
+                <mat-icon matSuffix>access_time</mat-icon>
+              </mat-form-field>
+
+              <ngx-material-timepicker #hrTimeOut></ngx-material-timepicker>
+            </p>
+          </div>
+
+          <div *ngIf="componentType.type == 'hr-form'" class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>HR Remarks</mat-label>
+                <input formControlName="hr_comments" matInput placeholder="" />
+                <!-- <mat-icon matSuffix>edit_note</mat-icon> -->
+              </mat-form-field>
+            </p>
+          </div>
+
+          <!-- HR section End -->
+        </div>
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button
+              (click)="onApproveStatus(2, formDirective)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Approve
+            </button>
+            <button
+              (click)="onApproveStatus(3, formDirective)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Disapprove
+            </button>
+            <button
+              *ngIf="componentType.type == 'Emp-form'"
+              type="submit"
+              class="submitButton ml-1"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              (click)="attendanceCorrectionForm.reset()"
+              class="submitButton ml-1"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Leave Reversal -->
+<div
+  *ngIf="componentType.type == 'Emp-form' || componentType.type == 'hr-form'"
+  class="w-100"
+>
+  <div class="ac-left-box">
+    <form
+      [formGroup]="leaveReversalForm"
+      #leaveReversal="ngForm"
+      (ngSubmit)="onSubmitLeaveReversal(leaveReversal)"
+    >
+      <div
+        class="ac-title"
+        data-toggle="collapse"
+        data-target="#leaveReversal"
+        aria-expanded="true"
+      >
+        Leave Reversal
+        <span class="fr"><i class="fas icon-up fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show" id="leaveReversal">
+        <div class="p-1 pb-3">
+          <div class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select
+                  (selectionChange)="onSelectLeaveType($event)"
+                  formControlName="leave_type_id"
+                >
+                  <mat-option
+                    *ngFor="let lrmData of leaveReversalMetaData"
+                    [value]="lrmData.leave_type_id"
+                    >{{ lrmData.leave_type_name }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </p>
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>From Date</mat-label>
+                <input
+                  formControlName="from_date"
+                  matInput
+                  [matDatepicker]="fromDatepicker"
+                  disabled
+                />
+                <mat-icon matSuffix (click)="fromDatepicker.open()"
+                  >calendar_today</mat-icon
+                >
+                <mat-datepicker #fromDatepicker></mat-datepicker>
+              </mat-form-field>
+            </p>
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>To Date</mat-label>
+                <input
+                  formControlName="to_date"
+                  matInput
+                  [matDatepicker]="toDatepicker"
+                  disabled
+                />
+                <mat-icon matSuffix (click)="toDatepicker.open()"
+                  >calendar_today</mat-icon
+                >
+                <mat-datepicker #toDatepicker></mat-datepicker>
+              </mat-form-field>
+            </p>
+            <div class="w-100 mx-1">&nbsp;</div>
+          </div>
+          <!-- class="ac-footer" -->
+          <div *ngIf="componentType.type == 'Emp-form'">
+            <div class="text-right ac-button-list">
+              <label class="custom-file-upload">
+                <input
+                  (change)="onLeaveReversalFileUpload($event)"
+                  type="file"
+                />
+                + Add
+              </label>
+
+              <!-- <a routerLink="/" class="ml-2">+ Add</a> -->
+            </div>
+          </div>
+          <div class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100 pr-2" appearance="outline">
+                <mat-label>Brief Reason</mat-label>
+                <input
+                  [readonly]="componentType.type == 'hr-form'"
+                  formControlName="reason"
+                  matInput
+                  placeholder=""
+                />
+                <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
+              </mat-form-field>
+            </p>
+          </div>
+          <div *ngIf="componentType.type == 'hr-form'" class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>HR Remarks</mat-label>
+                <input formControlName="hr_comments" matInput placeholder="" />
+                <mat-icon matSuffix>edit_note</mat-icon>
+              </mat-form-field>
+            </p>
+          </div>
+        </div>
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button
+              (click)="onHrLRApproveStatus(2, leaveReversal)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Approve
+            </button>
+            <button
+              (click)="onHrLRApproveStatus(3, leaveReversal)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Disapprove
+            </button>
+            <button
+              *ngIf="componentType.type == 'Emp-form'"
+              type="submit"
+              class="submitButton ml-1"
+            >
+              Submit
+            </button>
+            <!-- <button type="submit" class=" submitButton "> Submit</button> -->
+            <button
+              type="button"
+              (click)="leaveReversalForm.reset()"
+              class="submitButton ml-1"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Shift Change Request -->
+<div
+  *ngIf="componentType.type == 'lm-form' || componentType.type == 'Emp-form'"
+  class="w-100"
+>
+  <div class="ac-left-box">
+    <form
+      [formGroup]="shiftChangeRequestForm"
+      #shiftChange="ngForm"
+      (ngSubmit)="onSubmitShiftChange(shiftChange)"
+    >
+      <div
+        class="ac-title"
+        data-toggle="collapse"
+        data-target="#shiftChangeRequest"
+        aria-expanded="true"
+      >
+        Shift Change Request
+        <span class="fr"><i class="fas icon-up fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show" id="shiftChangeRequest">
+        <div class="p-1 pb-3">
+          <div class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Date</mat-label>
+                <input
+                  (dateChange)="onShiftDateChange()"
+                  formControlName="shift_date"
+                  matInput
+                  [matDatepicker]="SDPicker"
+                  readonly
+                />
+                <mat-icon matSuffix (click)="SDPicker.open()"
+                  >calendar_today</mat-icon
+                >
+                <mat-datepicker #SDPicker></mat-datepicker>
+              </mat-form-field>
+            </p>
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Current Shift</mat-label>
+                <mat-select formControlName="current_shift">
+                  <mat-option
+                    *ngFor="let shift of allShiftTypes"
+                    [value]="shift.shift_id"
+                    >{{
+                      shift.name +
+                        " (" +
+                        shift.time_in +
+                        " - " +
+                        shift.time_out +
+                        ")"
+                    }}</mat-option
+                  >
+                  <!-- <mat-option value="7">Morning</mat-option>
+              <mat-option value="15">Evening</mat-option> -->
+                </mat-select>
+              </mat-form-field>
+            </p>
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Requested Shift</mat-label>
+                <mat-select formControlName="requested_shift">
+                  <mat-option
+                    *ngFor="let shift of allShiftTypes"
+                    [value]="shift.shift_id"
+                    >{{
+                      shift.name +
+                        " (" +
+                        shift.time_in +
+                        " - " +
+                        shift.time_out +
+                        ")"
+                    }}</mat-option
+                  >
+                  <!-- <mat-option value="7">Morning</mat-option>
+              <mat-option value="15">Evening</mat-option> -->
+                </mat-select>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Brief Reason</mat-label>
+                <input
+                  formControlName="reason"
+                  [readonly]="componentType.type == 'lm-form'"
+                  matInput
+                  placeholder=""
+                />
+                <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
+              </mat-form-field>
+            </p>
+          </div>
+          <div *ngIf="componentType.type == 'lm-form'" class="d-flex my-1">
+            <p class="w-100 mx-1">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>LM Remarks</mat-label>
+                <input formControlName="lm_comments" matInput placeholder="" />
+                <mat-icon matSuffix>edit_note</mat-icon>
+              </mat-form-field>
+            </p>
+          </div>
+        </div>
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button
+              (click)="onLMAppveStatus(2, shiftChange)"
+              *ngIf="componentType.type == 'lm-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Approve
+            </button>
+            <button
+              (click)="onLMAppveStatus(3, shiftChange)"
+              *ngIf="componentType.type == 'lm-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Disapprove
+            </button>
+            <button
+              *ngIf="componentType.type == 'Emp-form'"
+              type="submit"
+              class="submitButton ml-1"
+            >
+              Submit
+            </button>
+
+            <button
+              type="button"
+              (click)="shiftChangeRequestForm.reset()"
+              class="submitButton ml-1"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

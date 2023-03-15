@@ -1,0 +1,70 @@
+/* ================ Attendance Correction */
+.ac-container {
+  position: relative;
+  clear: both;
+  display: flex;
+  background-color: #ffffff;
+
+}
+.ac-form-container {
+  position: relative;
+  clear: both;
+  display: flex;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  /* height: 81vh; */
+}
+.ac-box {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+.ac-left-container {
+  width: 820px;
+  float: left;
+  background-color: #ffffff;
+}
+.ac-right-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 99%;
+  margin-right: 20px;
+
+  width: 380px;
+  float: right;
+  background-color: #ffffff;
+}
+.ac-right-box {
+  display: block;
+  flex-direction: row-reverse;
+ margin-top: 0% !important;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+}
+.ac-title {
+  background-image: linear-gradient(#f7f7f7, #d6d6d6);
+  /* background: url('../../../../../assets/img/box-title.gif') repeat-x left top; */
+
+  padding: 8px 10px;
+  font: 13px/1em Verdana, Arial, Tahome;
+  color: #343434;
+  font-weight: bold;
+}
+.ac-box {
+  display: block;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+  flex-direction: row;
+  width:1210px ;
+}
+.fr {
+  float: right;
+}
+/* section end */
+div.ac-title[aria-expanded="false"] > .fr >img {
+  transform: rotate(180deg);
+}
+.body-container{
+  background-color: #ffffff;
+  min-height: 95vh;
+  }

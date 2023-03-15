@@ -1,0 +1,168 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "people": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "allowedCommonJsDependencies": [
+              "ng-sidebar",
+              "ngx-slick",
+              "rxjs",
+              "dagre",
+              "chart.js",
+              "lodash",
+              "jspdf",
+              "canvg",
+              "@babel/runtime-corejs3",
+              "raf",
+              "json-diff",
+              "pdfjs-dist"
+            ],
+            "outputPath": "people_html",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/@progress/kendo-theme-default/dist/all.css",
+              "src/assets/css/custom-theme.scss",
+              "src/assets/css/styles.css",
+              "src/assets/css/custom-bootstrap-table.css",
+              "src/assets/css/material-table.css",
+              "src/assets/css/custom-material.css",
+              "src/assets/css/header-tabs.css",
+              "node_modules/slick-carousel/slick/slick.css",
+              "src/assets/orgchart/css/jquery.orgchart.css",
+              "src/assets/orgchart/css/font-awesome.min.css",
+              "src/assets/orgchart/css/jquery.multiselect.css",
+              "src/assets/orgchart/css/style.css",
+              "src/assets/orgchart/css/styles-table.css",
+              "src/assets/orgchart/css/hide_first_node.css",
+              "src/assets/orgchart/css/department_expand_view.css",
+              "src/assets/orgchart/css/department_only_expand_view.css",
+              "src/assets/css/ag-grid-style.css",
+              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
+              "node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/orgchart/js/jquery.orgchart.js",
+              "src/assets/orgchart/js/org_chart.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "people:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "people:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "people:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "people:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "people:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "people",
+  "cli": {
+    "analytics": "9ab5e30c-fb5d-474c-8d00-ef9e66b4dc8d"
+  }
+}

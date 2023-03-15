@@ -1,0 +1,1261 @@
+<div class="w-100">
+  <div class="ac-left-box">
+    <form [formGroup]="attendanceCorrectionForm" #formDirective="ngForm">
+      <div
+        class="ac-title collapsed"
+        data-toggle="collapse"
+        data-target="#attendanceCorrection"
+        aria-expanded="true"
+      >
+        Attendace Correction
+        <span class="fr atend"> <i class="fas fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show" id="attendanceCorrection">
+        <div *ngIf="componentType.type != 'Emp-form'" class="d-flex">
+          <p class="w-25 ml-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Employee Code </mat-label>
+              <input
+                formControlName="employee_id"
+                matInput
+                placeholder=""
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">person</mat-icon>
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['employee_id'].invalid &&
+                attendanceCorrectionForm.controls['employee_id'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['employee_id'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+        </div>
+        <div class="d-flex">
+          <p
+            [ngClass]="componentType.type == 'Emp-form' ? 'mt-10' : ''"
+            class="w-100 ml-10"
+          >
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Date</mat-label>
+
+              <input
+                (dateChange)="onRosterDateChange()"
+                formControlName="roster_date"
+                matInput
+                [matDatepicker]="rosterDateChangePicker"
+                (click)="
+                  this.componentType.type == 'Emp-form'
+                    ? rosterDateChangePicker.open()
+                    : ''
+                "
+                readonly
+              />
+
+              <mat-icon
+                matSuffix
+                class="icon-align"
+                (click)="
+                  this.componentType.type == 'Emp-form'
+                    ? rosterDateChangePicker.open()
+                    : ''
+                "
+                >calendar_today</mat-icon
+              >
+              <mat-datepicker #rosterDateChangePicker></mat-datepicker>
+
+              <!-- *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')" -->
+              <!-- <mat-error >Required</mat-error> name.invalid && (name.dirty || name.touched) -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['roster_date'].invalid &&
+                attendanceCorrectionForm.controls['roster_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['roster_date'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p
+            [ngClass]="componentType.type == 'Emp-form' ? 'mt-10' : ''"
+            class="w-100 ml-10"
+          >
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time In</mat-label>
+              <input
+                matInput
+                formControlName="auto_fill_time_in"
+                [ngxTimepicker]="autoFillTimeIn"
+                [disableClick]="true"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #autoFillTimeIn></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['auto_fill_time_in']
+                  .invalid &&
+                attendanceCorrectionForm.controls['auto_fill_time_in'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['auto_fill_time_in'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p
+            [ngClass]="componentType.type == 'Emp-form' ? 'mt-10' : ''"
+            class="w-100 ml-10 mr-10"
+          >
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time Out </mat-label>
+              <input
+                matInput
+                formControlName="auto_fill_time_out"
+                [ngxTimepicker]="autoFillTimeOut"
+                [disableClick]="true"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #autoFillTimeOut></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['auto_fill_time_out']
+                  .invalid &&
+                attendanceCorrectionForm.controls['auto_fill_time_out'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['auto_fill_time_out'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+        </div>
+
+        <div *ngIf="componentType.type == 'Emp-form'" class="d-flex">
+          <p class="w-100 ml-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time Correction In</mat-label>
+              <input
+                matInput
+                formControlName="time_in"
+                [ngxTimepicker]="timeIn"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #timeIn></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['time_in'].invalid &&
+                attendanceCorrectionForm.controls['time_in'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['time_in'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Time Correction Out </mat-label>
+              <input
+                matInput
+                formControlName="time_out"
+                [ngxTimepicker]="timeOut"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #timeOut></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['time_out'].invalid &&
+                attendanceCorrectionForm.controls['time_out'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['time_out'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['time_out'].errors?.timeOut
+                "
+                class="mat-error-msg"
+                >The time out must be after time in.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+        <div class="d-flex">
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label> Reason</mat-label>
+              <input
+                [readonly]="
+                  componentType.type == 'hr-form' ||
+                  componentType.type == 'lm-form'
+                "
+                formControlName="reason"
+                matInput
+                placeholder=""
+              />
+              <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
+              <!-- <mat-error *ngIf="attendanceCorrectionForm.controls['username'].errors.required" >
+                Please enter a valid email address
+              </mat-error> -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['reason'].invalid &&
+                attendanceCorrectionForm.controls['reason'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['reason'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  !attendanceCorrectionForm.controls['reason'].errors
+                    ?.required &&
+                  attendanceCorrectionForm.controls['reason'].errors?.minlength
+                "
+                class="mat-error-msg"
+                >Reason must be at least 10 characters long.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+        <!-- Line Manager section -->
+        <div
+          *ngIf="componentType.type != 'Emp-form' && lmData == undefined"
+          class="d-flex"
+        >
+          <p class="w-100 ml-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>LM Date</mat-label>
+              <input
+                formControlName="lm_date"
+                matInput
+                [matDatepicker]="lmPicker"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">calendar_today</mat-icon>
+              <mat-datepicker #lmPicker></mat-datepicker>
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['lm_date'].invalid &&
+                attendanceCorrectionForm.controls['lm_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['lm_date'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+
+            </span>
+          </p>
+          <p class="w-100 ml-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>LM Time In</mat-label>
+              <input
+                matInput
+                formControlName="lm_time_in"
+                [ngxTimepicker]="lmTimeIn"
+                [disableClick]="componentType.type != 'lm-form'"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #lmTimeIn></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['lm_time_in'].invalid &&
+                attendanceCorrectionForm.controls['lm_time_in'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['lm_time_in'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p class="w-100 ml-10 mr-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>LM Time Out</mat-label>
+              <input
+                matInput
+                formControlName="lm_time_out"
+                [ngxTimepicker]="lmTimeOut"
+                [disableClick]="componentType.type != 'lm-form'"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #lmTimeOut></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['lm_time_out'].invalid &&
+                attendanceCorrectionForm.controls['lm_time_out'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['lm_time_out'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+              *ngIf="
+                attendanceCorrectionForm.controls['lm_time_out'].errors?.LMtimeOut
+              "
+              class="mat-error-msg"
+              >The time out must be after time in.
+            </mat-error>
+            </span>
+          </p>
+        </div>
+
+        <div
+          *ngIf="componentType.type != 'Emp-form ' && lmData == undefined"
+          class="d-flex"
+        >
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>LM Remarks</mat-label>
+
+              <input
+                [readonly]="componentType.type != 'lm-form'"
+                formControlName="lm_comments"
+                matInput
+                placeholder=""
+              />
+              <!-- <mat-icon matSuffix>edit_note</mat-icon> -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['lm_comments'].invalid &&
+                attendanceCorrectionForm.controls['lm_comments'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['lm_comments'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  !attendanceCorrectionForm.controls['lm_comments'].errors
+                    ?.required &&
+                  attendanceCorrectionForm.controls['lm_comments'].errors
+                    ?.minlength
+                "
+                class="mat-error-msg"
+                >Remarks must be at least 10 characters long.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+        <!-- Line Mangager section   for HR    -->
+        <div *ngFor="let lm of lmData; let i = index">
+          <div class="lm-box">
+            <div
+              class="lm-title"
+              data-toggle="collapse"
+              [attr.data-target]="'#LmCorrection' + i"
+              aria-expanded="true"
+            >
+              Line Manager {{ " (" + lm.lm_name + " )" }}
+              <span class="fr atend"> <i class="fas fa-caret-up"></i></span>
+            </div>
+            <div class="collapse show" id="{{ 'LmCorrection' + i }}">
+              <div *ngIf="componentType.type != 'Emp-form'" class="d-flex">
+                <p class="w-100 ml-10 mt-10">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>LM Date</mat-label>
+                    <input
+                      formControlName="lm_date"
+                      matInput
+                      [matDatepicker]="lmPicker"
+                      readonly
+                    />
+                    <mat-icon matSuffix class="icon-align"
+                      >calendar_today</mat-icon
+                    >
+                    <mat-datepicker #lmPicker></mat-datepicker>
+                  </mat-form-field>
+
+                </p>
+                <p class="w-100 ml-10 mt-10">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>LM Time In</mat-label>
+                    <input
+                      matInput
+                      [formControlName]="'lm_time_in_' + i"
+                      [ngxTimepicker]="lmTimeIn"
+                      [disableClick]="componentType.type != 'lm-form'"
+                      readonly
+                    />
+                    <mat-icon matSuffix class="icon-align"
+                      >access_time</mat-icon
+                    >
+                  </mat-form-field>
+
+                  <ngx-material-timepicker #lmTimeIn></ngx-material-timepicker>
+                  <!-- <span
+                    *ngIf="
+                      attendanceCorrectionForm.controls['lm_time_in'].invalid &&
+                      attendanceCorrectionForm.controls['lm_time_in'].touched
+                    "
+                  >
+                    <mat-error
+                      *ngIf="
+                        attendanceCorrectionForm.controls['lm_time_in'].errors
+                          ?.required
+                      "
+                      class="mat-error-msg"
+                      >Required*</mat-error
+                    >
+                  </span> -->
+                </p>
+                <p class="w-100 ml-10 mr-10 mt-10">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>LM Time Out</mat-label>
+                    <input
+                      matInput
+                      [formControlName]="'lm_time_out_' + i"
+                      [ngxTimepicker]="lmTimeOut"
+                      [disableClick]="componentType.type != 'lm-form'"
+                      readonly
+                    />
+                    <mat-icon matSuffix class="icon-align"
+                      >access_time</mat-icon
+                    >
+                  </mat-form-field>
+
+                  <ngx-material-timepicker #lmTimeOut></ngx-material-timepicker>
+                  <!-- <span
+                    *ngIf="
+                      attendanceCorrectionForm.controls['lm_time_out']
+                        .invalid &&
+                      attendanceCorrectionForm.controls['lm_time_out'].touched
+                    "
+                  >
+                    <mat-error
+                      *ngIf="
+                        attendanceCorrectionForm.controls['lm_time_out'].errors
+                          ?.required
+                      "
+                      class="mat-error-msg"
+                      >Required*</mat-error
+                    >
+                  </span> -->
+                </p>
+              </div>
+
+              <div *ngIf="componentType.type != 'Emp-form'" class="d-flex">
+                <p class="w-100 ml-10 mr-10">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>LM Remarks</mat-label>
+
+                    <input
+                      [readonly]="componentType.type != 'lm-form'"
+                      [formControlName]="'lm_comments_' + i"
+                      matInput
+                      placeholder=""
+                    />
+                    <!-- <mat-icon matSuffix>edit_note</mat-icon> -->
+                  </mat-form-field>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- HR Section start -->
+
+        <div *ngIf="componentType.type == 'hr-form'" class="d-flex">
+          <p class="w-100 ml-10">
+            <!-- (click)="hrDpicker.open()"   (click)="hrDpicker.open()"-->
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>HR Date</mat-label>
+              <input
+                formControlName="hr_date"
+                matInput
+                [matDatepicker]="hrDpicker"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">calendar_today</mat-icon>
+              <mat-datepicker #hrDpicker></mat-datepicker>
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['hr_date'].invalid &&
+                attendanceCorrectionForm.controls['hr_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['hr_date'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <!-- <p class="w-100 ">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label> HR Time In</mat-label>
+              <input
+                type="time"
+                formControlName="hr_time_in"
+                matInput
+                placeholder=""
+              />
+
+            </mat-form-field>
+          </p> -->
+          <p class="w-100 ml-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>HR Time In</mat-label>
+              <input
+                matInput
+                formControlName="hr_time_in"
+                [ngxTimepicker]="hrTimeIn"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #hrTimeIn></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['hr_time_in'].invalid &&
+                attendanceCorrectionForm.controls['hr_time_in'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['hr_time_in'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>HR Time Out</mat-label>
+              <input
+                matInput
+                formControlName="hr_time_out"
+                [ngxTimepicker]="hrTimeOut"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align">access_time</mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #hrTimeOut></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['hr_time_out'].invalid &&
+                attendanceCorrectionForm.controls['hr_time_out'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['hr_time_out'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['hr_time_out'].errors
+                    ?.HRtimeOut
+                "
+                class="mat-error-msg"
+                >The time out must be after time in.</mat-error
+              >
+            </span>
+          </p>
+        </div>
+
+        <div *ngIf="componentType.type == 'hr-form'" class="d-flex">
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>HR Remarks</mat-label>
+              <input formControlName="hr_comments" matInput placeholder="" />
+              <!-- <mat-icon matSuffix>edit_note</mat-icon> -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['hr_comments'].invalid &&
+                attendanceCorrectionForm.controls['hr_comments'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['hr_comments'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  !attendanceCorrectionForm.controls['hr_comments'].errors
+                    ?.required &&
+                  attendanceCorrectionForm.controls['hr_comments'].errors
+                    ?.minlength
+                "
+                class="mat-error-msg"
+                >Remarks must be at least 10 characters long.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+
+        <!-- HR section End -->
+
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button
+              (click)="onApproveStatus(2, formDirective)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Approve
+            </button>
+            <button
+              (click)="onApproveStatus(3, formDirective)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Disapprove
+            </button>
+            <button
+              *ngIf="componentType.type == 'Emp-form'"
+              type="button"
+              (click)="onSubmitAttendaceCorrection(formDirective)"
+              class="submitButton ml-1"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              (click)="
+                this.attendanceCorrectionForm.reset();
+                this.attendanceCorrection();
+                this.lmData = undefined
+              "
+              class="submitButton ml-1"
+            >
+              Cancel
+            </button>
+          </div>
+          <!--  this.attendanceCorrectionForm.reset(); this.attendanceCorrection();this.attendanceCorrectionForm.markAsPristine(); -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Leave Reversal -->
+<div
+  *ngIf="componentType.type == 'Emp-form' || componentType.type == 'hr-form'"
+  class="w-100 mt-10"
+>
+  <div class="ac-left-box">
+    <form [formGroup]="leaveReversalForm" #leaveReversal="ngForm">
+      <div
+        class="ac-title"
+        data-toggle="collapse"
+        data-target="#leaveReversal"
+        aria-expanded="true"
+      >
+        Leave Reversal
+        <span class="fr"><i class="fas fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show" id="leaveReversal">
+        <div class="d-flex">
+          <p class="w-100 ml-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Type</mat-label>
+              <mat-select
+                (selectionChange)="onSelectLeaveType($event)"
+                formControlName="leave_type_id"
+              >
+                <mat-option
+                  *ngFor="let lrmData of leaveReversalMetaData"
+                  [value]="lrmData.leave_type_id"
+                  >{{ lrmData.leave_type_name }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+            <span
+              *ngIf="
+                leaveReversalForm.controls['leave_type_id'].invalid &&
+                leaveReversalForm.controls['leave_type_id'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  leaveReversalForm.controls['leave_type_id'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p class="w-100 ml-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>From Date</mat-label>
+              <input
+                formControlName="from_date"
+                matInput
+                [matDatepicker]="fromDatepicker"
+                (click)="fromDatepicker.open()"
+                disabled
+              />
+              <mat-icon
+                matSuffix
+                class="icon-align"
+                (click)="fromDatepicker.open()"
+                >calendar_today</mat-icon
+              >
+              <mat-datepicker #fromDatepicker></mat-datepicker>
+            </mat-form-field>
+            <span
+              *ngIf="
+                leaveReversalForm.controls['from_date'].invalid &&
+                leaveReversalForm.controls['from_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="leaveReversalForm.controls['from_date'].errors?.required"
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p class="w-100 ml-10 mr-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>To Date</mat-label>
+              <input
+                formControlName="to_date"
+                matInput
+                [matDatepicker]="toDatepicker"
+                (click)="toDatepicker.open()"
+                disabled
+              />
+              <mat-icon
+                matSuffix
+                class="icon-align"
+                (click)="toDatepicker.open()"
+                >calendar_today</mat-icon
+              >
+              <mat-datepicker #toDatepicker></mat-datepicker>
+            </mat-form-field>
+            <span
+              *ngIf="
+                leaveReversalForm.controls['to_date'].invalid &&
+                leaveReversalForm.controls['to_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="leaveReversalForm.controls['to_date'].errors?.required"
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+        </div>
+        <!-- class="ac-footer" -->
+        <div *ngIf="componentType.type == 'Emp-form'">
+          <div class="text-right ac-button-list mb-10">
+            <span *ngIf="fileName != undefined" class="pr-2"
+              >{{ this.fileName }}
+              <span
+                (click)="
+                  this.uploadedFile = undefined; this.fileName = undefined
+                "
+                style="cursor: pointer"
+                >&times;</span
+              ></span
+            >
+            <label class="custom-file-upload">
+              <input (change)="onLeaveReversalFileUpload($event)" type="file" />
+              + Add
+            </label>
+
+            <!-- <a routerLink="/" class="ml-2">+ Add</a> -->
+          </div>
+        </div>
+        <div *ngIf="componentType.type == 'hr-form'">
+          <div class="text-right ac-button-list mb-10">
+            <!-- <span *ngIf="file_upload_url != undefined" class="pr-2"
+              >{{ this.file_upload_url }}
+              <span
+                (click)="
+                  this.file_upload_url = undefined; this.fileName = undefined
+                "
+                style="cursor: pointer"
+                >&times;</span
+              ></span
+            > -->
+            <label
+              (click)="openFile()"
+              *ngIf="file_upload_url != undefined"
+              class="custom-file-upload"
+              >View File</label
+            >
+
+            <!-- <a routerLink="/" class="ml-2">+ Add</a> -->
+          </div>
+        </div>
+        <div class="d-flex">
+          <p class="w-100 ml-10">
+            <mat-form-field class="w-100 pr-2" appearance="outline">
+              <mat-label>Brief Reason</mat-label>
+              <input
+                [readonly]="componentType.type == 'hr-form'"
+                formControlName="reason"
+                matInput
+                placeholder=""
+              />
+              <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                leaveReversalForm.controls['reason'].invalid &&
+                leaveReversalForm.controls['reason'].touched
+              "
+            >
+              <mat-error
+                *ngIf="leaveReversalForm.controls['reason'].errors?.required"
+                class="mat-error-msg pr-2"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  !leaveReversalForm.controls['reason'].errors?.required &&
+                  leaveReversalForm.controls['reason'].errors?.minlength
+                "
+                class="mat-error-msg"
+                >Reason must be at least 10 characters long.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+        <div *ngIf="componentType.type == 'hr-form'" class="d-flex">
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>HR Remarks</mat-label>
+              <input formControlName="hr_comments" matInput placeholder="" />
+              <!-- <mat-icon matSuffix>edit_note</mat-icon> -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                leaveReversalForm.controls['hr_comments'].invalid &&
+                leaveReversalForm.controls['hr_comments'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  leaveReversalForm.controls['hr_comments'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  !leaveReversalForm.controls['hr_comments'].errors?.required &&
+                  leaveReversalForm.controls['hr_comments'].errors?.minlength
+                "
+                class="mat-error-msg"
+                >Remarks must be at least 10 characters long.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button
+              (click)="onHrLRApproveStatus(2, leaveReversal)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Approve
+            </button>
+            <button
+              (click)="onHrLRApproveStatus(3, leaveReversal)"
+              *ngIf="componentType.type != 'Emp-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Disapprove
+            </button>
+            <button
+              *ngIf="componentType.type == 'Emp-form'"
+              type="button"
+              (click)="onSubmitLeaveReversal(leaveReversal)"
+              class="submitButton ml-1"
+            >
+              Submit
+            </button>
+            <!-- <button type="submit" class=" submitButton "> Submit</button>
+
+             this.leaveReversalForm.reset();
+                this.leaveReversalForm.form.markAsPristine();
+                this.leaveReversalForm.markAsUntouched();
+                this.leaveCorrection();
+              -->
+            <button
+              type="button"
+              (click)="
+                this.leaveReversalForm.reset();
+                this.leaveCorrection();
+                this.file_upload_url = undefined
+              "
+              class="submitButton ml-1"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Shift Change Request -->
+<div
+  *ngIf="componentType.type == 'lm-form' || componentType.type == 'Emp-form'"
+  class="w-100 mt-10"
+>
+  <div class="ac-left-box">
+    <form [formGroup]="shiftChangeRequestForm" #shiftChange="ngForm">
+      <div
+        class="ac-title"
+        data-toggle="collapse"
+        data-target="#shiftChangeRequest"
+        aria-expanded="true"
+      >
+        Shift Change Request
+        <span class="fr"><i class="fas icon-up fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show" id="shiftChangeRequest">
+        <div class="d-flex">
+          <p class="w-100 ml-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Date</mat-label>
+              <input
+                (dateChange)="onShiftDateChange()"
+                formControlName="shift_date"
+                matInput
+                [matDatepicker]="SDPicker"
+                (click)="SDPicker.open()"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align" (click)="SDPicker.open()"
+                >calendar_today</mat-icon
+              >
+              <mat-datepicker #SDPicker></mat-datepicker>
+            </mat-form-field>
+            <span
+              *ngIf="
+                shiftChangeRequestForm.controls['shift_date'].invalid &&
+                shiftChangeRequestForm.controls['shift_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  shiftChangeRequestForm.controls['shift_date'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p class="w-100 ml-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Current Shift</mat-label>
+              <mat-select formControlName="current_shift">
+                <!--
+                    shift.name +
+                      " (" +
+                      shift.time_in +
+                      " - " +
+                      shift.time_out +
+                      ")" -->
+                <mat-option
+                  *ngFor="let shift of allShiftTypes"
+                  [value]="shift.shift_id"
+                  >{{ shift.name }}</mat-option
+                >
+                <!-- <mat-option value="7">Morning</mat-option>
+              <mat-option value="15">Evening</mat-option> -->
+              </mat-select>
+            </mat-form-field>
+            <span
+              *ngIf="
+                shiftChangeRequestForm.controls['current_shift'].invalid &&
+                shiftChangeRequestForm.controls['current_shift'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  shiftChangeRequestForm.controls['current_shift'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+          <p class="w-100 ml-10 mr-10 mt-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Requested Shift</mat-label>
+              <mat-select formControlName="requested_shift">
+                <!-- {{
+                    shift.name +
+                      " (" +
+                      shift.time_in +
+                      " - " +
+                      shift.time_out +
+                      ")"
+                  }} -->
+                <mat-option
+                  *ngFor="let shift of allShiftTypes"
+                  [value]="shift.shift_id"
+                  >{{ shift.name }}</mat-option
+                >
+                <!-- <mat-option value="7">Morning</mat-option>
+              <mat-option value="15">Evening</mat-option> -->
+              </mat-select>
+            </mat-form-field>
+            <span
+              *ngIf="
+                shiftChangeRequestForm.controls['requested_shift'].invalid &&
+                shiftChangeRequestForm.controls['requested_shift'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  shiftChangeRequestForm.controls['requested_shift'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+        </div>
+        <div class="d-flex">
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Brief Reason</mat-label>
+              <input
+                formControlName="reason"
+                [readonly]="componentType.type == 'lm-form'"
+                matInput
+                placeholder=""
+              />
+              <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                shiftChangeRequestForm.controls['reason'].invalid &&
+                shiftChangeRequestForm.controls['reason'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  shiftChangeRequestForm.controls['reason'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  !shiftChangeRequestForm.controls['reason'].errors?.required &&
+                  shiftChangeRequestForm.controls['reason'].errors?.minlength
+                "
+                class="mat-error-msg"
+                >Reason must be at least 10 characters long.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+        <div *ngIf="componentType.type == 'lm-form'" class="d-flex">
+          <p class="w-100 ml-10 mr-10">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>LM Remarks</mat-label>
+              <input formControlName="lm_comments" matInput placeholder="" />
+              <!-- <mat-icon matSuffix class="icon-align">edit_note</mat-icon> -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                shiftChangeRequestForm.controls['lm_comments'].invalid &&
+                shiftChangeRequestForm.controls['lm_comments'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  shiftChangeRequestForm.controls['lm_comments'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  !shiftChangeRequestForm.controls['lm_comments'].errors
+                    ?.required &&
+                  shiftChangeRequestForm.controls['lm_comments'].errors
+                    ?.minlength
+                "
+                class="mat-error-msg"
+                >Remarks must be at least 10 characters long.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button
+              (click)="onLMAppveStatus(2, shiftChange)"
+              *ngIf="componentType.type == 'lm-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Approve
+            </button>
+            <button
+              (click)="onLMAppveStatus(3, shiftChange)"
+              *ngIf="componentType.type == 'lm-form'"
+              type="button"
+              class="submitButton ml-1"
+            >
+              Disapprove
+            </button>
+            <button
+              *ngIf="componentType.type == 'Emp-form'"
+              type="button"
+              (click)="onSubmitShiftChange(shiftChange)"
+              class="submitButton ml-1"
+            >
+              Submit
+            </button>
+
+            <button
+              type="button"
+              (click)="
+                shiftChangeRequestForm.reset(); this.shiftChangeRequest()
+              "
+              class="submitButton ml-1"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <div class="alert_container">
+<div *ngIf="testvar" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div> -->
+
+<div
+  *ngIf="isSccessMessage == true"
+  id="ssnackbar"
+  [ngClass]="isSnaksBarDisplay == true ? 'show' : ''"
+>
+  {{ alertMessage }}
+</div>
+
+<div
+  *ngIf="isFailMessage == true"
+  id="fsnackbar"
+  [ngClass]="isSnaksBarDisplay == true ? 'show' : ''"
+>
+  <p class="error-message" *ngFor="let message of errorList">{{ message }}</p>
+</div>
+<div
+  *ngIf="isWarnMessage == true"
+  id="wsnackbar"
+  [ngClass]="isSnaksBarDisplay == true ? 'show' : ''"
+>
+  {{ alertMessage }}
+</div>

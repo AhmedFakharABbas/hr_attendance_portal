@@ -1,0 +1,91 @@
+.data_wrapper {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 10px;
+}
+.data_wrapper:hover {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px;
+}
+
+.data_wrapper > .inner_wrapper > .node {
+    border: unset !important;
+    width: 100%;
+    background: #dad9e4 !important;
+}
+.data_wrapper > .inner_wrapper > .node:hover {
+    border: 1px solid #039BE5 !important;
+    padding: 10px !important;
+    border-radius: 4px;
+    background: #dad9e4 !important;
+}
+.orgchart .verticalNodes ul>li::before {
+    width: calc(52% - 1px) !important;
+}
+
+.verticalNodes div.node {
+    margin: 10px auto;
+}
+
+.department_title ~ .node {
+    margin: 10px auto;
+}
+
+/* .first_node > .node_container_1 > .node_header {
+    background-color: #e80000 !important;
+} */
+
+/*.verticalNodes ul>li:before,
+.verticalNodes ul>li:after {
+    display: none !important;
+}
+
+.verticalNodes>td::before {
+    border: 1px solid rgba(217, 83, 79, 0.8);
+    padding: 10px 0px;
+}*/
+
+.orgchart .verticalNodes ul {
+    padding-left: 0px;
+}
+
+.data_wrapper > .inner_wrapper {
+    width: 100%;
+    border: 4px solid #039BE5;
+    border-radius: 4px;
+    background: #dad9e4 !important;
+}
+
+tr.verticalNodes > td > ul > li > table > tr > td > 
+.data_wrapper > .inner_wrapper > div.node > div.first_node > .node_container_1 > 
+.node_header {
+    background-color: #09a715 !important;
+}
+
+h1.department_title {
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #5e6069;
+    background-color: #41434e;
+    color: #ffffff;
+}
+
+div#chart-container > .orgchart > table > tr:first-child > td > .data_wrapper {
+    visibility: hidden !important;
+    width: 100% !important;
+    display: none !important;
+}
+
+div#chart-container > .orgchart > table > tr:first-child + .verticalNodes>td::before,
+div#chart-container > .orgchart > table > tr:first-child + .verticalNodes ul>li:before,
+div#chart-container > .orgchart > table > tr:first-child + .verticalNodes ul>li:after {
+    display: none !important;
+}
+
+div#chart-container > .orgchart > table > tr.lines {
+    visibility: hidden !important;
+    display: none !important;
+}

@@ -1,0 +1,97 @@
+
+.ac-title {
+  background: url('../../../../assets/img/box-title.gif') repeat left top;
+   padding: 8px 10px 8px 10px;
+   font: 12px/1.0em Verdana, Arial, Tahome;
+   color: #333333;
+   font-weight: 600;
+ }
+ .ac-title-with-input {
+   background: url('../../../../assets/img/box-title.gif') repeat left top;
+    padding: 0px 10px 17px 10px;
+    font: 12px/1.0em Verdana, Arial, Tahome;
+    color: #333333;
+    font-weight: 600;
+  }
+  .title-text{
+   position: relative;
+   top: 8px;
+  }
+ .ac-content {
+   background: url('../../../../assets/img/box-shadow.gif') repeat-x left top;
+   padding: 5px;
+ }
+ .ac-table {
+   width: 100%;
+ }
+ .ac-box {
+   display: block;
+   background: #fcfcfc !important;
+   border: 1px solid #e7e7e7;
+   flex-direction: row;
+ }
+ .ac-title-withoutpic{
+   font: 12px/1.0em Verdana, Arial, Tahome;
+   color: #333333;
+   font-weight: 600;
+ }
+ .grayborder{
+   border: 1px solid  #E7E7E7;
+   border-radius: 5px;
+ }
+ textarea {
+   border-bottom: none;
+   border-left: none;
+   border-right: none;
+   border-top: 1px solid #E7E7E7;
+   outline: none;
+ }
+ .ac-footer {
+   background: #e6e6e6;
+   padding: 2px 10px 4px;
+ }
+ #ac-button-list {
+   margin: 3px 0;
+   text-align: right;
+ }
+
+ #ac-button-list a,
+ .ac-button-list a,
+ #ac-button-list font,
+ .ac-button-list font,
+ #ac-button,
+ a#ac-button,
+ a.ac-button {
+   position: relative;
+   padding: 4px 6px 4px 6px;
+   border: 1px solid var(--unnamed-color-ffffff);
+   background: transparent linear-gradient(180deg, #EDEDED 0%, #FAFAFA 100%) 0% 0% no-repeat padding-box;
+   border: 1px solid #FFFFFF;
+   border-radius: 3px;
+   color: #3080EA;
+   opacity: 1;
+   text-decoration: none;
+   font-size: 12px;
+ }
+
+ #ac-button-list a:hover,
+ .ac-button-list a:hover,
+ #ac-button a:hover,
+ .ac-button a:hover,
+ a.ac-button:hover,
+ a#ac-button:hover {
+   border: 1px solid #a6daee;
+   padding: 4px 6px 4px 6px;
+   background: transparent linear-gradient(0deg, #F1FAFE 0%, #BDE9FB 100%) 0% 0% no-repeat padding-box;
+   border-radius: 3px;
+   opacity: 1;
+   color: #343434;
+   text-decoration: none;
+   font-size: 12px;
+ }
+.PendingStatus{
+  color: rgb(239 164 72);
+}
+.employeeName{
+  color: #007bff;
+}

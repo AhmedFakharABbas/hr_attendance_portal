@@ -1,0 +1,431 @@
+<div class="card">
+  <div class="card-body">
+    <p class="ml-10">
+      <b>Settings \ </b>
+      <span style="color: #007bff"> Conduct Setup</span>
+    </p>
+
+    <form [formGroup]="enquiryFormGrop" class="mb-10">
+      <!-- Enquiry Details Screen  section -->
+      <div class="wrapper">
+        <div
+          class="ac-title"
+          data-toggle="collapse"
+          data-target="#enquiryDetails"
+          aria-expanded="true"
+        >
+          Enquiry Details
+          <span class="fr atend"> <i class="fas fa-caret-up"></i></span>
+        </div>
+        <div class="collapse show" id="enquiryDetails">
+          <div class="row mt-15">
+            <div class="col-2 p-10 pb-10 mb-15">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label> Enquiry </mat-label>
+                <input
+                  formControlName="enquiry_type_name"
+                  matInput
+                  placeholder=""
+
+                />
+              </mat-form-field>
+            </div>
+
+            <div class="col-2 pl-10 mb-15 pb-2">
+              <span class="pl-2">Enquiry Section:</span>
+            </div>
+            <div class="col-2 pl-10 mb-15">
+              <mat-checkbox formControlName="responder_section" class="example-margin"
+                >Responder's Response</mat-checkbox
+              >
+            </div>
+            <div class="col-2 pl-10 mb-15">
+              <mat-checkbox class="example-margin" formControlName="provision_policy_section"
+                >Provision of Policy</mat-checkbox
+              >
+            </div>
+            <div class="col-2 pl-10 mb-15">
+              <mat-checkbox formControlName="legal_opinion_section" class="example-margin">Legal Opinion</mat-checkbox>
+            </div>
+            <div class="col-2 pl-10 mb-15">
+              <mat-checkbox class="example-margin" formControlName="recommendation_section"
+                >Recommendations</mat-checkbox
+              >
+            </div>
+          </div>
+          <div class="row mt-15 mb-15">
+            <div class="col-2 p-10 mb-15 pb-10">
+              <span class="pl-2" >Anonymous Application:</span>
+            </div>
+            <div class="col-2 pl-10 mb-15">
+              <mat-checkbox (change)="updateAnonymousCheckBox('anonymous_application_allowed','anonymous_application_not_allowed')"   class="example-margin" formControlName="anonymous_application_allowed" >Allowed</mat-checkbox>
+            </div>
+            <div class="col-2 pl-10 mb-15">
+              <mat-checkbox class="example-margin"   (change)="updateAnonymousCheckBox('anonymous_application_not_allowed','anonymous_application_allowed')" formControlName="anonymous_application_not_allowed"
+                >Not Allowed</mat-checkbox
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Investigator section -->
+      <div class="wrapper">
+        <div
+          class="ac-title"
+          data-toggle="collapse"
+          data-target="#investigator"
+          aria-expanded="true"
+        >
+          Investigator
+          <span class="fr atend"> <i class="fas fa-caret-up"></i></span>
+        </div>
+        <div class="collapse show" id="investigator">
+          <div class="row mb-15 mt-15 w-100">
+            <div
+              class="col-6 mb-15"
+              *ngFor="
+                let investigator of investigatorsDataArray;
+                let i = index;
+                let isLast = last
+              "
+            >
+              Level {{ i + 1 }}:
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Department</mat-label>
+                <mat-select    [formControlName]="'investigator_department_'+i" >
+                  <mat-option
+                    *ngFor="let depart of allDepartments"
+                    [value]="depart.id"
+                    >{{ depart.department_name }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Designation</mat-label>
+                <mat-select  [formControlName]="'investigator_designation_'+i" >
+                  <mat-option
+                    *ngFor="let designations of allDesignations"
+                    [value]="designations.designation_id"
+                    >{{ designations.designation_name }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Employee</mat-label>
+                <mat-select [formControlName]="'investigator_employee_'+i" >
+                  <mat-option
+                    *ngFor="
+                      let employee of employee_list
+                        | filter
+                          :enquiryFormGrop.controls['investigator_department_' + i]
+                          .value
+                          : 'department_id'
+                        | filter
+                          :enquiryFormGrop.controls['investigator_designation_' + i]
+                          .value
+                          : 'designation_id'
+                    "
+                    [value]="employee.id"
+                    >{{ employee.name }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+              <button
+                class="submitButton"
+                *ngIf="isLast"
+                (click)="addInvestegator()"
+              >
+                Add +
+              </button>
+
+            </div>
+
+            <!-- <div class="col-6">
+              Level 1:
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Department</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Department</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Department</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <button class="submitButton">Add +</button>
+            </div> -->
+            <!-- <span class="ml-10">
+              Level 1:
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Department</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Designation</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Employee</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              Level 1:
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Department</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Designation</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Employee</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              Level 1:
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Department</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Designation</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-9" appearance="outline">
+                <mat-label class="label">Employee</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option1</mat-option>
+                  <mat-option value="option2">Option2</mat-option>
+                  <mat-option value="option3">Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </span> -->
+          </div>
+        </div>
+      </div>
+      <!-- Decision Maker section -->
+
+      <div
+        class="ac-title ml-10 mr-10"
+        data-toggle="collapse"
+        data-target="#decisionMaker"
+        aria-expanded="true"
+      >
+        Decision Maker
+        <span class="fr atend"> <i class="fas fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show ml-10 mr-10" id="decisionMaker">
+        <table class="table table-striped">
+          <div class="td-w">
+            <thead>
+              <tr style="background-color: #ffffff">
+                <td scope="col" class="title">Selection</td>
+                <td scope="col" class="title">Authority</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let decisionMaker of decisionMakerArray;
+                  let i = index;
+                  let isLast = last;
+                  let isFirst = first
+                "
+              >
+                <td class="td-50">
+                  <span class="row left-row">
+                    Level {{ i + 1 }}:
+                    <mat-form-field class="w-28" appearance="outline">
+                      <mat-label class="label">Department</mat-label>
+                      <mat-select   [formControlName]="'decision_makers_department_'+i" >
+                        <mat-option
+                          *ngFor="let depart of allDepartments"
+                          [value]="depart.id"
+                          >{{ depart.department_name }}</mat-option
+                        >
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="w-28" appearance="outline">
+                      <mat-label class="label">Designation</mat-label>
+                      <mat-select   [formControlName]="'decision_makers_designation_'+i" >
+                        <mat-option
+                          *ngFor="let designations of allDesignations"
+                          [value]="designations.designation_id"
+                          >{{ designations.designation_name }}</mat-option
+                        >
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="w-28" appearance="outline">
+                      <mat-label class="label">Employee</mat-label>
+                      <mat-select  [formControlName]="'decision_makers_employee_'+i" >
+                        <mat-option
+                          *ngFor="  let employee of employee_list
+                          | filter
+                            :enquiryFormGrop.controls['decision_makers_department_' + i]
+                            .value
+                            : 'department_id'
+                          | filter
+                            :enquiryFormGrop.controls['decision_makers_designation_' + i]
+                            .value
+                            : 'designation_id'
+                          "
+                          [value]="employee.id"
+                          >{{ employee.name }}</mat-option
+                        >
+                      </mat-select>
+                    </mat-form-field>
+                    <button
+                      class="submitButton"
+                      (click)="addDecisionMaker(1, 1)"
+                      *ngIf="isLast"
+                    >
+                      +</button
+                    ><button
+                      class="submitButton"
+                      (click)="removeDecisionMaker()"
+                      *ngIf="!isFirst && isLast"
+                    >
+                      -
+                    </button>
+                  </span>
+                </td>
+                <td
+                  *ngIf="isFirst"
+                  style="background-color: #ffffff; padding: 0"
+                  rowspan="8"
+                  class="td-50"
+                >
+                  <tr>
+                    <td
+                      class="td-33 td-header-padding"
+                      *ngFor="
+                        let decisionMaker of decisionMakerArray;
+                        let i = index;
+                        let isLast = last;
+                        let isFirst = first
+                      "
+                    >
+                      Level{{ i + 1 }}
+                    </td>
+                  </tr>
+                  <tr
+                    *ngFor="
+                      let authority of decisionMaker.authorities;
+                      let authorityIndex = index;
+                      let isLastAuthority = last;
+                      let isFirstAurthority = first
+                    "
+                  >
+                    <td
+                      *ngFor="
+                        let decisionMaker of decisionMakerArray;
+                        let decisionMakerIndex = index;
+                        let isLastDecisionMaker = last;
+                        let isFirstDecisionMaker = first
+                      "
+                    >
+                    <!-- *ngIf="authority.isAuthdisplay==true" -->
+                      <div >
+                        <mat-form-field class="authority-width" appearance="outline">
+                          <mat-label class="label">{{decisionMaker.ddisplay}}=>{{authority.isAuthdisplay}}</mat-label>
+                          <mat-select   [formControlName]="'decision_makers_authority_'+decisionMakerIndex">
+                            <mat-option
+                              *ngFor="let authority of authorities"
+                              [value]="authority.authority_id"
+                              >{{ authority.authority_name }}</mat-option
+                            >
+                          </mat-select>
+                        </mat-form-field>
+
+                        <button
+                          class="submitButton"
+
+                          (click)="addAuthority(decisionMakerIndex,authorityIndex,isLastAuthority)"
+                        >
+                          +{{decisionMakerIndex}}
+                        </button>
+                        <button
+                          class="submitButton"
+
+                          (click)="removeAuthority(decisionMakerIndex,authorityIndex,isLastAuthority)"
+                        >
+                          -{{authorityIndex}}
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+      </div>
+<!-- submit -->
+<div class="ac-footer">
+  <div class="text-right ac-button-list">
+    <button class="submitButton" type="button" (click)="enquiryFormSubmit()">Submit</button>
+    <button class="submitButton">Cancel</button>
+  </div>
+  </div>
+      <!-- Enquiry Types  -->
+
+      <div
+        class="ac-title ml-10 mr-10"
+        data-toggle="collapse"
+        data-target="#enquiryTypes"
+        aria-expanded="true"
+      >
+        Enquiry Types
+        <span class="fr atend"> <i class="fas fa-caret-up"></i></span>
+      </div>
+      <div class="collapse show ml-10 mr-10 mb-10" id="enquiryTypes">
+        <app-conduct-setup-details></app-conduct-setup-details>
+      </div>
+    </form>
+  </div>
+</div>

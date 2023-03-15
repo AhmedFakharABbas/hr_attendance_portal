@@ -1,0 +1,11 @@
+.card {
+  border: 1px solid #fff;
+}
+.card-body{
+  background-color: white;
+  padding: 10px;
+}
+.custom-padding{
+  padding-left: 10px;
+  padding-right: 10px;
+}

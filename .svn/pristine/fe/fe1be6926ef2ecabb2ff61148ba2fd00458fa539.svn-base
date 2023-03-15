@@ -1,0 +1,67 @@
+{
+  "StaffTurnoverJoinersValue": "5",
+  "StaffTurnoverLeaversValue": "3",
+
+  "salaryWagesBigLegendHeaderData":[
+    {"header": "Fixed Salary","value": "2.7 M"},
+    {"header": "Variable Salary","value": "0.1 M"},
+    {"header": "Gross Salary","value": "2.8 M"}
+  ],
+  "expenseBigLegendHeaderData":[
+    {"header": "OPD Expense","value": "0.14 M"},
+    {"header": "Travelling Exp","value": "30 K"},
+    {"header": "Total Exps","value": "0.17 M"}
+  ],
+  
+  "perksBigLegendHeaderData":[
+    {"header": "Mobile","value": "38 K"},
+    {"header": "Car & Fuel","value": "92 K"},
+    {"header": "Meal","value": "20 K"}
+  ],
+
+  "terminalBigLegendHeaderData":[
+    {"header": "Provident Fund","value": "0.16 M"},
+    {"header": "Gratuity","value": "0.2 M"},
+    {"header": "Pension","value": "0.18 M"}
+  ],
+  
+  "statutoryBigLegendHeaderData":[
+    {"header": "EOBI","value": "35 K"},
+    {"header": "Social Security","value": "6 K"},
+    {"header": "Group Life","value": "5 K"}
+  ],
+
+  "otherBigLegendHeaderData":[
+    {"header": "Incentive","value": "0.57 M"},
+    {"header": "Bonus","value": "0.32 M"},
+    {"header": "Leave Encashment","value": "1.2 M"}
+  ],
+  
+  "salarychangesBigLegendHeaderData":[
+    {"header": "Increments","value": "0.81 M"},
+    {"header": "Promotions","value": "78 K"},
+    {"header": "Total","value": "0.88 M"}
+  ],
+
+  "headcountBigLegendHeaderData":[
+    {"header": "Headcount","value": "97"},
+    {"header": "By Job Family","value": ""},
+    {"header": "By Gender","value": ""}
+  ],
+
+  
+  "avaeragesalarydepartmentBigLegendHeaderData":[
+    {"Name": "IT", "totalNoType": 14, "totalNoData": 76432, "color": "#1CB1EE"},
+    {"Name": "Marketing & Sales", "totalNoType": 10, "totalNoData": 54595, "color": "#E4B9B6"},
+    {"Name": "Client Relationship", "totalNoType": 8, "totalNoData": 43676, "color": "#0E71BE"},
+    {"Name": "Human Resource", "totalNoType": 7, "totalNoData": 38216, "color": "#FEBF29"},
+    {"Name": "Finance", "totalNoType": 11, "totalNoData": 60054, "color": "#AB9ABF"},
+    {"Name": "Service Delivery", "totalNoType": 5, "totalNoData": 27297, "color": "#94D057"},
+    {"Name": "SD Department", "totalNoType": 5, "totalNoData": 24297, "color": "#A5A5A5"},
+    {"Name": "QA Department", "totalNoType": 2, "totalNoData": 19543, "color": "#1ab054"},
+    {"Name": "Test Department 1", "totalNoType": 2, "totalNoData": 16543, "color": "#3a6351"},
+    {"Name": "Test Department 2", "totalNoType": 2, "totalNoData": 14543, "color": "#e48257"},
+    {"Name": "Test Department 3", "totalNoType": 1, "totalNoData": 9143, "color": "#f2edd7"}
+  ]
+  
+}

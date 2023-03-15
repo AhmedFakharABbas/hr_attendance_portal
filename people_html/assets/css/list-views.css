@@ -1,0 +1,77 @@
+.container {
+    height: 90vh;
+}
+
+.people-title-heading h3 {
+    display: inline-block;
+    font: 12px/1.0em Verdana, Arial, Tahome;
+    font-weight: 600;
+    margin: 0;
+}
+
+::ng-deep .mat-form-field-infix {
+    width: 120px !important;
+}
+
+.filters {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 465px;
+}
+
+.mat-form-field {
+    margin: 0 5px;
+    top: -4px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+::ng-deep .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+    font-size: 10px !important;
+    width: 1.7em !important;
+    height: 1.7em !important;
+}
+
+a {
+    color: #0078bd;
+}
+
+.status:hover {
+    text-decoration: underline;
+}
+
+.status {
+    cursor: pointer;
+}
+
+mat-form-field ::ng-deep .mat-form-field-label-wrapper {
+    top: -13px;
+}
+
+mat-form-field ::ng-deep button:focus {
+    outline: none;
+}
+
+.checkbox-margin ::ng-deep label {
+    margin: 5px 0;
+}
+
+.checkbox-margin {
+    text-align: center;
+}
+
+.checkboxes {
+    display: table-cell;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.checkboxes ::ng-deep .mat-checkbox-inner-container {
+    margin-right: 0px;
+}

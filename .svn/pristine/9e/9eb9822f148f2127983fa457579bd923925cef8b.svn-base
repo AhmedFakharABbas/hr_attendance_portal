@@ -1,0 +1,143 @@
+<div class="card">
+  <div class="card-body">
+    <p>
+      <b>Conduct \Enquiries</b> \
+      <span style="color: #007bff">Applications</span>
+    </p>
+    <table class="table table-striped">
+      <thead>
+        <tr style="background-color: rgba(0, 0, 0, 0.05)">
+          <td class="heading" colspan="2">
+            Recommendation investigator officer
+          </td>
+        </tr>
+        <tr>
+          <td scope="col" class="title">Actions</td>
+          <td scope="col" class="title">Remarks</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col-6">
+                Show Cause
+              </div>
+              <div class="col-6">
+
+                <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select>
+                  <mat-option>Option1</mat-option>
+                  <mat-option>Option2</mat-option>
+                  <mat-option>Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            </div>
+          </td>
+          <td></td>
+        </tr>
+        <!-- <tr>
+          <th>
+            <div class="row">
+              <div class="col-6">Penalty</div>
+              <div class="col-6">
+                <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select>
+                  <mat-option>Option1</mat-option>
+                  <mat-option>Option2</mat-option>
+                  <mat-option>Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            </div>
+          </th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>
+            <div class="row">
+              <div class="col-6">Amount*</div>
+              <div class="col-6"><input type="input" /></div>
+            </div>
+          </th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>
+            <div class="row">
+              <div class="col-6">Warning</div>
+              <div class="col-6">
+                <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select>
+                  <mat-option>Option1</mat-option>
+                  <mat-option>Option2</mat-option>
+                  <mat-option>Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            </div>
+          </th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>
+            <div class="row">
+              <div class="col-6">Suspension </div>
+              <div class="col-6">
+                <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select>
+                  <mat-option>Option1</mat-option>
+                  <mat-option>Option2</mat-option>
+                  <mat-option>Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            </div>
+          </th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>
+            <div class="row">
+              <div class="col-6">Suspension Type</div>
+              <div class="col-6">
+                <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select>
+                  <mat-option>Option1</mat-option>
+                  <mat-option>Option2</mat-option>
+                  <mat-option>Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            </div>
+          </th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>
+            <div class="row">
+              <div class="col-6">Termination</div>
+              <div class="col-6">
+                <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select>
+                  <mat-option>Option1</mat-option>
+                  <mat-option>Option2</mat-option>
+                  <mat-option>Option3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            </div>
+          </th>
+          <td></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>

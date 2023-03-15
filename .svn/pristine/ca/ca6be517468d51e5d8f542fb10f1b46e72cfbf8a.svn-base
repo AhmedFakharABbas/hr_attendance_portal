@@ -1,0 +1,24 @@
+<div class="tooltiptext">
+    <div class="custom-card-header card-header heading">
+        <h4 style="display: inline-block;">HR Comments</h4>
+        <div class="row float-right mr-1" style="display: inline-block;">
+          <button  style="border: none;background-color:#e0e0e0" (click)="remove()"> <i class="fas fa-times"  ></i></button>
+          </div>
+        </div>
+    
+        <div class="p-1">
+          <div class="body p-1">
+        <div style="text-align: left;">
+        <p>
+          Information doesn't match with documents submitted.
+        </p>
+        </div>
+    </div>
+    <div class="col-md-12">
+      <div class="row" style="text-align: left;color: grey;">
+        <p class="mb-0">* Double click the field to edit it.</p>
+    </div>
+    </div>
+
+  </div>
+  </div>

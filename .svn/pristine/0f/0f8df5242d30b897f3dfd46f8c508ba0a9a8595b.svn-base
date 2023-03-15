@@ -1,0 +1,4 @@
+.frame {
+  min-height: 95%;
+  max-width: 1280px;
+}

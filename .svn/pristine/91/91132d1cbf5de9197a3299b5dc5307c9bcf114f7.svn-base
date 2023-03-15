@@ -1,0 +1,88 @@
+{
+  "regularShiftData":[
+    {"workingDays": "Monday & Other", "shiftTimings": "9:00 am – 5:30 pm", "breakTimings": "1:00 pm – 2:00 pm"},
+    {"workingDays": "Friday", "shiftTimings": "9:00 am – 5:30 pm", "breakTimings": "12:30 pm – 2:30 pm"},
+    {"workingDays": "Saturday", "shiftTimings": "9:00 am – 2:30 pm", "breakTimings": "None"}
+  ],
+  "rosterShiftData":[
+    {"shiftName": "Morning", "shiftType": "Full Time", "shiftTimings": "7:00 am – 7:00 pm", "midBreak": "1:00 pm – 2:00 pm", "teaBreak": "10:00 am – 10:15 am"},
+    {"shiftName": "Night", "shiftType": "Full Time", "shiftTimings": "7:00 pm – 7:00 am", "midBreak": "1:00 am – 2:00 am", "teaBreak": "4:00 am – 4:15 am"}
+  ],
+  "markingAttendanceData":[
+    {"employmentType": "Permanent Staff", "attendanceType": "Biometric Device or Mobile App"},
+    {"employmentType": "Contract Staff", "attendanceType": "Manual Register"}
+  ],
+  "leaveEncashmentPaymentData":[
+    {"employmentType": "Permanent Staff", "claimType": "at year end"},
+    {"employmentType": "Consultant", "claimType": "on resignation"}
+  ],
+  "lateArrivalTolerance": 10, "consecutiveLate": 3, "attendanceTolerance": 30,
+  "compensationExtraWorkedData":[
+    {"employmentType":"Permanent Staff", "compensationExtraWorkedType": "Compensatory Leave"},
+    {"employmentType":"Contract Staff", "compensationExtraWorkedType": "Overtime Paid"}
+  ],
+  "regularConsecutiveArrivalData":[
+    {"consecutiveArrivalNumber1": 3, "consecutiveArrivalNumber2" : 0}
+  ],
+  "regularLateArrivalData":[
+    {"lateArrivalNumber1": 1, "lateArrivalNumber2": 30}
+  ],
+  "lateArrivalRegularLWOP1": "LWOP", "lateArrivalRegularLWOP2": "LWOP",
+  "rosterConsecutiveArrivalData":[
+    {"consecutiveArrivalNumber1": 3, "consecutiveArrivalNumber2" : 0}
+  ],
+  "rosterLateArrivalData":[
+    {"lateArrivalNumber1": 1, "lateArrivalNumber2": 30}
+  ],
+  "lateArrivalRosterLWOP1": "LWOP", "lateArrivalRosterLWOP2": "LWOP",
+  "leaveTypeData":[
+    {"leaveType": "ANNUAL"},
+    {"leaveType": "MATERNITY"},
+    {"leaveType": "PILGRIMAGE"},
+    {"leaveType": "EMERGENCY"},
+    {"leaveType": "SICK"},
+    {"leaveType": "EXTENDED SICK"},
+    {"leaveType": "WORK"},
+    {"leaveType": "COMPENSATORY"}
+  ],
+  "entitlementData":[
+    {"entitlement": "21"},
+    {"entitlement": "60"},
+    {"entitlement": "15"},
+    {"entitlement": "8"},
+    {"entitlement": "8"},
+    {"entitlement": "3"},
+    {"entitlement": "As Required"},
+    {"entitlement": "As Required"}
+  ],
+  "durationData":[
+    {"duration": "FULL/HALF/SHORT", "eligibility": "1 YEAR from DOJ", "comment": ""},
+    {"duration": "FULL", "eligibility": "MAX 2 TIMES", "comment": ""},
+    {"duration": "FULL/HALF/SHORT", "eligibility": "1 YEAR from DOJ", "comment": ""},
+    {"duration": "FULL/HALF/SHORT", "eligibility": "", "comment": ""},
+    {"duration": "FULL/HALF/SHORT", "eligibility": "", "comment": "DOCUMENT REQUIRED FOR > 2 DAYS"},
+    {"duration": "FULL", "eligibility": "", "comment": "DOCUMENT REQUIRED"},
+    {"duration": "FULL/HALF/SHORT", "eligibility": "", "comment": ""},
+    {"duration": "FULL", "eligibility": "", "comment": "Works on weekend or public holiday "}
+  ],
+  "approvalTypeHeadingData":[
+    {"approvalTypeHeading": "1st Approval"},
+    {"approvalTypeHeading": "2nd Approval"},
+    {"approvalTypeHeading": "3rd Approval"},
+    {"approvalTypeHeading": "4th Approval"}
+  ],
+  "approvalAuthorityData":[
+    {"staff": "Permanent", "band": "Band 1 to 4", "approvalTypeData":[
+      {"approvalType": "CEO"},
+      {"approvalType": ""},
+      {"approvalType": ""},
+      {"approvalType": ""}
+    ]},
+    {"staff": "Permanent", "band": "Band 5, 6, 7 & NM", "approvalTypeData":[
+      {"approvalType": "LM"},
+      {"approvalType": "LM"},
+      {"approvalType": "HR"},
+      {"approvalType": ""}
+    ]}
+  ]
+}

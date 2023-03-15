@@ -1,0 +1,130 @@
+/* .mat-expansion-panel .mat-expansion-panel-body {
+  padding: 0 !important;
+} */
+
+.mr-20P {
+    margin-right: 20px;
+}
+
+.ag-header-row {
+    font: 12px Roboto, "Helvetica Neue", sans-serif !important;
+    color: #007bff !important;
+    font-weight: 600 !important;
+    text-align: center;
+    background: white !important;
+    border-bottom: 1px solid var(--ag-row-border-color, var(--ag-secondary-border-color, #dde2eb)) !important;
+}
+
+.ag-theme-alpine .ag-ltr input[class^='ag-'][type='text'] {
+    padding-left: 6px;
+    margin-top: 6px;
+    height: 27px;
+    margin-right: 2px;
+    border-radius: 5px;
+}
+
+.ag-theme-alpine .ag-select .ag-picker-field-wrapper {
+    padding-left: 6px;
+    margin-top: 6px;
+    height: 27px!important;
+    margin-right: 2px;
+    border-radius: 5px;
+}
+
+.ag-theme-alpine .ag-header {
+    background-color: #FAFAFA !important;
+    border-bottom: none !important;
+}
+
+.ag-theme-alpine .ag-row-odd {
+    background-color: #FAFAFA !important;
+    margin-top: -5px;
+}
+
+.ag-theme-alpine .ag-row-even {
+    background-color: #ffffff !important;
+    margin-top: -5px;
+}
+
+.ag-theme-alpine .ag-cell {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: #4d4d4d;
+    border: none !important;
+    padding-right: 0px !important;
+}
+
+.ag-header-cell-resize {
+    width: 0px !important;
+}
+
+.ag-theme-alpine .ag-header-cell,
+.ag-theme-alpine .ag-header-group-cell {
+    padding-right: 0px !important;
+}
+
+.ag-cell-edit-wrapper {
+    height: 30px !important;
+}
+
+.ag-theme-alpine .ag-cell-inline-editing {
+    box-shadow: none !important;
+    background-color: #fff !important;
+}
+
+.ag-theme-alpine .ag-checkbox-input-wrapper {
+    font-size: 13px !important;
+    line-height: 20px !important;
+    width: 10px !important;
+    height: 15px !important;
+}
+
+.ag-theme-alpine .ag-checkbox-input-wrapper:focus-within,
+.ag-theme-alpine .ag-checkbox-input-wrapper:active {
+    box-shadow: none !important;
+}
+
+.custom-button-payroll {
+    position: relative;
+    padding: 2px 6px 2px 6px;
+    border: 1px solid #e6e6e6;
+    background: #fcfcfc url(../../assets/img/btn_bgtile.gif) repeat-x;
+    font: 12px Tahoma, Arial, Verdana;
+    color: #0078bd !important;
+    margin: 5px 0 5px 2px;
+    text-decoration: none !important;
+    background-color: white;
+    cursor: pointer;
+}
+
+.custom-1-card-header {
+    height: 30px !important;
+    background-color: #e0e0e0;
+    border-radius: 0;
+    position: relative;
+}
+
+.header-seconf-text {
+    font: 12px Tahoma, Arial, Verdana;
+    font-weight: 500;
+}
+
+.header-icon {
+    margin: 1px 30px;
+    cursor: pointer;
+    color: #007bff;
+    display: inline-block;
+    width: 100%;
+}
+
+.people-title-heading .filters #button {
+    margin: 0;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+
+span.ag-header-cell-text {
+    white-space: normal;
+}

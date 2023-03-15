@@ -1,0 +1,281 @@
+<div class="w-100">
+  <div class="ac-left-box">
+    <form
+      class="form-box"
+      [formGroup]="attendanceCorrectionForm"
+      #formDirective="ngForm"
+    >
+      <div
+        class="ac-title collapsed"
+        data-toggle="collapse"
+        data-target="#HRAttendanceCorrection"
+        aria-expanded="true"
+      >
+        HR Attendance Correction
+        <span class="fr atend">
+          <img src="../../../../../assets/icons/Up Arrow.svg"
+        /></span>
+      </div>
+      <div class="collapse show box-shadow" id="HRAttendanceCorrection">
+        <div class="d-flex border-b">
+          <p class="input-box">
+            <span class="input-box-text">Employee Code</span>
+          </p>
+          <p class="width-260 ml-2 pt-1">
+            <mat-form-field class="width-260" appearance="outline">
+              <!-- <mat-label>Time In </mat-label> -->
+              <input
+                formControlName="employee_id"
+                matInput
+                placeholder=""
+                matInput
+              />
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['employee_id'].invalid &&
+                attendanceCorrectionForm.controls['employee_id'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['employee_id'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+        </div>
+        <div class="d-flex border-b">
+          <p class="input-box">
+            <span class="input-box-text">Date</span>
+          </p>
+          <p class="width-260 ml-2 pt-1">
+            <mat-form-field
+              class="width-260 pointer"
+              appearance="outline"
+              (click)="rosterDateChangePicker.open()"
+            >
+              <!-- <mat-label>Date</mat-label> -->
+
+              <input
+                formControlName="roster_date"
+                [max]="today"
+                matInput
+                [matDatepicker]="rosterDateChangePicker"
+                readonly
+              />
+
+              <mat-icon matSuffix class="icon-align">
+                <img
+                  src="../../../../../assets/icons/calendar.svg"
+                  class="font-image"
+              /></mat-icon>
+              <mat-datepicker #rosterDateChangePicker> </mat-datepicker>
+
+              <!-- *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')" -->
+              <!-- <mat-error >Required</mat-error> name.invalid && (name.dirty || name.touched) -->
+            </mat-form-field>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['roster_date'].invalid &&
+                attendanceCorrectionForm.controls['roster_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['roster_date'].errors
+                    ?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+        </div>
+        <div class="d-flex border-b">
+          <p class="input-box">
+            <span class="input-box-text">Time In</span>
+          </p>
+          <p class="width-260 ml-2 pt-1">
+            <mat-form-field class="width-260 pointer" appearance="outline" (click)="autoFillTimeIn.open()">
+              <input
+                matInput
+                formControlName="time_in"
+                [ngxTimepicker]="autoFillTimeIn"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align"
+                ><img
+                  src="../../../../../assets/icons/Time.svg"
+                  class="font-image"
+              /></mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #autoFillTimeIn></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['time_in'].invalid &&
+                attendanceCorrectionForm.controls['time_in'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['time_in'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </p>
+        </div>
+        <div class="d-flex border-b">
+          <p class="input-box">
+            <span class="input-box-text">Time Out</span>
+          </p>
+          <p class="width-260 ml-2 pt-1">
+            <mat-form-field class="width-260 pointer" appearance="outline" (click)="autoFillTimeOut.open()">
+              <input
+                matInput
+                [ngxTimepicker]="autoFillTimeOut"
+                formControlName="time_out"
+                readonly
+              />
+              <mat-icon matSuffix class="icon-align"
+                ><img
+                  src="../../../../../assets/icons/Time.svg"
+                  class="font-image"
+              /></mat-icon>
+            </mat-form-field>
+
+            <ngx-material-timepicker #autoFillTimeOut></ngx-material-timepicker>
+            <span
+              *ngIf="
+                attendanceCorrectionForm.controls['time_out'].invalid &&
+                attendanceCorrectionForm.controls['time_out'].touched
+              "
+            >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['time_out'].errors?.required
+                "
+                class="mat-error-msg"
+                >Required*</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  attendanceCorrectionForm.controls['time_out'].errors?.timeOut
+                "
+                class="mat-error-msg"
+                >The time out must be after time in.
+              </mat-error>
+            </span>
+          </p>
+        </div>
+        <!-- HR section End -->
+
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button
+              (click)="onSubmitAttendaceCorrection(formDirective)"
+              class="submitButton ml-1"
+            >
+              Submit
+            </button>
+            <button
+              (click)="
+                this.attendanceCorrectionForm.reset();
+                this.attendanceCorrection()
+              "
+              class="submitButton ml-1"
+            >
+              Cancel
+            </button>
+          </div>
+          <!--  this.attendanceCorrectionForm.reset(); this.attendanceCorrection();this.attendanceCorrectionForm.markAsPristine(); -->
+        </div>
+      </div>
+    </form>
+    <!-- upload file  -->
+    <form class="form-box">
+      <div
+        class="ac-title collapsed"
+        data-toggle="collapse"
+        data-target="#Upload"
+        aria-expanded="true"
+      >
+        Upload
+        <span class="fr atend">
+          <img src="../../../../../assets/icons/Up Arrow.svg"
+        /></span>
+      </div>
+      <div class="collapse show box-shadow" id="Upload">
+        <div class="d-flex border-b">
+          <p class="width-260 ml-1 mt-10 mb-10">
+            <label for="file-upload" class="width-260">
+              <mat-form-field
+                for="file-upload"
+                class="width-260"
+                appearance="outline"
+              >
+                <mat-label for="file-upload">Attachment</mat-label>
+                <input
+                  [formControl]="uploadedFileText"
+                  placeholder=""
+                  matInput
+                  [ngClass]="this.fileName != undefined ? 'w-200' : 'w-0'"
+                />
+                <mat-icon matSuffix class="icon-align"
+                  ><img
+                    src="../../../../../assets/icons/Attachment.svg"
+                    class="font-image"
+                /></mat-icon>
+              </mat-form-field>
+            </label>
+            <span>
+              <mat-error *ngIf="isShowFileRequired" class="mat-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+            <input
+            #inputFile
+              (change)="onFileUploadChange($event)"
+              id="file-upload"
+              type="file"
+
+            />
+          </p>
+          <p class="width-260 ml-1 view-attachment mt-10 mb-10 pt-1">
+            <!-- view attachment -->
+            <a
+              download="Template"
+              target="_blank"
+              href="../../../../../assets/files/attendance_correction_upload.csv"
+            >
+              Download Template
+            </a>
+          </p>
+        </div>
+        <!-- HR section End -->
+
+        <div class="ac-footer">
+          <div class="text-right ac-button-list">
+            <button class="submitButton ml-1" (click)=" onFileUploadSubmit(inputFile)">
+              Update
+            </button>
+            <button
+              type="button"
+              class="submitButton ml-1"
+              (click)="resetUploadFile(inputFile)"
+            >
+              Cancel
+            </button>
+          </div>
+          <!--  this.attendanceCorrectionForm.reset(); this.attendanceCorrection();this.attendanceCorrectionForm.markAsPristine(); -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

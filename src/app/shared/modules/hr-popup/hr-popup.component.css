@@ -1,0 +1,22 @@
+.clickhmehide  {
+    display: none;
+  }
+  
+::ng-deep .clickhme {
+    width: 400px;
+    background-color: #fff;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: -1%;
+    left: -172%!important;
+    margin-left: -60px;
+    transition: opacity 0.3s;
+    border: 1px solid #dee2e6;
+  
+  }
+  .body {
+    border: 1px solid #dee2e6;
+  }

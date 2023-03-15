@@ -1,0 +1,56 @@
+import { Component } from '@angular/core';
+import { FilterDataEmitterService } from '../../services/filter-data-emitter.service';
+import * as config from '../../../../config.json';
+
+declare var $: any;
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  providers: [FilterDataEmitterService]
+})
+export class AppComponent {
+  title = 'People i';
+
+  public siteConfig: string;
+
+  ngOnInit() {
+    this.siteConfig = JSON.stringify(config);
+    $("#loader-body").show();
+    this.hrLogin();
+  }
+
+
+  // Dummy logins
+  hrLogin() {
+    localStorage.setItem('emp_name', '"Mazhar Khan"');
+    localStorage.setItem('e_code', '"87758"');
+    localStorage.setItem('e_number', '56193');
+    localStorage.setItem('e_user_id', '"eyJpdiI6IlN6dzdVMWxubHU1UzBxMytOR096Y0E9PSIsInZhbHVlIjoic25kOW1wMVQ0WjU2MjVDZ2hZajdcL3c9PSIsIm1hYyI6IjU3OWNlNzg1NjA5OTM1MTM0MGFkOGE3MmNiOGNlZjVmOGMzOGJkYjgyODJjNTczZWUzYTFjZmMwZDBhZDZmZTgifQ=="');
+    localStorage.setItem('s_u_number', '56193');
+    localStorage.setItem('link', 'hrportal');
+    localStorage.setItem('token', '"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjliYzU4MmE2NTQxMjhmZWE0ODk0ZTYyZGIxM2NmNjJkMDUxMGZmNDA5YWNmZDI0NzZkMDkxY2M1Y2Y2MDVhNmMzMWVhZjRiNDE2NzM2YmJhIn0.eyJhdWQiOiIxIiwianRpIjoiOWJjNTgyYTY1NDEyOGZlYTQ4OTRlNjJkYjEzY2Y2MmQwNTEwZmY0MDlhY2ZkMjQ3NmQwOTFjYzVjZjYwNWE2YzMxZWFmNGI0MTY3MzZiYmEiLCJpYXQiOjE2MjY1MTA4MzAsIm5iZiI6MTYyNjUxMDgzMCwiZXhwIjoxNjU4MDQ2ODMwLCJzdWIiOiI1NjE5MyIsInNjb3BlcyI6W119.cqqyuVCpNdXFlcGGAyJgFEy8HYEU4V4icJqHimO6ysh1t6bb5_srhXdbj2LZFd69qVHOs316iNZiE28Kv-M9AdQ7QribHSE6vdTsaVpljRkvu_uuVFSUE_2-mZar1hVpOix8rVC6nebvgLAdUJo5SsY2GJI6HsXBNc7yZW_V3LJUOywY3J_OH81KG3Kfg3WlOeLGXEDQyaFSWFzy0dRQ4qN1SH6wP4OI7x0puKgYAUbw7RvKbi7LwyuvRy9dm-TSPkgZ0dMv1HafEwNyxvxX4nYzF8d8pCzo6ssYOkM_a0DLAPd0jljeTFBZcjC5_ZcRQBbWZr2jNWFqAvjFdZqKvZQqiCW3JJR5nm0vli2KPnTixvrBPTY9ZxY0At2l9tNkvEnia8RdCMP5wsU7YEXejhmrLq9mysaeo9hn9clj0LaOBOTRlDiKTmuPIAK0QO3_KymXoKWnfILx61IRm9VmcgKqX1ed9Bo65gh6Ern1xtvyuFbHzUUuy8ACfpQ-heBKqZ3IvOsLeGlywd7KCSx7O-WtHfkHYIZUJwDa3JBuuwYKmbM67xTWIis6uwB2rRl9iPxrGQ5PmgCaNtbjn5TJ2l13nhyz3NZlWPz-wFQVwps6FJS9lbCVUdjhwuSE4KzkSBQxU9jeu9L053ZytelEMP6PK-80ao-rTPl_9K0m0Fs"');
+  }
+
+  lmLogin() {
+    localStorage.setItem('emp_name', '');
+    localStorage.setItem('e_code', '');
+    localStorage.setItem('e_number', '');
+    localStorage.setItem('e_user_id', '');
+    localStorage.setItem('s_u_number', '');
+    localStorage.setItem('link', 'emportal');
+    localStorage.setItem('token', '');
+  }
+
+  empLogin() {
+    localStorage.setItem('emp_name', '');
+    localStorage.setItem('e_code', '');
+    localStorage.setItem('e_number', '');
+    localStorage.setItem('e_user_id', '');
+    localStorage.setItem('s_u_number', '');
+    localStorage.setItem('link', '');
+    localStorage.setItem('token', '');
+  }
+
+}

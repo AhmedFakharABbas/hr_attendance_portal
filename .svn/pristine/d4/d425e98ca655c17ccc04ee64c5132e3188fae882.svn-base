@@ -1,0 +1,18 @@
+<div class="sec1-1">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Application Type</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let application of newApplications">
+        <td>{{application.name}}</td>
+        <td><a [routerLink]="application.link">{{application.applicationType}}</a></td>
+        <td>{{application.date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+<div class="container main">
+  <div class="bg-white mb-1">
+    <div class="statusMenu">
+      <ul class="list">
+        <li><a class="disabled" href="#"><b>About</b></a></li>
+        <li><img src="../../../../assets/images/login_statusbar_saperator.gif"></li>
+        <li><a href="#">Brochure</a></li>
+        <li><img src="../../../../assets/images/login_statusbar_saperator.gif"></li>
+        <li><a href="http://www.people.com.pk/" target="_blank">PEOPLE&nbsp;Website</a></li>
+      </ul>
+      <div class="isoLogos" style="margin-left:100px;">
+        <img class="iso" src="../../../../assets/images/iso_ukas.jpg">
+      </div>
+    </div>
+    <a routerLink="/" class="logo">
+      <img src="../../../../assets/img/logo.png" alt="People" title="people" height="60" />
+    </a>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,14 @@
+<div id="config" * style="display: none">{{siteConfig}} </div>
+<div id="loader-body" class="loading showLoader">
+
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- router views go here -->

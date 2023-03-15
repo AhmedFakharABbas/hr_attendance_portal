@@ -1,0 +1,12 @@
+
+.table-height td ::ng-deep .mat-form-field-infix {
+    padding: 0.75em 0 !important;
+}
+
+.table-height .td-input ::ng-deep .mat-form-field-infix {
+    padding: 0.77em 0 !important;
+}
+
+.table-height td ::ng-deep  .mat-form-field-wrapper{
+    margin: 0;
+}

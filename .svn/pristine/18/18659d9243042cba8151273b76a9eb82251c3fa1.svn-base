@@ -1,0 +1,58 @@
+h4 {
+  font: 12px Tahoma, Arial, Verdana;
+  margin: 0;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.content a {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 4.5%;
+  cursor: pointer;
+  font: 12px Tahoma, Arial, Verdana;
+}
+
+.content {
+  min-height: 63vh;
+  padding-top: 10px;
+}
+
+.content img {
+  vertical-align: top;
+}
+
+.content a p {
+  margin-top: 1px;
+  border-top: 2px solid #e6e6e6 !important;
+  width: 195px;
+  padding: 5px;
+  height: 95px;
+  text-align: justify;
+  color: #000;
+}
+
+.content a:hover .portal-title {
+  text-decoration: underline;
+}
+
+.disabled img,
+.disabled p {
+  opacity: 0.5;
+}
+
+.disabled {
+  opacity: 1;
+}
+
+.disabled img,
+.disabled p,
+.disabled .portal-title {
+  color: #999999 !important;
+}
+
+.portal-title {
+  font: 12px Tahoma, Arial, Verdana;
+  font-weight: 600;
+  color: #0078bd;
+}

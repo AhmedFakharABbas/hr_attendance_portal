@@ -1,0 +1,437 @@
+<div class="card">
+  <div class="card-body">
+    <p>
+      <b>Settings</b> \
+      <span style="color: #007bff">Conduct Setup</span>
+    </p>
+
+    <form [formGroup]="conductSetupForm">
+      <p class="ac-title">Enquiry Details</p>
+      <div class="row">
+        <div class="col-2 p-10 mb-15">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Enquiry Type</mat-label>
+            <!--    <mat-select formControlName="grievance_against_id"> -->
+            <mat-select formControlName="issue_type_id">
+              <mat-option value="1">Grievance</mat-option>
+              <mat-option value="2">Blowing a whistle</mat-option>
+              <mat-option value="3">Harassment related concern</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-2 pl-10 mb-15">
+          <mat-checkbox class="example-margin">Enquiry Sections</mat-checkbox>
+        </div>
+        <div class="col-2 pl-10 mb-15">
+          <mat-checkbox class="example-margin"
+            >Responder's Response</mat-checkbox
+          >
+        </div>
+        <div class="col-2 pl-10 mb-15">
+          <mat-checkbox class="example-margin"
+            >Provision of Policy</mat-checkbox
+          >
+        </div>
+        <div class="col-2 pl-10 mb-15">
+          <mat-checkbox class="example-margin">Legal Opinion</mat-checkbox>
+        </div>
+        <div class="col-2 pl-10 mb-15">
+          <mat-checkbox class="example-margin">Recommendations</mat-checkbox>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 p-10 mb-15">
+          <span class="pl-2">Anonymous Application:</span>
+        </div>
+        <div class="col-2 pl-10 mb-15">
+          <mat-checkbox class="example-margin">Legal Opinion</mat-checkbox>
+        </div>
+        <div class="col-2 pl-10 mb-15">
+          <mat-checkbox class="example-margin">Recommendations</mat-checkbox>
+        </div>
+      </div>
+      <p class="ac-title">Investigator</p>
+      <div class="row">
+        <div class="col mb-15 pr-0 ml-0 mr-0">
+          <div class="row">
+            <div class="col-3 pr-0 mr-0">level 1</div>
+            <div class="col-3 pr-0 pl-0 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Department</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-3 pr-0 pl-1 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Designation</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-3 pr-0 pl-1 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Employee</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-15 pr-0 ml-0mr-0">
+          <div class="row">
+            <div class="col-3 pr-0 mr-0">level 2</div>
+            <div class="col-3 pr-0 pl-0 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Department</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-3 pr-0 pl-1 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Designation</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-3 pr-0 pl-1 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Employee</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-15 pr-0 ml-0 mr-0">
+          <div class="row">
+            <div class="col-3 pr-0 mr-0">level 3</div>
+            <div class="col-3 pr-0 pl-0 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Department</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-3 pr-0 pl-1 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Designation</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-3 pr-0 pl-1 mr-0">
+              <mat-form-field class="w-100 m-0" appearance="outline">
+                <mat-label class="f-11">Employee</mat-label>
+
+                <mat-select formControlName="issue_type_id">
+                  <mat-option value="1">Grievance</mat-option>
+                  <mat-option value="2">Blowing a whistle</mat-option>
+                  <mat-option value="3">Harassment related concern</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ac-title">Decision Maker</p>
+
+      <table class="table table-striped">
+        <thead>
+          <!-- <tr style="background-color: rgba(0, 0, 0, 0.05)">
+            <td *ngIf="type == 'iOfficer' || type == 'Head/OD'" colspan="2">
+              <div class="row">
+                <div class="co-12">
+                  <span *ngIf="type == 'iOfficer'" class="heading pl-4"
+                    >Recommendation investigator officer</span
+                  >
+                  <span *ngIf="type == 'Head/OD'" class="heading pl-4"
+                    >Head of HCM & OD</span
+                  >
+                </div>
+              </div>
+            </td>
+            <td *ngIf="type == 'recomendation'" colspan="3">
+              <div class="row">
+                <div class="co-12">
+                  <span class="heading pl-4" *ngIf="type == 'recomendation'"
+                    >Recommendation</span
+                  >
+                </div>
+              </div>
+            </td>
+          </tr> -->
+          <tr style="background-color: #ffffff">
+            <td scope="col" class="title">Selection</td>
+            <td scope="col" class="title">Authority</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-50">
+              <div class="row">
+                <div class="col-3 pl-4 pr-0">Level 1</div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              style="background-color: #ffffff; padding: 0"
+              rowspan="8"
+              class="td-50"
+            >
+              <tr>
+                <td class="td-33">Role-1</td>
+                <td class="td-33">Role-2</td>
+                <td class="td-33">Role-3</td>
+              </tr>
+              <tr>
+                <td class="td-33">
+                  <div class="authorityAction">
+
+
+                      <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="label">Show Cause</mat-label>
+                        <mat-select>
+                          <mat-option value="option1">Option1</mat-option>
+                          <mat-option value="option2">Option2</mat-option>
+                          <mat-option value="option3">Option3</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                  </div>
+                </td>
+                <td class="td-33">
+                  <div class="authorityAction">
+
+
+                      <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="label">Show Cause</mat-label>
+                        <mat-select>
+                          <mat-option value="option1">Option1</mat-option>
+                          <mat-option value="option2">Option2</mat-option>
+                          <mat-option value="option3">Option3</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                  </div>
+                </td>
+                <td class="td-33">
+                  <div class="authorityAction">
+
+
+                      <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="label">Show Cause</mat-label>
+                        <mat-select>
+                          <mat-option value="option1">Option1</mat-option>
+                          <mat-option value="option2">Option2</mat-option>
+                          <mat-option value="option3">Option3</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-33">fg</td>
+                <td class="td-33">Role-2</td>
+                <td class="td-33">Role-3</td>
+              </tr>
+            </td>
+          </tr>
+          <tr>
+            <td class="td-50">
+              <div class="row">
+                <div class="col-3 pl-4 pr-0">Level 1</div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="td-50">
+              <div class="row">
+                <div class="col-3 pl-4 pr-0">Level 1</div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-3 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="td-50"></td>
+          </tr>
+          <tr>
+            <td class="td-50"></td>
+          </tr>
+          <tr>
+            <td class="td-50"></td>
+          </tr>
+          <tr>
+            <td class="td-50"></td>
+          </tr>
+          <tr>
+            <td class="td-50"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="ac-footer">
+        <div id="ac-button-list" class="text-right">
+          <button
+            *ngIf="type == 'iOfficer'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Submit
+          </button>
+
+          <button
+            *ngIf="type == 'Head/OD' || type == 'recomendation'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Approve
+          </button>
+          <button
+            *ngIf="type == 'Head/OD' || type == 'recomendation'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Dis approve
+          </button>
+          <button
+            *ngIf="type == 'Head/OD' || type == 'recomendation'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Resubmit
+          </button>
+          <button
+            *ngIf="type == 'Head/OD'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Send to CEO
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

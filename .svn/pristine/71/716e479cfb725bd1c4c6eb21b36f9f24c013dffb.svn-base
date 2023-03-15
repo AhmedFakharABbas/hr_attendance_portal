@@ -1,0 +1,29 @@
+table{
+    width: 100%;
+   }
+   
+   .mat-footer-cell, .mat-header-cell{
+     font-weight: 600;
+       padding: 5px!important;
+       color: #007bff;
+       font-size: 13px;
+       height: 30px;
+       text-align: left;
+   }
+   mat-header-row,mat-row, mat-footer-row{
+     min-height: auto;
+   }
+   .mat-cell, .mat-footer-cell
+   {
+     /* font-size: 11px;
+     padding: 8px 0; */
+     font-family: "Roboto", "Helvetica Neue", sans-serif;
+     font-size: 11px;
+     font-weight: 400;
+     letter-spacing: normal;
+     color:#333333;
+     height: 30px;
+   }
+   mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type{
+     padding-left:12px!important ;
+   }

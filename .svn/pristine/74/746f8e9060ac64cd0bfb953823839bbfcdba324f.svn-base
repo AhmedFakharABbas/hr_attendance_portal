@@ -1,0 +1,47 @@
+<!-- <h1>{{applicationType.ComponenttypeId}}</h1> -->
+<!-- <div *ngIf="applicationType.ComponenttypeId==2">hi</div> -->
+
+<div class="ac-container">
+  <div class="w-100">
+    <div class="ac-box  mt-2">
+      <div class="ac-title-with-input ">
+    <span class="title-text">Grievance  Applicaitons</span>
+        <span class="float-right">
+
+          <mat-form-field  appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select>
+
+              <mat-option value="option">Pending</mat-option>
+              <mat-option value="option">Completed</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Employee name</mat-label>
+            <mat-select>
+              <mat-option value="option">Jack</mat-option>
+              <mat-option value="option">Miller</mat-option>
+              <mat-option value="option">James</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+      </div>
+
+      <div class="ac-content">
+        <table class="ac-table" mat-table [dataSource]="ApplicationDataSource">
+
+          <ng-container [matColumnDef]="column" *ngFor="let column of applicationColums ;let i = index">
+            <th mat-header-cell *matHeaderCellDef> {{column| titlecase}} </th>
+
+            <td    mat-cell *matCellDef="let element"  [ngClass]="(element[column])== 'Pending'? 'PendingStatus' : ((column)== 'name'||(column)== 'grievanceAgainst')?'employeeName':''"> {{element[column]}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+          <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page" class="mt-2">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
+import { AttendanceService } from "../attendance.service";
+
+@Component({
+  selector: "app-hrattend",
+  templateUrl: "./hrattend.component.html",
+  styleUrls: ["./hrattend.component.css"],
+})
+export class HRAttendComponent implements OnInit {
+  application_type = new FormControl("");
+  application_status = new FormControl("");
+  searched_employee = new FormControl("");
+  searchTerm = new FormControl("");
+
+  correctionStatus = {
+    type: "hr-Correction-Status",
+  };
+  correctionApplication = {
+    type: "hr-Correction-Applicaitons",
+  };
+  empForm = {
+    type: "hr-form",
+    ComponenttypeId: 3,
+  };
+  firstName: any;
+  constructor(private _attendanceService: AttendanceService) {}
+
+  ngOnInit(): void {
+
+    this. SearchObjectForm();
+  }
+  SearchObjectForm() {
+    this.application_type = new FormControl("-1");
+    this.application_status = new FormControl("-1");
+    this.searched_employee = new FormControl("");
+    this.searchTerm = new FormControl("");
+  }
+  setSearchTerm() {
+    // this._attendanceService.setSearchTerm(this.FilterValueFarmConctol.value);
+  }
+  applyFilter() {
+    console.log('application_type',this.application_type.value);
+    console.log('application_status',this.application_status.value);
+    console.log('searched_employee',this.searched_employee.value);
+    console.log('searchTerm',this.searchTerm.value);
+    let url = `application_type=${this.application_type.value}&application_status=${this.application_status.value}&search_by_id=${this.searched_employee.value}`;
+    console.log(url);
+    if (url != "") {
+      this._attendanceService.setSearchTerm(url);
+    }
+  }
+}

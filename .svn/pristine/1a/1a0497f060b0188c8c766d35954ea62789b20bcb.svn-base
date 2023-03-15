@@ -1,0 +1,130 @@
+<!-- Raised by -->
+<form [formGroup]="grievanceForm" (ngSubmit)="!grievanceForm.invalid?onSubmit():'' ">
+<p class="ac-title mt-1">Issue Raised by</p>
+   <div class="row my-3">
+
+
+    <div class="col-3  ">
+      <mat-form-field   class="w-100" appearance="outline">
+        <mat-label>Issue Type*</mat-label>
+        <mat-select formControlName="grievanceAgainstId">
+          <mat-option value="1">Grievance</mat-option>
+          <mat-option value="2">Blowing a whistle</mat-option>
+          <mat-option value="3">Harassment related concern</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+
+    <div class="col-3 pl-0 ml-0">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label> Employee name*</mat-label>
+        <input  formControlName="name" matInput placeholder="">
+
+      </mat-form-field>
+  </div>
+  <div class="col-3 pl-0 ml-0">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Department*</mat-label>
+      <input formControlName="employeeDeprtment" matInput placeholder="">
+
+    </mat-form-field>
+</div>
+<div class="col-3 pl-0 pr-4 ml-0">
+  <mat-form-field class="w-100 " appearance="outline">
+    <mat-label>Designation*</mat-label>
+    <input formControlName="employeeDesignation" matInput placeholder="">
+
+  </mat-form-field>
+</div>
+
+
+  </div>
+  <!-- Raised againest -->
+   <p class="ac-title mt-1">Issue Raised against</p>
+    <div class="row my-1">
+<div class="col-3 ">
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label> Target type dropdown*</mat-label>
+    <mat-select formControlName="targetTypeId">
+      <mat-option value="1">General</mat-option>
+      <mat-option value="2">Specific Employee *</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="col-3">
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Department*</mat-label>
+    <input formControlName="againstDepartment" matInput placeholder="">
+
+  </mat-form-field>
+</div>
+<div class="col-3">
+<mat-form-field class="w-100" appearance="outline">
+  <mat-label>Designation*</mat-label>
+  <input formControlName="againstDesignation" matInput placeholder="">
+
+</mat-form-field>
+</div>
+
+    </div>
+    <!-- seprator -->
+    <hr>
+<!-- details -->
+<div class="grayborder">
+<p  class="py-1">
+  <span *ngIf="applicationType.ComponenttypeId==3" class="ac-title-withoutpic title-text pl-2 pr-1">  Issue Raised</span>
+  <span  *ngIf="applicationType.ComponenttypeId==4" class="ac-title-withoutpic title-text px-2">  Details</span>
+  <span class="links text-center"> <a>Written Statement</a>  <a class="mx-1">Audio Statement</a>  <a class="ml-1">Video Statement </a>  <a> Picture</a></span>
+<span class="float-right">
+
+  <mat-form-field  appearance="outline">
+    <mat-label>From</mat-label>
+    <input formControlName="from" matInput [matDatepicker]="picker1">
+    <mat-icon matSuffix (click)="picker1.open()">calendar_today</mat-icon>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field  appearance="outline">
+    <mat-label>To</mat-label>
+    <input  formControlName="to" matInput [matDatepicker]="picker2">
+    <mat-icon matSuffix (click)="picker2.open()">calendar_today</mat-icon>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+</span>
+</p>
+<textarea rows="4" cols="100" class="w-100"></textarea>
+</div>
+
+<!-- Line Manager Section -->
+<div *ngIf="applicationType.ComponenttypeId==3"   class="grayborder mt-1">
+  <p  class="py-1">
+    <span class="ac-title-withoutpic title-text px-3">  Line Manager's Section</span>
+    <span class="links text-center"> <a>Written Statement</a>  <a class="mx-1">Audio Statement</a>  <a class="ml-1">Video Statement </a>  <a> Picture</a></span>
+
+  </p>
+  <textarea rows="4" cols="100" class="w-100"></textarea>
+  </div>
+<!--  evidence-->
+<br>
+<div *ngIf="applicationType.ComponenttypeId==4" class="grayborder pt-2">
+  <div class="row">
+    <div class="col"> <mat-checkbox class="example-margin">Written statement </mat-checkbox></div>
+    <div class="col"> <mat-checkbox class="example-margin"> audio statement</mat-checkbox></div>
+    <div class="col"> <mat-checkbox class="example-margin">video statement</mat-checkbox></div>
+    <div class="col"> <mat-checkbox class="example-margin">Picture</mat-checkbox></div>
+    <!--  <button class="ac-title" mat-button> + Add</button>  -->
+    <div class="col">   <input (change)="fileUpload($event)" type="file"> </div>
+  </div>
+</div>
+<!-- submit -->
+<div *ngIf="applicationType.ComponenttypeId==4" class="ac-footer   my-3">
+  <div id="ac-button-list" class="text-right">
+    <a routerLink="/" class="ml-2">Save Draft</a>
+    <button type="submit"   class=" submitButton ml-2">Send to LM</button>
+    <button type="submit"   class=" submitButton ml-2">Send to HR</button>
+  </div>
+</div>
+</form>
+
+

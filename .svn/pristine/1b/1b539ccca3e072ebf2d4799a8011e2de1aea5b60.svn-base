@@ -1,0 +1,193 @@
+* {
+  font: 11px Tahoma, Arial, Verdana;
+}
+
+.iso {
+  margin-top: 3px;
+  margin-left: 100px;
+  margin-right: 15px;
+  width: 115px;
+  height: 78px;
+}
+
+.header_widgets {
+  height: 110px;
+}
+
+/* ================ Login */
+.main {
+  min-height: 93.6%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 6px 8px 0px 35px;
+  margin: 0;
+  height: 26px;
+  width: auto;
+}
+
+.statusMenu {
+  padding: 0px;
+  height: 50px;
+  width: auto;
+  float: right;
+  font: 11px Tahoma, Arial, Verdana;
+  color: #4c4c4c;
+  text-align: left;
+}
+
+.logo {
+  display: inline-block;
+  margin: 27px;
+}
+
+.list li {
+  display: inline-block;
+}
+
+.login {
+  position: relative;
+  background: none;
+  top: 150px;
+  width: 400px;
+  min-width: 400px;
+  height: 276px;
+  min-height: 0;
+  margin: auto;
+}
+
+.box {
+  display: block;
+  margin: 0 5px 10px 5px;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+}
+
+.title {
+  background: url('../../../assets/img/box-title.gif') repeat-x left top;
+  padding: 8px 10px;
+  font: 12px/1.0em Verdana, Arial, Tahome;
+  color: #333333;
+  font-weight: 600;
+}
+
+.content {
+  background: url('../../../assets/img/box-shadow.gif') repeat-x left top;
+  padding: 5px;
+}
+
+.footer {
+  background: #e6e6e6;
+  padding: 6px 10px 4px;
+}
+
+#button-list {
+  margin: 3px 0;
+  text-align: right;
+}
+
+#button-list a,
+.button-list a,
+#button-list font,
+.button-list font,
+#button,
+a#button,
+a.button {
+  position: relative;
+  padding: 2px 6px 2px 6px;
+  border: 1px solid #e6e6e6;
+  font: 12px Tahoma, Arial, Verdana;
+  color: #0078bd;
+  margin: 5px 0 5px 2px;
+  text-decoration: none;
+  background-color: white;
+}
+
+#button-list a:hover,
+.button-list a:hover,
+#button a:hover,
+.button a:hover,
+a.button:hover,
+a#button:hover {
+  border: 1px solid #a6daee;
+  padding: 2px 6px 2px 6px;
+  color: #005a8c;
+  text-decoration: none;
+  cursor: pointer;
+  font: 12px Tahoma, Arial, Verdana;
+}
+
+.controls label {
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 9px;
+  padding: 0;
+  margin: 0;
+  cursor: text;
+  width: 35%;
+  font-weight: bold;
+}
+
+form div {
+  display: block;
+  position: relative;
+  border: none;
+  line-height: 26px;
+  padding: 0
+}
+
+form div:nth-child(odd) {
+  background-color: #FAFAFA;
+}
+
+form div .right {
+  display: block;
+  margin: 0 0 0 35%;
+  padding-left: 10px;
+  border-left: 1px solid #eee;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  z-index: -1;
+}
+
+input {
+  display: inline-block;
+  background: url('../../../assets/images/input-back.gif') repeat-x left top;
+  border: 1px solid #dcdcdc;
+  outline: 0;
+  padding: 3px;
+  margin: 2px;
+  font: 12px/1.2em Arial;
+  width: 100%;
+}
+
+.custom-checkbox label {
+  background-position: left bottom;
+  background: url('../../../assets/images/checkbox.gif') no-repeat;
+  position: relative;
+  top: 0;
+  padding: 1px 0 0 20px;
+  margin: 0 0 5px 0;
+  font-size: 11px/12px Arial;
+  color: #1c1c1c;
+  cursor: pointer;
+  width: auto;
+  height: 15px;
+}
+
+form div .right label {
+  left: 2px;
+  font-weight: normal;
+}
+
+p {
+  margin: 10px 0 0px 0;
+  font-size: 11px;
+}

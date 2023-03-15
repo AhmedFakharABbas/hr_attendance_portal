@@ -1,0 +1,117 @@
+.node_container {
+    color: #000000;
+}
+.node {
+    width: 200px !important;
+    margin-top: 60px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.node_parent {
+    background: #62B655;
+}
+.orgchart .node_parent:hover, .orgchart .node_parent.focused {
+    background: #62B655;
+    cursor: pointer;
+}
+
+.node_parent .border-div {
+    border-color: #62B655 !important;
+}
+
+.child_only .border-div {
+    border-color: #70cef0 !important;
+}
+.child_only {
+    background: #70cef0;
+}
+.orgchart .child_only:hover, .orgchart .child_only.focused {
+    background: #70cef0;
+    cursor: pointer;
+ }
+
+ .orgchart .node .edge {
+    font-size: 30px;
+    position: absolute;
+    color: #ffffff;
+    cursor: default;
+    transition: .2s;
+    bottom: -17px !important;
+}
+.edge.fa-minus-circle:before, .edge.fa-plus-circle::before {
+  background-color: #a3a3a3;
+  border-radius: 50%;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.orgchart > table > tbody > tr.lines > td,
+.orgchart table tr.lines td,
+.orgchart .lines .rightLine,
+.orgchart .lines .topLine,
+.orgchart .lines .downLine {
+    border-color: #039be5 !important;
+}
+.orgchart .lines .downLine {
+    background-color: #039be5 !important;
+}
+p.comp_name {
+    font-weight: 100 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.verticalNodes div.node {
+    margin: 10px auto;
+}
+
+.orgchart {
+    transition-duration: 0.12s;
+}
+
+p.number_image {
+    font-size: 52px;
+    color: #0078BD;
+}
+.orgchart .verticalNodes ul>li {
+    padding-top: 65px !important;
+}
+.orgchart .verticalNodes>td>ul>li:first-child::before,
+.orgchart .verticalNodes ul>li::before {
+    height: 150px;
+}
+.orgchart .verticalNodes ul>li:first-child::after,
+.orgchart .verticalNodes ul>li::after {
+    top: 145px;
+}
+.orgchart .verticalNodes ul>li::before, .orgchart .verticalNodes ul>li::after {
+    border-color: #039be5 !important;
+}
+a.node_options {
+    color: #ffffff !important;
+}
+.border-div > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+h1.department_title {
+    width: 104% !important;
+    position: relative !important;
+    /* top: -57px; */
+    right: 8px !important;
+}
+.department_title ~ .node {
+    margin: 10px auto 10px !important;
+}
+.data_wrapper > .inner_wrapper > .node {
+    width: 95% !important;
+    margin-top: 0px !important;
+}
+.data_wrapper > .inner_wrapper > .node > .node {
+    margin-top: 67px !important;
+}

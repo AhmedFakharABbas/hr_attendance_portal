@@ -1,0 +1,26 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-conduct-setup-details',
+  templateUrl: './conduct-setup-details.component.html',
+  styleUrls: ['./conduct-setup-details.component.css']
+})
+export class ConductSetupDetailsComponent implements OnInit {
+
+  constructor() { }
+
+  data={
+    type :'ConductEnquries',
+
+  }
+  type ;
+   typeA='iOfficer';
+   typeB='Head/OD';
+   typeC='recomendation'
+
+  ngOnInit(): void {
+    this.type=this.typeC;
+  }
+
+
+}

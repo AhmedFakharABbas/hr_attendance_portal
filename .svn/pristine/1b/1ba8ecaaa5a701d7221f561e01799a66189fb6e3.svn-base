@@ -1,0 +1,999 @@
+<!-- Raised by -->
+<form [formGroup]="grievanceForm">
+  <div class="wrapper ml-20 mr-20 p-0">
+    <div
+      class="ac-title"
+      data-toggle="collapse"
+      data-target="#issueRaisedBy"
+      aria-expanded="true"
+    >
+      Issue Raised by
+      <span class="fr">
+        <img src="../../../../assets/icons/Up Arrow.svg"
+      /></span>
+    </div>
+
+    <div class="collapse show"  id="issueRaisedBy">
+<!-- for normal application  -->
+      <div class="row" *ngIf="!(isAnonymous==true && applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)">
+        <div class="col-3 mb-15 mt-15 pl-0 pr-0 ml-10 width-260" >
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Issue Type*</mat-label>
+            <mat-select formControlName="issue_type_id">
+              <mat-option value="1">Grievance</mat-option>
+              <mat-option value="2">Blowing a whistle</mat-option>
+              <mat-option value="3">Harassment related concern</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_type_id'].invalid &&
+              grievanceForm.controls['issue_type_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="grievanceForm.controls['issue_type_id'].errors?.required"
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+
+        <div class="col-3 mb-15 mt-15 pl-0 pr-0 ml-10 width-260">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label> Employee name</mat-label>
+            <input
+              formControlName="employee_name"
+              matInput
+              placeholder=""
+              readonly
+            />
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['employee_name'].invalid &&
+              grievanceForm.controls['employee_name'].touched
+            "
+          >
+            <mat-error
+              *ngIf="grievanceForm.controls['employee_name'].errors?.required"
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+        <div class="col-3 mb-15 mt-15 pl-0 pr-0 ml-10 width-260">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Department*</mat-label>
+
+            <input
+              formControlName="issue_raised_by_dept_name"
+              matInput
+              placeholder=""
+              readonly
+            />
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_raised_by_dept_id'].invalid &&
+              grievanceForm.controls['issue_raised_by_dept_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="
+                grievanceForm.controls['issue_raised_by_dept_id'].errors
+                  ?.required
+              "
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+        <div class="col mb-15 mt-15 pl-0 pr-0 ml-10 mr-10 width-260">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Designation</mat-label>
+            <input
+              formControlName="issue_raised_by_desig_name"
+              matInput
+              placeholder=""
+              readonly
+            />
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_raised_by_desig_id'].invalid &&
+              grievanceForm.controls['issue_raised_by_desig_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="
+                grievanceForm.controls['issue_raised_by_desig_id'].errors
+                  ?.required
+              "
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+      </div>
+<!-- for LM if Anonymous applications  -->
+      <div class="row" *ngIf="(isAnonymous==true && applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)">
+        <div class="col-3 mb-15 mt-15 pl-0 pr-0 ml-10 width-260" >
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Issue Type*</mat-label>
+            <mat-select formControlName="issue_type_id"  [disabled]="(applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)">
+              <mat-option value="1">Grievance</mat-option>
+              <mat-option value="2">Blowing a whistle</mat-option>
+              <mat-option value="3">Harassment related concern</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_type_id'].invalid &&
+              grievanceForm.controls['issue_type_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="grievanceForm.controls['issue_type_id'].errors?.required"
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+
+        <div class="col-3 mb-15 mt-15 pl-0 pr-0 ml-10 width-260">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label> Employee name</mat-label>
+            <input
+             value="Anonymous"
+              matInput
+              placeholder=""
+              readonly
+            />
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['employee_name'].invalid &&
+              grievanceForm.controls['employee_name'].touched
+            "
+          >
+            <mat-error
+              *ngIf="grievanceForm.controls['employee_name'].errors?.required"
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+        <div class="col-3 mb-15 mt-15 pl-0 pr-0 ml-10 width-260">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Department*</mat-label>
+
+            <input
+            value="Anonymous"
+              matInput
+              placeholder=""
+              readonly
+            />
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_raised_by_dept_id'].invalid &&
+              grievanceForm.controls['issue_raised_by_dept_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="
+                grievanceForm.controls['issue_raised_by_dept_id'].errors
+                  ?.required
+              "
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+        <div class="col mb-15 mt-15 pl-0 pr-0 ml-10 mr-10 width-260">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Designation</mat-label>
+            <input
+            value="Anonymous"
+              matInput
+              placeholder=""
+              readonly
+            />
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_raised_by_desig_id'].invalid &&
+              grievanceForm.controls['issue_raised_by_desig_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="
+                grievanceForm.controls['issue_raised_by_desig_id'].errors
+                  ?.required
+              "
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Raised againest -->
+  <div class="wrapper ml-20 mr-20 p-0">
+    <div
+      class="ac-title"
+      data-toggle="collapse"
+      data-target="#issueRaisedAgainst"
+      aria-expanded="true"
+    >
+      Issue Raised against
+      <span class="fr">
+        <img src="../../../../assets/icons/Up Arrow.svg"
+      /></span>
+    </div>
+    <div class="collapse show" id="issueRaisedAgainst">
+      <div class="row">
+        <div class="col-3 pl-0 pr-0 ml-10 mb-15 mt-15 width-260">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label> Target type*</mat-label>
+            <mat-select formControlName="target_type_id"   [disabled]="(applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)">
+              <mat-option value="1">General</mat-option>
+              <mat-option value="2">Specific Employee *</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['target_type_id'].invalid &&
+              grievanceForm.controls['target_type_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="grievanceForm.controls['target_type_id'].errors?.required"
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+
+        <div class="col-3 pl-0 pr-0 ml-10 mb-15 mt-15 width-260">
+          <!-- <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Department*</mat-label>
+        <input formControlName="issue_raised_against_dept_id" matInput placeholder="" />
+      </mat-form-field> -->
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Department</mat-label>
+            <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+            <mat-select  [disabled]="(applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)" formControlName="issue_raised_against_dept_id" >
+              <mat-option
+                *ngFor="let depart of allDepartments"
+                [value]="depart.id"
+                >{{ depart.department_name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_raised_against_dept_id'].invalid &&
+              grievanceForm.controls['issue_raised_against_dept_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="
+                grievanceForm.controls['issue_raised_against_dept_id'].errors
+                  ?.required
+              "
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+        <div class="col-3 pl-0 pr-0 ml-10 mb-15 mt-15 width-260">
+          <!-- <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Designation*</mat-label>
+        <input formControlName="againstDesignation" matInput placeholder="" />
+      </mat-form-field> -->
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Designation</mat-label>
+            <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+            <mat-select  [disabled]="(applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)" formControlName="issue_raised_against_desig_id">
+              <mat-option
+                *ngFor="let designations of allDesignations"
+                [value]="designations.designation_id"
+                >{{ designations.designation_name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_raised_against_desig_id'].invalid &&
+              grievanceForm.controls['issue_raised_against_desig_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="
+                grievanceForm.controls['issue_raised_against_desig_id'].errors
+                  ?.required
+              "
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+        <div
+          *ngIf="grievanceForm.value.target_type_id == 2"
+          class="col pl-0 pr-0 mr-10 ml-10 mb-15 mt-15 width-260"
+        >
+          <!-- <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Number</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field> -->
+          <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+          <!-- <mat-option
+          *ngFor="let depart of allDesignations"
+          [value]="depart.designation_id"
+          >{{ depart.designation_title }}</mat-option> -->
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Grievance Against</mat-label>
+            <mat-select  [disabled]="(applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)" formControlName="issue_raised_against_emp_id">
+              <mat-option
+                *ngFor="
+                  let employee of employee_list
+                    | filter
+                      : grievanceForm.controls['issue_raised_against_dept_id']
+                          .value
+                      : 'department_id'
+                    | filter
+                      : grievanceForm.controls['issue_raised_against_desig_id']
+                          .value
+                      : 'designation_id'
+                "
+                [value]="employee.id"
+                >{{ employee.name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <span
+            *ngIf="
+              grievanceForm.controls['issue_raised_against_emp_id'].invalid &&
+              grievanceForm.controls['issue_raised_against_emp_id'].touched
+            "
+          >
+            <mat-error
+              *ngIf="
+                grievanceForm.controls['issue_raised_against_emp_id'].errors
+                  ?.required
+              "
+              class="mat-error-msg"
+              >Required*</mat-error
+            >
+          </span>
+        </div>
+
+        <div
+          *ngIf="applicationType.type != 'ConductEnquries'"
+          class="col-12 mt-0 mb-1"
+        >
+          <mat-checkbox
+            type="checkbox"
+            [disabled]="(applicationType.type == 'lm-portal' && isDetailOPenbyLM && !isSubmitedApp)"
+            [checked]="isAnonymous"
+            (change)="onChangeAnynomus($event)"
+            class="d-flex justify-content-end"
+            ><span class="f-11">Anonymous</span>
+          </mat-checkbox>
+        </div>
+      </div>
+      <!-- seprator -->
+      <!-- <hr class="customHR" /> -->
+      <!-- details  of/for employe -->
+      <div
+        *ngIf="applicationType.type != 'ConductEnquries'"
+        class="grayborder mt-0 mb-15 ml-10 mr-10"
+      >
+        <p class="py-0">
+          <span
+            *ngIf="applicationType.type == 'Emp-form'"
+            class="ac-title-withoutpic title-text pl-2 pr-1"
+          >
+            Issue Raised</span
+          >
+          <span
+            *ngIf="
+              applicationType.type == 'Emp-portal' ||
+              applicationType.type == 'lm-portal'
+            "
+            class="ac-title-withoutpic title-text px-2"
+          >
+            Details</span
+          >
+          <span
+            class="links text-center"
+            *ngIf="isDetailOpen || isDetailOPenbyLM"
+          >
+            <!-- <a class="ml-1 f-11" (click)="openModal(content, 'text')"
+              >Written Statement</a
+            > -->
+            <a class="ml-2 f-11" (click)="openModal(content, 'audio')"
+              >Audio Statement</a
+            >
+            <a class="ml-2 f-11" (click)="openModal(content, 'video')"
+              >Video Statement
+            </a>
+            <a class="ml-2 f-11" (click)="openModal(content, 'image')">
+              Picture</a
+            >
+          </span>
+          <span class="float-right data-wrapper">
+            <Span class="mr-3">
+              <mat-form-field appearance="outline">
+                <mat-label>From</mat-label>
+                <input
+                  formControlName="from_date"
+                  matInput
+                  [max]="today"
+                  [matDatepicker]="picker1"
+                  (click)="picker1.open()"
+                  readonly
+                />
+                <mat-icon matSuffix (click)="picker1.open()"
+                  ><img
+                    src="../../../../assets/icons/calendar.svg"
+                    class="font-image"
+                /></mat-icon>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+              <!--  *ngIf="
+              grievanceForm.controls['from_date'].invalid &&
+              grievanceForm.controls['from_date'].touched
+              " -->
+              <span
+                *ngIf="
+                  grievanceForm.controls['from_date'].invalid &&
+                  grievanceForm.controls['from_date'].touched
+                "
+              >
+                <!-- *ngIf="
+                grievanceForm.controls['from_date'].errors
+                    ?.required
+                " -->
+                <mat-error
+                  *ngIf="grievanceForm.controls['from_date'].errors?.required"
+                  class="from_date_error"
+                  >Required*</mat-error
+                >
+              </span>
+            </Span>
+
+            <mat-form-field appearance="outline" class="mr-3">
+              <mat-label>To</mat-label>
+              <input
+                formControlName="to_date"
+                [max]="today"
+                matInput
+                [matDatepicker]="picker2"
+                (click)="picker2.open()"
+                readonly
+              />
+              <mat-icon matSuffix (click)="picker2.open()"
+                ><img
+                  src="../../../../assets/icons/calendar.svg"
+                  class="font-image"
+              /></mat-icon>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <span
+              *ngIf="
+                grievanceForm.controls['to_date'].invalid &&
+                grievanceForm.controls['to_date'].touched
+              "
+            >
+              <mat-error
+                *ngIf="grievanceForm.controls['to_date'].errors?.required"
+                class="to-date-error-msg"
+                >Required*</mat-error
+              >
+            </span>
+          </span>
+        </p>
+
+        <textarea
+          formControlName="text"
+          rows="4"
+          cols="100"
+          class="w-100"
+        ></textarea>
+      </div>
+      <!-- employee  section for  applications detials opended and saved Application -->
+      <div
+        *ngIf="
+          (applicationType.type == 'Emp-portal' &&
+            isDetailOpen &&
+            isSavedApplications) ||
+          (applicationType.type == 'lm-portal' &&
+            isDetailOPenbyLM &&
+            isSavedApplications &&
+            isSubmitedApp)
+        "
+        class="grayborder emp-portal open-details pt-2"
+      >
+        <div class="row">
+          <div class="col-1 add-icon">
+            <button class="submitButton" (click)="addNewEvidence()">
+              + Add
+            </button>
+          </div>
+        </div>
+        <div *ngFor="let evidence of evidenceArray; let i = index" class="row">
+          <div class="col">
+            <mat-checkbox
+              [checked]="evidence.type == 'file'"
+              (change)="onChangeEvidenceType($event, i, 'file')"
+              class="example-margin f-11"
+              [disabled]="evidence.url!=null"
+              >Written Statement employee
+            </mat-checkbox>
+          </div>
+          <div class="col">
+            <mat-checkbox
+              [checked]="evidence.type == 'audio'"
+              (change)="onChangeEvidenceType($event, i, 'audio')"
+              class="example-margin f-11"
+              [disabled]="evidence.url!=null"
+            >
+              Audio Statement</mat-checkbox
+            >
+          </div>
+          <div class="col">
+            <mat-checkbox
+              class="example-margin f-11"
+              [checked]="evidence.type == 'video'"
+              [disabled]="evidence.url!=null"
+              (change)="onChangeEvidenceType($event, i, 'video')"
+              >Video Statement</mat-checkbox
+            >
+          </div>
+          <div class="col">
+            <mat-checkbox
+              class="example-margin f-11"
+              [checked]="evidence.type == 'image'"
+              [disabled]="evidence.url!=null"
+              (change)="onChangeEvidenceType($event, i, 'image')"
+              >Picture</mat-checkbox
+            >
+          </div>
+
+          <div class="col emp" *ngIf="file_upload_url == undefined">
+            <input
+              (change)="fileUpload($event, evidence, i)"
+              type="file"
+              [accept]="
+                evidence.type
+                  ? parseEvidencesTypes(allowedTypes[evidence.type])
+                  : null
+              "
+              #fileUploadTemplate
+            />
+            <label
+              class="custom-file-upload"
+              (click)="fileUploadHandler(evidence, fileUploadTemplate)"
+            >
+              Upload File
+            </label>
+            <div
+              class="evidence-name-wrapper"
+              *ngIf="evidence.fileName != undefined"
+            >
+              <div class="evidence-name">{{ evidence.fileName }}</div>
+              <div
+                (click)="cancelUploadImage(i)"
+                *ngIf="evidence.fileName != undefined"
+                style="cursor: pointer ;color: #3080ea !important;"
+              >
+                &times;
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div
+        *ngIf="
+          applicationType.type == 'lm-portal' &&
+          isDetailOPenbyLM &&
+          !isSubmitedApp
+        "
+        class="grayborder mt-1"
+      >
+        <p class="py-1">
+          <span class="ac-title-withoutpic title-text px-3">
+            Line Manager's Section</span
+          >
+          <span
+            class="lm-links text-center"
+            *ngIf="isDetailOpen || isDetailOPenbyLM"
+          >
+            <a class="ml-2 f-11" (click)="openLMModal(content, 'audio')"
+              >Audio Statement</a
+            >
+            <a class="ml-2 f-11" (click)="openLMModal(content, 'video')"
+              >Video Statement
+            </a>
+            <a class="ml-2 f-11" (click)="openLMModal(content, 'image')">
+              Picture</a
+            >
+          </span>
+          <!-- <span class="links text-center">
+            <a class="f-11">Written Statement</a>
+            <a class="mx-1 f-11">Audio Statement</a>
+            <a class="ml-1 f-11">Video Statement </a>
+            <a class="f-11"> Picture</a></span
+          > -->
+        </p>
+        <textarea
+          formControlName="LMtext"
+          rows="4"
+          cols="100"
+          class="w-100"
+        ></textarea>
+      </div>
+      <!--  evidence-->
+      <!-- employee  for normaal applications -->
+      <div
+        *ngIf="
+          (applicationType.type == 'Emp-portal' &&
+            !isDetailOpen &&
+            !isSavedApplications) ||
+          (applicationType.type == 'lm-portal' &&
+            !isDetailOPenbyLM &&
+            !isSavedApplications)
+        "
+        class="grayborder emp-portal pt-2"
+      >
+        <div class="row">
+          <div class="col-1 add-icon">
+            <button class="submitButton" (click)="addNewEvidence()">
+              + Add
+            </button>
+          </div>
+        </div>
+        <div *ngFor="let evidence of evidenceArray; let i = index" class="row">
+          <div class="col">
+            <mat-checkbox
+              [checked]="evidence.type == 'file'"
+              (change)="onChangeEvidenceType($event, i, 'file')"
+              class="example-margin f-11"
+              >Written Statement employee
+            </mat-checkbox>
+          </div>
+          <div class="col">
+            <mat-checkbox
+              [checked]="evidence.type == 'audio'"
+              (change)="onChangeEvidenceType($event, i, 'audio')"
+              class="example-margin f-11"
+            >
+              Audio Statement</mat-checkbox
+            >
+          </div>
+          <div class="col">
+            <mat-checkbox
+              class="example-margin f-11"
+              [checked]="evidence.type == 'video'"
+              (change)="onChangeEvidenceType($event, i, 'video')"
+              >Video Statement</mat-checkbox
+            >
+          </div>
+
+          <div class="col">
+            <mat-checkbox
+              class="example-margin f-11"
+              [checked]="evidence.type == 'image'"
+              (change)="onChangeEvidenceType($event, i, 'image')"
+              >Picture</mat-checkbox
+            >
+          </div>
+          <!--  <button class="ac-title" mat-button> + Add</button>  -->
+          <!-- new code  -->
+          <div class="col emp" *ngIf="file_upload_url == undefined">
+            <input
+              (change)="fileUpload($event, evidence, i)"
+              type="file"
+              [accept]="
+                evidence.type
+                  ? parseEvidencesTypes(allowedTypes[evidence.type])
+                  : null
+              "
+              #fileUploadTemplate
+            />
+            <label
+              class="custom-file-upload"
+              (click)="fileUploadHandler(evidence, fileUploadTemplate)"
+            >
+              Upload File
+            </label>
+            <div
+              class="evidence-name-wrapper"
+              *ngIf="evidence.fileName != undefined"
+            >
+              <div class="evidence-name">{{ evidence.fileName }}</div>
+              <div
+                (click)="cancelUploadImage(i)"
+                *ngIf="evidence.fileName != undefined"
+                style="cursor: pointer ;color: #3080ea !important;"
+              >
+                &times;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- lm  -->
+
+      <!-- submit -->
+      <!--  &&
+          lmEvidenceArray.length==0 -->
+      <div
+        *ngIf="
+          applicationType.type == 'lm-portal' &&
+          isDetailOPenbyLM &&
+          !isSubmitedApp&&
+          this.loginLMSection==null
+        "
+        class="grayborder lm-portal pt-2"
+      >
+        <div class="row">
+          <div class="col-1 add-icon">
+            <button class="submitButton" (click)="addNewLMEvidence()">
+              + Add
+            </button>
+          </div>
+        </div>
+
+        <div
+          *ngFor="let lmevidence of lmEvidenceArray; let i = index"
+          class="row"
+        >
+          <div class="col">
+            <mat-checkbox
+              [checked]="lmevidence.type == 'text'"
+              (change)="onLMChangeEvidenceType($event, i, 'text')"
+              class="example-margin f-11"
+              >Written Statement
+            </mat-checkbox>
+          </div>
+          <div class="col">
+            <mat-checkbox
+              [checked]="lmevidence.type == 'audio'"
+              (change)="onLMChangeEvidenceType($event, i, 'audio')"
+              class="example-margin f-11"
+            >
+              Audio Statement</mat-checkbox
+            >
+          </div>
+          <div class="col">
+            <mat-checkbox
+              class="example-margin f-11"
+              [checked]="lmevidence.type == 'video'"
+              (change)="onLMChangeEvidenceType($event, i, 'video')"
+              >Video Statement</mat-checkbox
+            >
+          </div>
+          <div class="col">
+            <mat-checkbox
+              class="example-margin f-11"
+              [checked]="lmevidence.type == 'image'"
+              (change)="onLMChangeEvidenceType($event, i, 'image')"
+              >Picture</mat-checkbox
+            >
+          </div>
+          <!--  <button class="ac-title" mat-button> + Add</button>  -->
+          <div class="col lm" *ngIf="file_upload_url == undefined">
+            <input
+              (change)="lmFileUpload($event, lmevidence, i)"
+              type="file"
+              [accept]="
+                lmevidence.type
+                  ? parseEvidencesTypes(allowedTypes[lmevidence.type])
+                  : null
+              "
+              #LmfileUploadTemplate
+            />
+            <label
+              class="custom-file-upload"
+              (click)="fileUploadHandler(lmevidence, LmfileUploadTemplate)"
+            >
+              Upload File
+            </label>
+            <div
+              class="evidence-name-wrapper"
+              *ngIf="lmevidence.fileName != undefined"
+            >
+              <div class="evidence-name">{{ lmevidence.fileName }}</div>
+              <div
+                (click)="lmCancelUploadImage(i)"
+                *ngIf="lmevidence.fileName != undefined"
+                style="cursor: pointer ;color: #3080ea !important;"
+              >
+                &times;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+
+      <div
+        *ngIf="
+          applicationType.type == 'Emp-portal' ||
+          applicationType.type == 'lm-portal'
+        "
+        class="ac-footer"
+      >
+        <div id="ac-button-list" class="text-right">
+          <button
+          *ngIf="
+          !(applicationType.type == 'lm-portal' &&
+          isDetailOPenbyLM &&
+          !isSubmitedApp)
+        "
+            (click)="disableEmployeeFormSubmit == false && pendingRequest==0 ? onSaveDraft() : ''"
+            [ngClass]="
+              disableEmployeeFormSubmit == false&& pendingRequest==0
+                ? 'submitButton'
+                : 'disabledSubmitButton'
+            "
+            type="submit"
+            class="ml-2"
+          >
+            Save Draft
+          </button>
+          <button
+            *ngIf="applicationType.type == 'Emp-portal'"
+            (click)="disableEmployeeFormSubmit == false && pendingRequest==0 ? onSendToLM() : ''"
+            [ngClass]="
+              disableEmployeeFormSubmit == false && pendingRequest==0
+                ? 'submitButton'
+                : 'disabledSubmitButton'
+            "
+            type="submit"
+            class="ml-2"
+          >
+            Send to LM
+          </button>
+          <!--     [disabled]=" grievanceForm.value.target_type_id == 1" -->
+<!-- for LM  when own details is open  -->
+
+      <button
+          *ngIf="(isDetailOPenbyLM && !isSubmitedApp)"
+            (click)="
+            this.loginLMSection==null && pendingRequest==0? onSendToHR()
+                : ''
+            "
+            type="submit"
+            [ngClass]="
+            this.loginLMSection==null && pendingRequest==0
+                ? 'submitButton'
+                : 'disabledSubmitButton'
+            "
+            class="ml-2"
+          >
+          Send to HR
+          </button>
+          <!-- for employee and lm when details is not open -->
+          <!--   *ngIf="!(isDetailOPenbyLM  && !isSubmitedApp)" -->
+          <button
+          *ngIf="!(isDetailOPenbyLM  && !isSubmitedApp)"
+            (click)="(
+              (disableEmployeeFormSubmit == false &&
+                grievanceForm.value.target_type_id == 1) ||
+              (applicationType.type == 'lm-portal' && disableEmployeeFormSubmit == false))&& pendingRequest==0
+                ? onSendToHR()
+                : ''
+            "
+            type="submit"
+            [ngClass]="(
+              (disableEmployeeFormSubmit == false && grievanceForm.value.target_type_id == 1) ||
+                (applicationType.type == 'lm-portal' && disableEmployeeFormSubmit == false))&& pendingRequest==0
+                ? 'submitButton'
+                : 'disabledSubmitButton'
+            "
+            class="ml-2"
+          >
+         Send to HR
+          </button>
+          <button (click)="resetGrievanceForm()"
+           class="submitButton ml-2">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- <p>loginLMSection{{loginLMSection|json}}</p>
+<p>loginLMSection{{(loginLMSection==null)}}</p> -->
+<!-- modal  -->
+<ng-template #content>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">View Your Uploads</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="evidence-preview-container">
+      <ng-container
+        *ngIf="filteredEvidences && filteredEvidences.length; else elseBlock"
+      >
+        <div
+          class="evidence-preview"
+          *ngFor="let evidence of filteredEvidences; let i = index"
+        >
+          <div class="picture-name">
+            {{ modalType + "" | titlecase }} {{ i + 1 }}
+          </div>
+          <div
+            class="picture-action"
+            style="cursor: pointer"
+            (click)="preview(evidence)"
+          >
+            {{ evidence.src ? "Hide" : "View" }}
+          </div>
+          <!-- testing code  -->
+          <!-- <p>{{evidence.file.type}}</p>
+          <p>{{evidence.src}}</p> -->
+
+          <!-- testing code  -->
+          <div class="preview-container" *ngIf="evidence.src">
+            <img [src]="evidence.src" *ngIf="evidence.type == 'image'" />
+            <video
+              width="320"
+              height="240"
+              controls
+              *ngIf="evidence.type == 'video'"
+            >
+              <source
+                [src]="evidence.src"
+                [type]="
+                  (evidence.file && evidence.file.type) ||
+                  'video/' + (evidence.fileType || 'mp4')
+                "
+              />
+              Your browser does not support the video tag.
+            </video>
+            <audio controls *ngIf="evidence.type == 'audio'">
+              <source
+                [src]="evidence.src"
+                [type]="
+                  (evidence.file && evidence.file.type) ||
+                  'audio/' + (evidence.fileType || 'mp3')
+                "
+              />
+              Your browser does not support the audio tag.
+            </audio>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #elseBlock>
+        <div>No Data Found</div>
+      </ng-template>
+    </div>
+  </div>
+</ng-template>

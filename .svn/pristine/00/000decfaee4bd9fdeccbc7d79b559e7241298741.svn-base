@@ -1,0 +1,16 @@
+import { Injectable } from "@angular/core";
+import { HttpService } from "src/app/shared/http-service/http.service";
+
+@Injectable({
+  providedIn: "root",
+})
+export class GrievanceService {
+  constructor(private _httpService: HttpService) {}
+
+  saveData(url, data) {
+    return this._httpService.post(url, data);
+  }
+  getData(url, data?) {
+    return this._httpService.get(url, data);
+  }
+}

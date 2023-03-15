@@ -1,0 +1,237 @@
+/* ================ Attendance Correction */
+mat-form-field.mat-form-field-should-focus {
+  font-size: 12px;
+}
+
+mat-label {
+  font-size: 12px;
+}
+
+.mat-cell, .mat-footer-cell {
+    font-size: 13px !important;
+}
+
+.ac-main {
+  min-height: 93.6%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.ac-left-container {
+  width: 65%;
+  float: left;
+  background-color: white;
+}
+
+.ac-right-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 99%;
+  /*  overflow-y: auto; */
+
+  width: 35%;
+  float: right;
+  background-color: white;
+}
+
+.ac-label {
+  width: 100%;
+  padding: 5px;
+}
+
+.ac-list {
+  list-style-type: none;
+  padding: 6px 8px 0px 35px;
+  margin: 0;
+  height: 26px;
+  width: auto;
+}
+
+.ac-table {
+  width: 100%;
+}
+
+.ac-statusMenu {
+  padding: 0px;
+  height: 50px;
+  width: auto;
+  float: right;
+  font: 11px Tahoma, Arial, Verdana;
+  color: #4c4c4c;
+  text-align: left;
+}
+
+.ac-logo {
+  display: inline-block;
+  margin: 27px;
+}
+
+.ac-list li {
+  display: inline-block;
+}
+
+.ac-login {
+  position: relative;
+  background: none;
+  top: 150px;
+  width: 400px;
+  min-width: 400px;
+  height: 276px;
+  min-height: 0;
+  margin: auto;
+}
+
+.ac-box {
+  display: block;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+  flex-direction: row;
+}
+
+
+.ac-left-box {
+  display: block;
+  width: 98%;
+  margin: 1%;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+  flex-direction: row;
+}
+
+.ac-right-box {
+  display: block;
+  flex-direction: row-reverse;
+  margin-right: 20px;
+  margin: 1%;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+}
+
+.ac-title {
+  background: url('../../../../assets/img/box-title.gif') repeat-x left top;
+  padding: 8px 10px;
+  font: 12px/1.0em Verdana, Arial, Tahome;
+  color: #333333;
+  font-weight: 600;
+}
+
+.ac-content {
+  background: url('../../../../assets/img/box-shadow.gif') repeat-x left top;
+  padding: 5px;
+}
+
+.ac-footer {
+  background: #e6e6e6;
+  padding: 6px 10px 4px;
+}
+
+#ac-button-list {
+  margin: 3px 0;
+  text-align: right;
+}
+
+
+
+#ac-button-list a,
+.ac-button-list a,
+#ac-button-list font,
+.ac-button-list font,
+#ac-button,
+a#ac-button,
+a.ac-button {
+  position: relative;
+  padding: 2px 6px 2px 6px;
+  border: 1px solid var(--unnamed-color-ffffff);
+  background: transparent linear-gradient(180deg, #EDEDED 0%, #FAFAFA 100%) 0% 0% no-repeat padding-box;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  color: #3080EA;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+#ac-button-list a:hover,
+.ac-button-list a:hover,
+#ac-button a:hover,
+.ac-button a:hover,
+a.ac-button:hover,
+a#ac-button:hover {
+  border: 1px solid #a6daee;
+  padding: 2px 6px 2px 6px;
+  background: transparent linear-gradient(0deg, #F1FAFE 0%, #BDE9FB 100%) 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+  color: #343434;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.ac-container{
+  position: relative;
+  clear: both;
+  display: flex;
+}
+
+.ac-controls label {
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 9px;
+  padding: 0;
+  margin: 0;
+  cursor: text;
+  width: 35%;
+  font-weight: bold;
+}
+
+form div {
+  display: block;
+  position: relative;
+  border: none;
+  line-height: 26px;
+  padding: 0
+}
+
+form div:nth-child(odd) {
+  background-color: #FAFAFA;
+}
+
+form div .right {
+  display: block;
+  margin: 0 0 0 35%;
+  padding-left: 10px;
+  border-left: 1px solid #eee;
+}
+
+.ac-custom-checkbox label {
+  background-position: left bottom;
+  background: url('../../../../assets/images/checkbox.gif') no-repeat;
+  position: relative;
+  top: 0;
+  padding: 1px 0 0 20px;
+  margin: 0 0 5px 0;
+  font-size: 11px/12px Arial;
+  color: #1c1c1c;
+  cursor: pointer;
+  width: auto;
+  height: 15px;
+}
+
+form div .ac-right label {
+  left: 2px;
+  font-weight: normal;
+}
+
+.ac-flux {
+  display: flex;
+}
+
+
+p {
+  margin: 10px 0 0px 0;
+  font-size: 11px;
+}
+

@@ -1,0 +1,41 @@
+.table td, .table th {
+  padding: 5px 5px 5px 5px;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+td{
+width: 50%;
+
+}
+.row {
+  height: 27px;
+  width: 100%;
+  align-items: center;
+}
+.title{
+  color: #007bff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.heading{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* mat-form-field .mat-form-field-label-wrapper {
+  top: -13px;
+}
+.mat-form-field-label-wrapper {
+    top: -15px !important;
+} */
+/* .mat-form-field-flex>.mat-form-field-infix {
+  padding: 5px !important;
+}
+mat-form-field .mat-form-field-label-wrapper {
+  top: -18px !important;
+} */

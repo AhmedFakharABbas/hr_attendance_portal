@@ -1,0 +1,46 @@
+import { Component, OnInit } from '@angular/core';
+import { CorrectionApplication } from 'src/app/shared/interfaces/correction-application';
+import { CorrectionStatus } from 'src/app/shared/interfaces/correction-status';
+import { EmployeeGrievance } from 'src/app/shared/interfaces/employee grievance';
+
+const STATUS_DATA: CorrectionStatus[] = [
+  {month: 'January', corrections: '21', approved: '4', pending: '0', rejected: '8'},
+  {month: 'February', corrections: '8', approved: '1.5', pending: '5', rejected: '8'},
+  {month: 'March', corrections: '8', approved: '2.25', pending: '0', rejected: '0'},
+  {month: 'April', corrections: '15', approved: '0', pending: '0', rejected: '0'},
+  {month: 'May', corrections: '-', approved: '0', pending: '0', rejected: '5'},
+  {month: 'June', corrections: '-', approved: '1', pending: '5', rejected: '5'},
+  {month: 'July', corrections: '-', approved: '0', pending: '5', rejected: '5'},
+  {month: 'Auguest', corrections: '8', approved: '5', pending: '0', rejected: '0'},
+  {month: 'September', corrections: '8', approved: '0', pending: '0', rejected: '0'},
+  {month: 'October', corrections: '15', approved: '8', pending: '0', rejected: '0'},
+  {month: 'November', corrections: '8', approved: '0', pending: '2', rejected: '2'},
+  {month: 'December', corrections: '8', approved: '0', pending: '2', rejected: '2'},
+];
+
+
+@Component({
+  selector: 'app-employee-portal',
+  templateUrl: './employee-portal.component.html',
+  styleUrls: ['./employee-portal.component.css']
+})
+export class EmployeePortalComponent implements OnInit {
+  selectedValue: string;
+  selectedCar: string;
+  data={
+    type :'Emp-portal',
+    ComponenttypeId:4
+  }
+
+
+  statusColumns: string[] = ['employeeId', 'grievanceAgainstName', 'applicationDate', 'type', 'from', 'to', 'status'];
+  statusDataSource = STATUS_DATA;
+
+  correctionAppsColumns: string[] = ['dated', 'month', 'correctionDate', 'lmStatus', 'hrStatus'];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

@@ -1,0 +1,47 @@
+
+<div class="ac-container">
+  <div class="ac-left-container">
+<app-attendance-form [componentType]="empForm"></app-attendance-form>
+  </div>
+
+  <!-- Correction Status -->
+  <div class="ac-right-container">
+    <div class="w-100">
+      <div class="ac-right-box mt-2">
+        <div class="ac-title"
+        data-toggle="collapse"
+        data-target="#hrCorrectionStatus"
+        aria-expanded="true">
+          Correction Status
+          <span class="fr"><i class="fas icon-up fa-caret-up"></i></span>
+        </div>
+        <div class="collapse show" id="hrCorrectionStatus">
+        <app-attendance-table [componentType]="correctionStatus"></app-attendance-table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- Correction Applicaitons -->
+<div class="ac-container">
+  <div class="w-100">
+    <div class="ac-box ml-2 mt-2">
+      <div class="ac-title"
+      data-toggle="collapse"
+      data-target="#hrCorrectionStatus"
+      aria-expanded="true">
+        Correction Applicaitons
+        <span class="fr"><i class="fas icon-up fa-caret-up"></i></span>
+      </div>
+      <div class="ac-content">
+     <!-- table  start-->
+     <div class="collapse show" id="hrCorrectionStatus">
+ <app-attendance-table [componentType]="correctionApplication"></app-attendance-table>
+     </div>
+ <!-- table end-->
+      </div>
+    </div>
+  </div>
+</div>

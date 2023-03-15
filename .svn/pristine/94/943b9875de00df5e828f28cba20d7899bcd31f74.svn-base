@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-body">
+
+    <p><b>Conduct \Enquiries</b> \ <span style="color: #007bff;">Applications</span></p>
+     <app-grievance-table [applicationType]="data"></app-grievance-table>
+
+  </div>
+</div>
+

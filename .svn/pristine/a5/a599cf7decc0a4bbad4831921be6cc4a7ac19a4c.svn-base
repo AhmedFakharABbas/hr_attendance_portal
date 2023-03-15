@@ -1,0 +1,179 @@
+{
+  "hCByDepartmentData":[
+    {"Name": "Finance", "totalNoData": 6, "color": "#1CB1EE"},
+    {"Name": "Marketing & Sales", "totalNoData": 5, "color": "#E4B9B6"},
+    {"Name": "Client Relationship", "totalNoData": 10, "color": "#0E71BE"},
+    {"Name": "Human Resource", "totalNoData": 5, "color": "#FEBF29"},
+    {"Name": "Service Delivery", "totalNoData": 10, "color": "#AB9ABF"},
+    {"Name": "IT", "totalNoData": 14, "color": "#FC0017"},
+    {"Name": "Finance", "totalNoData": 6, "color": "#1CB1EE"},
+    {"Name": "Marketing & Sales", "totalNoData": 5, "color": "#E4B9B6"},
+    {"Name": "Client Relationship", "totalNoData": 10, "color": "#0E71BE"},
+    {"Name": "Human Resource", "totalNoData": 5, "color": "#FEBF29"},
+    {"Name": "Service Delivery", "totalNoData": 10, "color": "#AB9ABF"},
+    {"Name": "IT", "totalNoData": 14, "color": "#FC0017"}
+  ],
+  "headCountPercentage": 10, "headCountCenterValue": "55", "headCountPreviousMonthValue": 50,
+  "averageSalaryPercentage": 7.5, "averageSalaryCenterValue": "PKR 51,927", "averageSalaryPreviousMonthValue": "PKR 48,290",
+  "minimumSalaryPercentage": 16.6, "minimumSalaryCenterValue": "PKR 17,500", "minimumSalaryPreviousMonthValue": "PKR 15,000",
+  "newHiresByCategoryData":[
+    {"Name": "Managerial", "totalNoData": 1, "color": "#1CB1EE"},
+    {"Name": "Non-Managerial", "totalNoData": 6, "color": "#E4B9B6"}
+  ],
+  "newHiresByDepartmentData":[
+    {"Name": "Finance", "totalNoData": 2, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoData": 2, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoData": 1, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoData": 5, "color": "#72AD4C"}
+  ],
+  "newHiresByBandData":[
+    {"Name": "Band 6", "totalNoData": 2, "color": "#72AD4C"},
+    {"Name": "Band 5", "totalNoData": 2, "color": "#FEBF29"},
+    {"Name": "Band 4", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "Band 3", "totalNoData": 1, "color": "#E4B9B6"},
+    {"Name": "Band 2", "totalNoData": 5, "color": "#1CB1EE"}
+  ],
+  "leaversByCategoryData":[
+    {"Name": "Managerial", "totalNoData": 2, "color": "#AB9ABF"},
+    {"Name": "Non-Managerial", "totalNoData": 7, "color": "#5E9CD3"}
+  ],
+  "leaversByDepartmentData":[
+    {"Name": "Finance", "totalNoData": 2, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoData": 2, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoData": 1, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoData": 5, "color": "#72AD4C"}
+  ],
+  "leaversByBandData":[
+    {"Name": "Band 6", "totalNoData": 2, "color": "#72AD4C"},
+    {"Name": "Band 5", "totalNoData": 2, "color": "#FEBF29"},
+    {"Name": "Band 4", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "Band 3", "totalNoData": 1, "color": "#E4B9B6"},
+    {"Name": "Band 2", "totalNoData": 5, "color": "#1CB1EE"}
+  ],
+  "averageSalaryByDepartment":[
+    {"Name": "Finance", "totalNoType": 6, "totalNoData": 37500, "color": "#1CB1EE"},
+    {"Name": "Marketing & Sales", "totalNoType": 5, "totalNoData": 65000, "color": "#E4B9B6"},
+    {"Name": "Client Relationship", "totalNoType": 10, "totalNoData": 55000, "color": "#0E71BE"},
+    {"Name": "Human Resource", "totalNoType": 5, "totalNoData": 50000, "color": "#FEBF29"},
+    {"Name": "Service Delivery", "totalNoType": 9, "totalNoData": 27500, "color": "#AB9ABF"},
+    {"Name": "IT", "totalNoType": 15, "totalNoData": 60714, "color": "#94D057"},
+    {"Name": "Finance", "totalNoType": 6, "totalNoData": 37500, "color": "#1CB1EE"},
+    {"Name": "Marketing & Sales", "totalNoType": 5, "totalNoData": 65000, "color": "#E4B9B6"},
+    {"Name": "Client Relationship", "totalNoType": 10, "totalNoData": 55000, "color": "#0E71BE"},
+    {"Name": "Human Resource", "totalNoType": 5, "totalNoData": 50000, "color": "#FEBF29"},
+    {"Name": "Service Delivery", "totalNoType": 9, "totalNoData": 27500, "color": "#AB9ABF"},
+    {"Name": "IT", "totalNoType": 15, "totalNoData": 60714, "color": "#94D057"}
+  ],
+  "fixedSalaryCostPercentage": 10, "fixedSalaryCostCenterValue": "PKR 2,750,000", "fixedSalaryCostPreviousMonthValue": "PKR 2,500,000",
+  "benefitsCostPercentage": 2, "benefitsCostCenterValue": "PKR 250,000", "benefitsCostPreviousMonthValue": "PKR 245,000",
+  "variableSalaryCostPercentage": -81.3, "variableSalaryCostCenterValue": "PKR 8,000", "variableSalaryCostPreviousMonthValue": "PKR 14,500",
+  "salaryChangesByCategoryData":[
+    {"Name": "Managerial", "totalNoData": 1, "color": "#1CB1EE"},
+    {"Name": "Non-Managerial", "totalNoData": 9, "color": "#E4B9B6"}
+  ],
+  "salaryChangesByDepartmentData":[
+    {"Name": "Finance", "totalNoData": 2, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoData": 2, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoData": 1, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoData": 5, "color": "#72AD4C"}
+  ],
+  "salaryChangesByBandData":[
+    {"Name": "Band 6", "totalNoData": 2, "color": "#72AD4C"},
+    {"Name": "Band 5", "totalNoData": 2, "color": "#FEBF29"},
+    {"Name": "Band 4", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "Band 3", "totalNoData": 1, "color": "#E4B9B6"},
+    {"Name": "Band 2", "totalNoData": 5, "color": "#1CB1EE"}
+  ],
+  "expensesByCategoryData":[
+    {"Name": "Managerial", "totalNoData": 1, "color": "#AB9ABF"},
+    {"Name": "Non-Managerial", "totalNoData": 14, "color": "#5E9CD3"}
+  ],
+  "expensesByDepartmentData":[
+    {"Name": "Finance", "totalNoData": 2, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoData": 2, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoData": 1, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoData": 5, "color": "#72AD4C"}
+  ],
+  "expensesByBandData":[
+    {"Name": "Band 6", "totalNoData": 2, "color": "#72AD4C"},
+    {"Name": "Band 5", "totalNoData": 2, "color": "#FEBF29"},
+    {"Name": "Band 4", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "Band 3", "totalNoData": 1, "color": "#E4B9B6"},
+    {"Name": "Band 2", "totalNoData": 5, "color": "#1CB1EE"}
+  ],
+  "statutoryCostByDepartment":[
+    {"Name": "Punjab", "totalNoType": 14, "totalNoData": 76432, "color": "#1CB1EE"},
+    {"Name": "Sindh", "totalNoType": 10, "totalNoData": 54595, "color": "#E4B9B6"},
+    {"Name": "Baluchistan", "totalNoType": 8, "totalNoData": 43676, "color": "#0E71BE"},
+    {"Name": "KPK", "totalNoType": 7, "totalNoData": 38216, "color": "#FEBF29"},
+    {"Name": "Islamabad", "totalNoType": 11, "totalNoData": 60054, "color": "#AB9ABF"},
+    {"Name": "FATA", "totalNoType": 5, "totalNoData": 27297, "color": "#94D057"}
+  ],
+  "grossSalaryCostPercentage": 9.4, "grossSalaryCostCenterValue": "PKR 2,856,000", "grossSalaryCostPreviousMonthValue": "PKR 2,628,000",
+  "statutorySalaryCostPercentage": 10.7, "statutorySalaryCostCenterValue": "PKR 300,270", "statutorySalaryCostPreviousMonthValue": "PKR 271,250",
+  "terminalBenefitsCostPercentage": 4.6, "terminalBenefitsCostCenterValue": "PKR 364,730", "terminalBenefitsCostPreviousMonthValue": "PKR 348,750",
+  "attendanceByCategoryData":[
+    {"Name": "Managerial", "totalNoData": 1, "color": "#1CB1EE"},
+    {"Name": "Non-Managerial", "totalNoData": 10, "color": "#E4B9B6"}
+  ],
+  "attendanceByDepartmentData":[
+    {"Name": "Finance", "totalNoData": 2, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoData": 2, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoData": 1, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoData": 5, "color": "#72AD4C"}
+  ],
+  "attendanceByBandData":[
+    {"Name": "Band 6", "totalNoData": 2, "color": "#72AD4C"},
+    {"Name": "Band 5", "totalNoData": 2, "color": "#FEBF29"},
+    {"Name": "Band 4", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "Band 3", "totalNoData": 1, "color": "#E4B9B6"},
+    {"Name": "Band 2", "totalNoData": 5, "color": "#1CB1EE"}
+  ],
+  "loanDeductionByCategoryData":[
+    {"Name": "Managerial", "totalNoData": 1, "color": "#AB9ABF"},
+    {"Name": "Non-Managerial", "totalNoData": 4, "color": "#5E9CD3"}
+  ],
+  "loanDeductionByDepartmentData":[
+    {"Name": "Finance", "totalNoData": 2, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoData": 2, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoData": 1, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoData": 5, "color": "#72AD4C"}
+  ],
+  "loanDeductionByBandData":[
+    {"Name": "Band 6", "totalNoData": 2, "color": "#72AD4C"},
+    {"Name": "Band 5", "totalNoData": 2, "color": "#FEBF29"},
+    {"Name": "Band 4", "totalNoData": 3, "color": "#0E71BE"},
+    {"Name": "Band 3", "totalNoData": 1, "color": "#E4B9B6"},
+    {"Name": "Band 2", "totalNoData": 5, "color": "#1CB1EE"}
+  ],
+  "joinersByDepartment":[
+    {"Name": "Finance", "totalNoType": 2, "totalNoData": 75000, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoType": 1, "totalNoData": 95000, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoType": 2, "totalNoData": 50000, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoType": 1, "totalNoData": 65000, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoType": 6, "totalNoData": 98000, "color": "#72AD4C"}
+  ],
+  "leaversByDepartment":[
+    {"Name": "Finance", "totalNoType": 2, "totalNoData": 75000, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoType": 1, "totalNoData": 95000, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoType": 2, "totalNoData": 50000, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoType": 1, "totalNoData": 65000, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoType": 6, "totalNoData": 98000, "color": "#72AD4C"}
+  ],
+  "salaryChangesByDepartment":[
+    {"Name": "Finance", "totalNoType": 2, "totalNoData": 75000, "color": "#1CB1EE"},
+    {"Name": "Admin", "totalNoType": 1, "totalNoData": 95000, "color": "#E4B9B6"},
+    {"Name": "CR", "totalNoType": 2, "totalNoData": 50000, "color": "#0E71BE"},
+    {"Name": "HR", "totalNoType": 1, "totalNoData": 65000, "color": "#FEBF29"},
+    {"Name": "SD", "totalNoType": 6, "totalNoData": 98000, "color": "#72AD4C"}
+  ],
+  "noOfPendingTask": 15 , "totalNoOfPendingTask": 28,
+  "noOfInprogressTask": 10, "totalNoOfInprogressTask": 22,
+  "noOfCompletedTask": 40, "totalNoOfCompletedTask": 65
+}

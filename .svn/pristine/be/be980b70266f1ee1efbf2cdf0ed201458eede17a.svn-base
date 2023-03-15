@@ -1,0 +1,30 @@
+<div class="row bg-white w-100 m-0">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-6 p-0">
+        <div class="portal-container">
+          <h4 class="people-title-heading">{{s01}}</h4>
+          <ng-content select=".s0-1"></ng-content>
+        </div>
+      </div>
+      <div class="col-md-6 p-0">
+        <div class="portal-container">
+          <h4 class="people-title-heading">{{s02}}</h4>
+          <ng-content select=".s0-2"></ng-content>
+        </div>
+      </div>
+      <div class="col-md-12 p-0">
+        <div class="portal-container">
+          <h4 class="people-title-heading">{{s03}}</h4>
+          <ng-content select=".s0-3"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 pr-0">
+    <div class="portal-container">
+      <h4 class="people-title-heading">{{s11}}</h4>
+      <ng-content select=".s1-1"></ng-content>
+    </div>
+  </div>
+</div>

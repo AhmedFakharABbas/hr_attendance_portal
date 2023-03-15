@@ -1,0 +1,68 @@
+.late10 {
+  background-color: #c8ecff;
+}
+
+.late30 {
+  background-color: #ffdff6;
+}
+
+.businessTravel {
+  background-color: #cdaed2;
+}
+
+.absent {
+  background-color: #fe9a9a;
+}
+
+.appliedLeave {
+  background-color: #d5ffa8;
+}
+
+.publicHoliday {
+  background-color: #fdcc8a;
+}
+
+.workLeave {
+  background-color: #a1ffcc;
+}
+
+.late10,
+.businessTravel,
+.late30,
+.appliedLeave,
+.absent,
+.workLeave,
+.publicHoliday {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 6px;
+}
+
+.sec-1,
+.sec-2 {
+  width: 50%;
+  font-size: 11px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sec-1 div,
+.sec-2 div {
+  margin: 8px 0;
+}
+
+.month-container td,
+.month-container th {
+  text-align: center !important;
+  line-height: 1.6em;
+}
+
+.month-container .label,
+.month-container th {
+  font-weight: 600;
+}
+
+.month-container {
+  border: 1px solid #e6e6e6;
+}

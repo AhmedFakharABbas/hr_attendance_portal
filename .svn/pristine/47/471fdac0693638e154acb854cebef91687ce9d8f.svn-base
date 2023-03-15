@@ -1,0 +1,208 @@
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HeaderService } from 'src/app/services/header.service';
+import { EmployeeAttendanceService } from 'src/app/services/employee-attendance.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { environment } from 'src/environments/environment';
+
+declare var $: any;
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
+  encapsulation: ViewEncapsulation.None
+})
+export class HeaderComponent implements OnInit {
+  public clock: string;
+  currentDate: number = Date.now();
+  breadCrumb = [];
+
+  orgStructureUrl = (typeof localStorage.getItem('host') !== 'undefined' &&
+    localStorage.getItem('host') !== null) ? JSON.parse(localStorage.getItem('host')) : '';
+
+  userEncName = (typeof localStorage.getItem('u') !== 'undefined' &&
+    localStorage.getItem('u') !== null) ? JSON.parse(localStorage.getItem('u')) : '';
+
+  userEncPassword = (typeof localStorage.getItem('p') !== 'undefined' &&
+    localStorage.getItem('p') !== null) ? JSON.parse(localStorage.getItem('p')) : '';
+
+  employeeName = (typeof localStorage.getItem('emp_name') !== 'undefined' &&
+    localStorage.getItem('emp_name') !== null) ? JSON.parse(localStorage.getItem('emp_name')) : 'HR';
+
+  portals;
+  selectedPortal;
+  empName: string;
+
+  constructor(
+    public headerService: HeaderService,
+    public employeeAttendanceService: EmployeeAttendanceService,
+    public router: Router,
+    public activatedRoute: ActivatedRoute,
+    public authService: AuthService,
+  ) { }
+
+  ngOnInit() {
+    this.runMiniClock();
+    const link = localStorage.getItem('link');
+    this.getMenus(link);
+
+    this.headerService.getPortals()
+      .subscribe(resp => {
+        var keys = Object.keys(resp);
+        var length = keys.length;
+        var portals = [];
+
+
+        for (var i = 0; i < length; i++) {
+
+          var ipor = { link: "", name: "", group_name: "", val: "" };
+
+          ipor.link = resp[i].link;
+          ipor.name = resp[i].name;
+          ipor.group_name = resp[i].group_name;
+          ipor.val = resp[i].link + "|" + resp[i].phpurl;
+
+          portals.push(ipor);
+
+        }
+
+        this.portals = portals;
+        this.selectedPortal = localStorage.getItem('link');
+
+      });
+
+    this.employeeAttendanceService.empName$
+      .subscribe(name => {
+        this.empName = name;
+      });
+  }
+
+  // 1) Get raw menus from MySQL.
+  getMenus(link: string) {
+    this.headerService.getMenus(link)
+      .subscribe((result: Array<any>) => {
+
+        this.headerService.rawHeaderMenus.next(result);
+        this.headerService.sortedMenus();
+      });
+  }
+
+  public runMiniClock() {
+    const time = new Date();
+    let hours = 0;
+    let minutes = null;
+    let ampm = '';
+
+    setInterval(() => {
+      hours = time.getHours();
+      minutes = time.getMinutes();
+      minutes = ((minutes < 10) ? '0' : '') + minutes;
+      ampm = (hours >= 12) ? 'PM' : 'AM';
+      hours = (hours > 12) ? hours - 12 : hours;
+      hours = (hours === 0) ? 12 : hours;
+      this.clock = hours + ':' + minutes + ' ' + ampm;
+    }, 1000);
+  }
+
+  openLink(componentName: string, fileName: string, clickStatus: boolean) {
+
+    if (clickStatus) {
+      if (componentName) {
+        this.router.navigate(['/' + componentName], { relativeTo: this.activatedRoute });
+        // this.headerService.getBreadCrum();
+      }
+      if (fileName) {
+        const destinationRequest = fileName.split('/').pop();
+        const portal = (typeof localStorage.getItem('link') != 'undefined'
+          && localStorage.getItem('link') != 'null') ?
+          localStorage.getItem('link') : '';
+        const employeeId = (typeof localStorage.getItem('e_number') != 'undefined'
+          && localStorage.getItem('e_number') != 'null') ? localStorage.getItem('e_number') : '';
+        const sourceRequest = this.router.url.split('/').pop();
+
+        $('.showLoader').show();
+
+        var extraParams = "";
+        if (destinationRequest === "cempedit.php") {
+          extraParams = JSON.stringify({ "id": window.btoa('0') });
+        }
+
+        this.authService.switchSeamlessportal(destinationRequest, portal, employeeId, sourceRequest, extraParams)
+          .subscribe(data => {
+            if (data.status == '200' && data.loginId != 'false') {
+              let routingLink = environment.phpSiteUrl + "?u=" + data.loginId + "&mt=aes";
+              window.open(routingLink, '_self');
+            }
+            else {
+              alert('Something went wrong cannot proceed your request');
+            }
+          });
+      }
+    } else {
+      this.headerService.levelOne.next([]);
+      this.headerService.levelTwo.next([]);
+
+      this.headerService.levelOneActive = this.headerService.levelOneActivePrevious;
+      this.headerService.levelTwoActive = this.headerService.levelTwoActivePrevious;
+      this.headerService.levelThreeActive = this.headerService.levelThreeActivePrevious;
+
+      // Previous Recode
+      this.headerService.levelOnePrevious
+        .subscribe(subMenu => {
+          this.headerService.levelOne.next(subMenu);
+        });
+      this.headerService.levelTwoPrevious
+        .subscribe(resp => {
+          this.headerService.levelTwo.next(resp);
+        });
+
+      this.headerService.levelTwoHover = null;
+    }
+  }
+
+  selectPortal(event) {
+    const fileName = event;
+
+    if (fileName) {
+
+      var splittedFilename = fileName.split('|');
+      const destinationRequest = splittedFilename[1].split('/').pop();
+      const portal = splittedFilename[0];
+      const employeeId = (typeof localStorage.getItem('e_number') != 'undefined'
+        && localStorage.getItem('e_number') != 'null') ? localStorage.getItem('e_number') : '';
+      const sourceRequest = this.router.url.split('/').pop();
+
+      $('.showLoader').show();
+
+      var extraParams = "";
+      if (destinationRequest === "cempedit.php") {
+        extraParams = JSON.stringify({ "id": window.btoa('0') });
+      }
+
+      this.authService.switchSeamlessportal(destinationRequest, portal, employeeId, sourceRequest, extraParams)
+        .subscribe(data => {
+          if (data.status == '200' && data.loginId != 'false') {
+            let routingLink = environment.phpSiteUrl + "?u=" + data.loginId + "&mt=aes";
+            window.open(routingLink, '_self');
+          }
+          else {
+            alert('Something went wrong cannot proceed your request');
+          }
+        });
+    }
+  }
+
+  getPortalName(): string {
+    if (this.portals)
+      //return this.portals.filter(map => map.group_name === this.selectedPortal || map.link === this.selectedPortal)[0].name;
+    return '';
+  }
+
+}
+
+// ================== Steps for dynamic menus
+// 1) Get raw menus from MySQL.
+// 2) Sort raw menus.
+// 3) Get selected menu (Current Page).
+// 4) Create parent and set sub menus using sorted menus and selected menus (Current Loaded Page)

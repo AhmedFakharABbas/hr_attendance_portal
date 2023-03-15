@@ -1,0 +1,24 @@
+<div class="sec0-1">
+  <table>
+    <tr>
+      <td>Name: </td>
+      <td class="value">{{profile.name}}</td>
+    </tr>
+    <tr>
+      <td>User Name: </td>
+      <td class="value">{{profile.userName}}</td>
+    </tr>
+    <tr>
+      <td>Company: </td>
+      <td class="value">{{profile.company}}</td>
+    </tr>
+    <tr>
+      <td>Department: </td>
+      <td class="value">{{profile.department}}</td>
+    </tr>
+    <tr>
+      <td>Last Login: </td>
+      <td class="value">{{profile.lastLogin | date:'medium'}}</td>
+    </tr>
+  </table>
+</div>

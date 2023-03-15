@@ -1,0 +1,22 @@
+<div class="sec0-3">
+  <table>
+    <thead>
+      <tr>
+        <th>Description </th>
+        <th class="text-center">Pending</th>
+        <th class="text-center">Approved</th>
+        <th class="text-center">Disapproved</th>
+        <th class="text-center">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let status of applicationStatus">
+        <td> <a [routerLink]="status.link">{{status.description}}</a></td>
+        <td class="text-center"> <a [routerLink]="status.link">{{status.pending}}</a></td>
+        <td class="text-center"> <a [routerLink]="status.link">{{status.approved}}</a></td>
+        <td class="text-center"> <a [routerLink]="status.link">{{status.disapproved}}</a></td>
+        <td class="text-center"> <a [routerLink]="status.link">{{status.total}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

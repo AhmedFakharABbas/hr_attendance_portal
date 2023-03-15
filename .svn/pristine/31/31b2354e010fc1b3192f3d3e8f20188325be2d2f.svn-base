@@ -1,0 +1,108 @@
+
+.table-container table {
+  width: 100%;
+  background: #fff;
+  cellspacing: 0;
+  cellpadding: 0;
+  border: 0;
+}
+
+.table-container table thead tr th,
+.table-container table tfoot tr th {
+  color: #4d4d4d;
+}
+
+.table-container table thead {
+  background: url(../gfx/table-title.gif) repeat-x right top;
+  border-right: none;
+}
+
+.table-container table thead tr th {
+  text-align: left;
+}
+
+.table-container table thead tr th,
+.table-container table tbody td {
+  border: 1px solid #e6e6e6;
+  white-space: nowrap;
+  padding: 5px 7px 5px 7px;
+  line-height: 1.6em;
+  transition-timing-function: ease-in-out;
+  transition: 0.3s;
+  font: 12px/1.0em Verdana, Arial, Tahome;
+}
+
+.table-container table tbody td {
+  padding: 5px 7px;
+}
+
+.table-container table tbody td input {
+  display: inline-block;
+  background: url(../gfx/input-back.gif) repeat-x left top;
+  border: 1px solid #dcdcdc;
+  outline: 0;
+  padding: 2px;
+  margin: 0;
+  font: 12px/1.2em Arial;
+  width: 97%;
+  height: 15px;
+}
+
+
+.table-container table tbody td input.file {
+  display: inline-block;
+
+}
+
+.table-container table tbody td .file-btn {
+  background: url(../images/btn_browse_small.gif) no-repeat left top;
+  margin: -3px 0 0 3px;
+  cursor: pointer;
+  width: 22px !important;
+}
+
+.table-container table tbody td .file-btn input {
+  padding: 0;
+  width: 30px !important;
+  height: 22px !important;
+}
+
+.table-container table tbody td .btn-upload:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.compact-table table tbody td a {
+  font-size: 11px;
+  border: none;
+}
+
+.table-container table tbody td:first-child,
+.table-container table thead tr th:first-child {
+  text-align: left;
+}
+
+.table-container table tbody tr.even td {
+  background-color: #fafafa;
+}
+
+.table-container table thead tr th.sorting {
+  background: url(../gfx/table-sort.png) no-repeat right 9px;
+}
+
+.table-container table thead tr th.sorting_asc {
+  background: url(../gfx/table-sort.png) no-repeat right -20px;
+}
+
+.table-container table thead tr th.sorting_desc {
+  background: url(../gfx/table-sort.png) no-repeat right -52px;
+}
+
+.table-container table tbody tr.footer-row {
+  background: #fafafa;
+  font-weight: bold;
+}
+
+.table-responsive thead {
+  background: url(../../img/table-title.gif) repeat-x right top;
+}

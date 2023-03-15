@@ -1,0 +1,320 @@
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl } from "@angular/forms";
+import { decisionMakers } from "src/app/shared/models/decision_makers";
+import { EnquiryTypes } from "src/app/shared/models/enquiry-types";
+import { Investigator } from "src/app/shared/models/investigator";
+import { SharedService } from "src/app/shared/Service/shared.service";
+import { APIs } from "src/environments/environment";
+import { GrievanceService } from "../../../grievance.service";
+
+@Component({
+  selector: "app-conduct-setup",
+  templateUrl: "./conduct-setup.component.html",
+  styleUrls: ["./conduct-setup.component.css"],
+})
+export class ConductSetupComponent implements OnInit {
+  investigatorsDataArray: any = [];
+  authorities: any = [
+    {
+      authority_id: 1,
+      authority_name: "Warning",
+      field_type: "dropdown",
+      field_value: "verbal",
+      is_multiple: "no",
+    },
+    {
+      authority_id: 2,
+      authority_name: "Show Cause",
+      field_type: "dropdown",
+      field_value: "yes,no",
+      is_multiple: "no",
+    },
+    {
+      authority_id: 3,
+      authority_name: "Penalty",
+      field_type: "dropdown",
+      field_value: "yes,no",
+      is_multiple: "no",
+    },
+    {
+      authority_id: 4,
+      authority_name: "Amount",
+      field_type: "text",
+      field_value: null,
+      is_multiple: "no",
+    },
+    {
+      authority_id: 5,
+      authority_name: "Suspension",
+      field_type: "dropdown",
+      field_value: "yes,no",
+      is_multiple: "no",
+    },
+    {
+      authority_id: 6,
+      authority_name: "Suspension Type",
+      field_type: "dropdown",
+      field_value: "Suspension with pay,Presence required at Office",
+      is_multiple: "yes",
+    },
+    {
+      authority_id: 7,
+      authority_name: "Termination",
+      field_type: "dropdown",
+      field_value: "yes,no",
+      is_multiple: "no",
+    },
+  ];
+  // investigatorsDataArray: Array<Investigator>;
+  // decisionMakerArray: Array<decisionMakers>;
+  decisionMakerArray: any = [];
+  enquiryFormGrop: FormGroup;
+  allDepartments: any;
+  allDesignations: any;
+  employee_list: any;
+  constructor(
+    private grievanceService: GrievanceService,
+    private sharedService: SharedService,
+    public _cdr: ChangeDetectorRef
+  ) {}
+  data = {
+    type: "ConductEnquries",
+  };
+
+  type;
+  typeA = "iOfficer";
+  typeB = "Head/OD";
+  typeC = "recomendation";
+  ngOnInit(): void {
+    this.onGetMetaData();
+    this.enquiryTypeForm();
+    this.initializedatainArrays();
+    this.type = this.typeA;
+  }
+  onGetMetaData() {
+    //get meta data
+    this.getAllDepartments();
+    this.getAllDesiginations();
+    this.getAllEmployees();
+
+    //if employee open the screen
+  }
+  initializedatainArrays() {
+    // this.investigatorsDataArray = new Array<Investigator>();
+    //
+    this.addInvestegator();
+    this.addDecisionMaker(1, 1);
+  }
+  addInvestegator() {
+    let inex = this.investigatorsDataArray.length;
+    this.enquiryFormGrop.addControl(
+      "investigator_department_" + inex,
+      new FormControl()
+    );
+    this.enquiryFormGrop.addControl(
+      "investigator_designation_" + inex,
+      new FormControl()
+    );
+    this.enquiryFormGrop.addControl(
+      "investigator_employee_" + inex,
+      new FormControl()
+    );
+    let investigatorObj: any = {
+      a: "hi",
+      b: "abdullah",
+    };
+    this.investigatorsDataArray.push(investigatorObj);
+  }
+  addDecisionMaker(levelNo, employeeId, authorities?) {
+    let inex = this.decisionMakerArray.length;
+    this.enquiryFormGrop.addControl(
+      "decision_makers_department_" + inex,
+      new FormControl()
+    );
+    this.enquiryFormGrop.addControl(
+      "decision_makers_designation_" + inex,
+      new FormControl()
+    );
+    this.enquiryFormGrop.addControl(
+      "decision_makers_employee_" + inex,
+      new FormControl()
+    );
+    this.enquiryFormGrop.addControl(
+      "decision_makers_authority_" + inex,
+      new FormControl()
+    );
+    let decesionMakerObj: any = {
+      ddisplay: true,
+      authorities: [{ isAuthdisplay: true }],
+    };
+    this.decisionMakerArray.push(decesionMakerObj);
+  }
+  removeDecisionMaker() {
+    this.decisionMakerArray.pop();
+  }
+  addAuthority(decisionMakerIndex, authorityIndex, isLastAuthority) {
+    console.log("decisionMakerIndex", decisionMakerIndex);
+    console.log("authorityIndex", authorityIndex);
+    console.log("isLastAuthority", isLastAuthority);
+    // this.decisionMakerArray.forEach((d) => d.authorities.push({isAuthdisplay:false}));
+    this.decisionMakerArray.forEach((d) => {
+      d.ddisplay = true;
+      d.authorities.push({ isAuthdisplay: false });
+    });
+
+    let auth = authorityIndex + 1;
+    this.decisionMakerArray[decisionMakerIndex].authorities[
+      auth
+    ].isAuthdisplay = true;
+    console.log(
+      this.decisionMakerArray[decisionMakerIndex].authorities[auth]
+        .isAuthdisplay
+    );
+    // this.decisionMakerArray[decisionMakerIndex].authorities[authorityIndex+1].isAuthdisplay=true;
+    // this.decisionMakerArray[0].authorities.push(2);
+  }
+  removeAuthority(decisionMakerIndex, authorityIndex, isLastAuthority) {
+
+    // for (let i=0; i < this.decisionMakerArray.length; i++) {
+    //   console.log(this.decisionMakerArray[i]);
+    //   for (let j=0; j < this.decisionMakerArray[i].authorities.length; j++) {
+    //     // if(i==1&& j==2){
+    //     //   this.decisionMakerArray[1].authorities[2].isAuthdisplay=false;
+    //     //   this._cdr.detectChanges();
+    //     // }
+
+    //     console.log( this.decisionMakerArray[i].authorities[j])
+    //   }
+
+    // }
+    // this.decisionMakerArray[decisionMakerIndex].authorities[
+    //   authorityIndex
+    // ].isAuthdisplay = false;
+
+    // this.decisionMakerArray[decisionMakerIndex].ddisplay=false;
+    // this.decisionMakerArray.forEach((d) => d.authorities.pop());
+    // this.decisionMakerArray[0].authorities.push(2);
+
+    this.decisionMakerArray[decisionMakerIndex].authorities[authorityIndex].isAuthdisplay=false;
+    // this.decisionMakerArray[1].authorities[0].isAuthdisplay=true;
+    // this.decisionMakerArray[1].authorities[2].isAuthdisplay=true;
+
+  }
+  enquiryFormSubmit() {
+    let formObj = this.enquiryFormGrop.value;
+    let serverRequstObj: EnquiryTypes = new EnquiryTypes();
+    console.log(this.enquiryFormGrop.value);
+    // check validations
+
+    //mapping request in server formate before sending it to server
+    serverRequstObj.enquiry_type_name = formObj.enquiry_type_name;
+    serverRequstObj.legal_opinion_section =
+      formObj.legal_opinion_section == true ? "enable" : "disable";
+    serverRequstObj.provision_policy_section =
+      formObj.provision_policy_section == true ? "enable" : "disable";
+    serverRequstObj.recommendation_section =
+      formObj.recommendation_section == true ? "enable" : "disable";
+    serverRequstObj.responder_section =
+      formObj.responder_section == true ? "enable" : "disable";
+    serverRequstObj.anonymous_application =
+      formObj.anonymous_application_allowed == true ? "allow" : "disallow";
+
+    // add investigator in array
+    let investigators: Array<Investigator> = new Array<Investigator>();
+    for (let i = 0; i < this.investigatorsDataArray.length; i++) {
+      let investigatorObj: Investigator = new Investigator();
+      investigatorObj.employee_id = formObj[`investigator_employee_${i}`];
+      investigatorObj.level_no = i + 1;
+      investigators.push(investigatorObj);
+    }
+
+    // add decesion maker  in array
+    let decesionMakers: Array<decisionMakers> = new Array<decisionMakers>();
+    for (let i = 0; i < this.decisionMakerArray.length; i++) {
+      let decesionMakerObj: decisionMakers = new decisionMakers();
+      decesionMakerObj.employee_id = formObj[`decision_makers_employee_${i}`];
+      decesionMakerObj.level_no = i + 1;
+      decesionMakerObj.authorities = [7];
+      decesionMakers.push(decesionMakerObj);
+    }
+    serverRequstObj.investigators = [...investigators];
+    serverRequstObj.decision_makers = [...decesionMakers];
+
+    console.log(serverRequstObj);
+    this.submitDataServer(serverRequstObj);
+  }
+  submitDataServer(serverRequstObj) {
+    this.grievanceService
+      .saveData(
+        `http://172.16.251.161/dev-people-i/api/grievance/enquiry-types`,
+        serverRequstObj
+      )
+      .subscribe({
+        next: (res) => {
+          this.sharedService.successMessage("application created");
+        },
+        error: (error) => {
+          console.log(error);
+          this.sharedService.erroMessage("Sorry something went wrong");
+        },
+      });
+  }
+  enquiryTypeForm() {
+    this.enquiryFormGrop = new FormGroup({
+      enquiry_type_name: new FormControl(""),
+      responder_section: new FormControl(false),
+      provision_policy_section: new FormControl(false),
+      legal_opinion_section: new FormControl(false),
+      recommendation_section: new FormControl(false),
+      anonymous_application_allowed: new FormControl(true),
+      anonymous_application_not_allowed: new FormControl(false),
+    });
+  }
+  updateAnonymousCheckBox(formcontolName: string, oppositFormControl: string) {
+    this.enquiryFormGrop.get(formcontolName).value == true
+      ? this.enquiryFormGrop.get(oppositFormControl).setValue(false)
+      : this.enquiryFormGrop.get(oppositFormControl).setValue(true);
+  }
+  getAllDepartments() {
+    this.grievanceService.getData(APIs.getAllDepartments).subscribe({
+      next: (res: any) => {
+        if (res.status == 200) {
+          this.allDepartments = res.data;
+        }
+      },
+      error: (error) => {
+        this.sharedService.erroMessage("Sorry something went wrong");
+      },
+    });
+  }
+  getAllDesiginations() {
+    this.grievanceService.getData(APIs.getAllDesignations).subscribe({
+      next: (res: any) => {
+        if (res.status == 200) {
+          this.allDesignations = res.data;
+        }
+        // let serverData = res[0];
+        // this.allDepartments = serverData.Departments;
+        // this.allDesignations = serverData.Designations;
+        // this.employee_list = serverData.Employees;
+        // this.grievanceForm.patchValue(serverData.employee);
+      },
+      error: (error) => {},
+    });
+  }
+  getAllEmployees() {
+    this.grievanceService.getData(APIs.getAllEmployees).subscribe({
+      next: (res: any) => {
+        if (res.status == 200) {
+          this.employee_list = res.data;
+        }
+        // let serverData = res[0];
+        // this.allDepartments = serverData.Departments;
+        // this.allDesignations = serverData.Designations;
+        // this.employee_list = serverData.Employees;
+        // this.grievanceForm.patchValue(serverData.employee);
+      },
+      error: (error) => {},
+    });
+  }
+}

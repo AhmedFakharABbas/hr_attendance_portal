@@ -1,0 +1,125 @@
+<table class="table table-striped">
+      <thead>
+        <tr >
+          <th class="table-title" rowspan="2">Enquiry Types</th>
+          <th class="table-title" rowspan="2">Sections</th>
+          <th class="table-title" rowspan="2">Anonymous</th>
+          <th class="table-title" colspan="3">Investigator</th>
+          <th class="table-title" colspan="3">Decision Maker</th>
+        </tr>
+        <tr >
+          <th class="table-title">Level 1</th>
+          <th class="table-title">Level 2</th>
+          <th class="table-title">Level 3</th>
+          <th class="table-title">Level 1</th>
+          <th class="table-title">Level 2</th>
+          <th class="table-title">Level 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Policy Violation</td>
+          <td class="width-40">
+            Responder's response,Provision of Policy , Legal Openion fgdg ghgf
+            jack Recommendations
+          </td>
+          <td>Allowed</td>
+          <td>Salman saeed</td>
+          <td>M irfan Bhatti</td>
+          <td></td>
+          <td>Mazhar khan</td>
+          <td>Gohar Butt</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>.</td>
+        </tr>
+      </tbody>
+</table>
+

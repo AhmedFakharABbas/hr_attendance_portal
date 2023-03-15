@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12.96" height="12.96" viewBox="0 0 12.96 12.96">
+  <g id="Attachment" transform="translate(1811.821 -5323.755)">
+    <g id="Left_Arrow" data-name="Left Arrow" transform="translate(-1818 5317)">
+      <g id="attach" transform="translate(3.35 13.41) rotate(-45)">
+        <g id="Group_143" data-name="Group 143" transform="translate(2 2)">
+          <path id="Path_35" data-name="Path 35" d="M8.53.881a3.009,3.009,0,0,0-4.254,0L.628,4.532A2.15,2.15,0,1,0,3.667,7.574L7.01,4.228A1.29,1.29,0,1,0,5.187,2.4L3,4.591a.43.43,0,1,0,.608.609L5.795,3.011a.43.43,0,1,1,.608.608L3.06,6.966A1.29,1.29,0,0,1,1.236,5.14L4.883,1.489A2.15,2.15,0,0,1,7.922,4.532L4.275,8.183a.43.43,0,1,0,.608.609L8.53,5.14a3.014,3.014,0,0,0,0-4.26Z" transform="translate(0 0)" fill="#343434"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

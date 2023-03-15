@@ -1,0 +1,68 @@
+<!--<div id="loader-body" class="loading" style="width: 100%;" *ngIf="!isLoginTemplate">
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+</div>-->
+
+<div class="container" *ngIf="isLoginTemplate">
+  <div class="row">
+    <div class="login">
+      <div class="box">
+        <div class="title">
+          Please Login
+        </div>
+        <div class="content">
+          <div class="content">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="controls">
+                <label>User Name</label>
+                <div class="right">
+                  <input formControlName="email" type="text" value="" autofocus="autofocus" placeholder="Username">
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                    <div *ngIf="email.errors.required">
+                      Username is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="controls">
+                <label>Password</label>
+                <div class="right">
+                  <input formControlName="password" type="password" placeholder="Password">
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required">
+                      Password is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="controls">
+                <div class="right">
+                  <mat-checkbox>Remember Me</mat-checkbox>
+
+                  <!-- <span class="custom-checkbox">
+                      <input type="checkbox" class="checked">
+                      <label>Remember Me</label>
+                    </span> -->
+                  <br>
+                  <button id="button" type="submit">Log In</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <p>Login here to access &amp; manPe payroll related information.<br> If you have difficulty accessing your
+            account, please contact your Service Provider.</p>
+        </div>
+        <div class="footer">
+          <div id="button-list">
+            <a routerLink="/">Forgot Password</a>
+            <!--<a href="empregister.php">Employee Signup</a><a href="cregister.php">Client/HR Signup</a>-->
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>

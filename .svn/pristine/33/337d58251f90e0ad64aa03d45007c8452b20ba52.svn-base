@@ -1,0 +1,9 @@
+<table mat-table [dataSource]="datatable" matSort multiTemplateDataRows class="table-bordered">
+    <ng-container *ngFor="let disCol of colValues; let colIndex = index" matColumnDef="{{disCol['name']}}">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{disCol['name']}}</mat-header-cell>
+      <mat-cell *matCellDef="let element "> {{element[disCol['value']]}}
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columnHeader"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnHeader;"></mat-row>
+  </table>

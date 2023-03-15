@@ -1,0 +1,1150 @@
+import { Component, OnInit, Input, ChangeDetectorRef } from "@angular/core";
+import {
+  FormControl,
+  FormGroup,
+  FormGroupDirective,
+  Validators,
+} from "@angular/forms";
+import { contains, data } from "jquery";
+import { SharedService } from "src/app/shared/Service/shared.service";
+import { AttendanceService } from "../attendance.service";
+import { AttendanceCorrection } from "src/app/shared/models/attendance-correction";
+import { leaveReversal } from "src/app/shared/models/leave-reversal";
+import { ShiftChangeData } from "src/app/shared/models/shift_change";
+import { environment } from "src/environments/environment";
+import { ThrowStmt } from "@angular/compiler";
+import { CustomValidators } from "../time.validator";
+import { Observable } from "rxjs";
+import { map, startWith } from "rxjs/operators";
+@Component({
+  selector: "app-attendance-form",
+  templateUrl: "./attendance-form.component.html",
+  styleUrls: ["./attendance-form.component.css"],
+})
+export class AttendanceFormComponent implements OnInit {
+  @Input() componentType;
+  //isTesting = environment.isTesting;
+  panelOpenState = false;
+  attendanceCorrectionForm: FormGroup;
+  leaveReversalForm: any;
+  shiftChangeRequestForm: any;
+  res: AttendanceCorrection;
+  attendCorreMData: AttendanceCorrection;
+  leaveReversalMetaData: Array<leaveReversal>;
+  isEmployee: boolean;
+  //to hold the selected leave type for lm
+  selectedReversalData: leaveReversal;
+
+  uploadedFile: File;
+  employeeId: number;
+  allShiftTypes: any;
+  isSnaksBarDisplay = false;
+
+  show = false;
+  alertMessage: string;
+  isSccessMessage;
+  isWarnMessage;
+  isFailMessage;
+  fileName: any;
+  errorList: any[];
+  lmData: any;
+  file_upload_url: any;
+
+  filteredOptions: Observable<any[]>;
+  filterdReqShifts: Observable<any[]>;
+  options: any[] = [];
+  currentShiftname: any;
+  requestedShiftname: any;
+  constructor(
+    private _attendanceService: AttendanceService,
+    private _sservice: SharedService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
+
+  ngOnInit(): void {
+    this.leaveReversalMetaData = new Array<leaveReversal>();
+    //  this.setCredintials();
+    this.componentType.type == "Emp-form"
+      ? (this.isEmployee = true)
+      : (this.isEmployee = false);
+    this.attendanceCorrection();
+    this.leaveCorrection();
+    this.shiftChangeRequest();
+    this.onGetMetaData();
+    this.employeeId = +localStorage.getItem("e_number");
+
+    this._attendanceService.clickedRowData.subscribe((rowData) => {
+      //rowData.application_date
+      rowData.componentType;
+      if (rowData != "") {
+        this.getRowDataForForm(rowData);
+      }
+    });
+
+  }
+
+  getRowDataForForm(rowData) {
+    //for line manger get attendance correction and shift change data
+    if (rowData.componentType == "lm-Correction-Applicaitons") {
+      if (rowData.correction_type == "attendance_correction") {
+        //for testing purpose
+        //this.isTesting == true ? (rowData.application_date = "2021-01-30") : "";
+
+        this.getLmAttendanceCorrectionData(
+          +rowData.employee_id,
+          rowData.roster_date
+        );
+      } else if (rowData.correction_type == "shift_change") {
+        rowData.application_date;
+
+        // rowData.application_date="2021-01-30";
+        // this.isTesting == true ? (rowData.application_date = "2021-01-30") : "";
+        this.getLmShiftChangeData(+rowData.employee_id, rowData.roster_date);
+      }
+    }
+    //for HR manger get attendance correction and leave reversal data
+    else if (rowData.componentType == "hr-Correction-Applicaitons") {
+      if (rowData.correction_type == "leave_reversal") {
+        this.getLeaveReversalMetaData(rowData.employee_id, rowData, true);
+      } else if (rowData.correction_type == "attendance_correction") {
+        //rowData.application_date="2021-04-06";
+
+        // this.isTesting == true ? (rowData.application_date = "2021-01-30") : "";
+        this.getHrAttendanceCorrectionData(
+          rowData,
+          +rowData.employee_id,
+          rowData.roster_date
+        );
+      }
+    }
+  }
+  //Get meta data
+  onGetMetaData() {
+    //get employee form section start
+
+    if (this.componentType.type == "Emp-form") {
+      let employeeId = localStorage.getItem("e_number");
+      this.getLeaveReversalMetaData(employeeId, null, false);
+      this.getAllShiftsTypes();
+    } else if (this.componentType.type == "lm-form") {
+      this.getAllShiftsTypes();
+    }
+  }
+  getLeaveReversalMetaData(empId, rowData, isHr) {
+    //this.isTesting == true ? (empId = 58480) : "";
+    let data = {
+      employee_id: empId,
+    };
+    //`/attendance_correction/employee_portal/get_leave_types`,
+    //data
+
+    this._attendanceService
+      .getLRMetaData(
+        "/attendance_correction/employee_portal/get_leave_types",
+        data
+      )
+      .subscribe({
+        next: (res: any) => {
+          if (res.status == "success") {
+            this.leaveReversalMetaData = res.data;
+            isHr ? this.gethrLRMetaData(rowData) : "";
+          }
+        },
+        error: (error) => {
+          // this._sservice.erroMessage(error.message);
+          this.showErrorMessage(error.message);
+        },
+      });
+  }
+
+  //leave reversal form
+  leaveCorrection() {
+    this.leaveReversalForm = new FormGroup({
+      leave_type_id: new FormControl("", Validators.required),
+      from_date: new FormControl("", Validators.required),
+      to_date: new FormControl("", Validators.required),
+      reason: new FormControl("", {
+        validators: [Validators.required, Validators.minLength(10)],
+      }),
+      hr_comments: new FormControl("", {
+        validators: [Validators.required, Validators.minLength(10)],
+      }),
+      application_id: new FormControl(""),
+    });
+  }
+  //attendance Correction form
+  attendanceCorrection() {
+    this.attendanceCorrectionForm = new FormGroup(
+      {
+        //employee
+        employee_id: new FormControl("", Validators.required),
+        roster_date: new FormControl("", Validators.required),
+        auto_fill_time_in: new FormControl("", Validators.required),
+        auto_fill_time_out: new FormControl("", Validators.required),
+        time_in: new FormControl("", Validators.required),
+        time_out: new FormControl("", Validators.required),
+        reason: new FormControl("", {
+          validators: [Validators.required, Validators.minLength(10)],
+        }),
+
+        // lm
+        lm_date: new FormControl("", Validators.required),
+        lm_time_in: new FormControl("", Validators.required),
+        lm_time_out: new FormControl("", Validators.required),
+        lm_comments: new FormControl("", {
+          validators: [Validators.required, Validators.minLength(10)],
+        }),
+
+        //hr
+        hr_date: new FormControl("", Validators.required),
+        hr_time_in: new FormControl("", Validators.required),
+        hr_time_out: new FormControl("", Validators.required),
+        hr_comments: new FormControl("", {
+          validators: [Validators.required, Validators.minLength(10)],
+        }),
+      },
+      [
+        CustomValidators.ValidateTime("time_in", "time_out"),
+        CustomValidators.ValidateLMTime("lm_time_in", "lm_time_out"),
+        CustomValidators.ValidateHRTime("hr_time_in", "hr_time_out"),
+      ]
+    );
+  }
+  //shiftChange Request  form
+  shiftChangeRequest() {
+    this.shiftChangeRequestForm = new FormGroup({
+      shift_date: new FormControl("", Validators.required),
+
+      requested_shift: new FormControl("", Validators.required),
+      requested_shift_string: new FormControl("", Validators.required),
+
+      current_shift: new FormControl("", Validators.required),
+      current_shift_string: new FormControl("", Validators.required),
+      reason: new FormControl("", {
+        validators: [Validators.required, Validators.minLength(10)],
+      }),
+      lm_comments: new FormControl("", {
+        validators: [Validators.required, Validators.minLength(10)],
+      }),
+      shift_change_id: new FormControl("", Validators.required),
+    });
+  }
+
+  onSubmitAttendaceCorrection(formDirective: FormGroupDirective) {
+    let formdata = this.attendanceCorrectionForm.value;
+    let data = this.attendanceCorrectionForm.value;
+    //formateDate
+    if (
+      this.componentType.type == "Emp-form" &&
+      (formdata.time_in == "" ||
+        formdata.time_in == null ||
+        formdata.time_out == "" ||
+        formdata.time_out == null ||
+        this.attendanceCorrectionForm.controls["reason"].status == "INVALID" ||
+        this.attendanceCorrectionForm.controls["time_out"].status ==
+          "INVALID" ||
+        formdata.time_in == "null:00" ||
+        formdata.time_in == null ||
+        formdata.time_out == "null:00" ||
+        formdata.time_out == null)
+    ) {
+      this.attendanceCorrectionForm.markAllAsTouched();
+      return;
+    }
+    // data.time_in = data.time_in + ":00";
+    // data.time_in = data.time_in + ":00";
+    data.time_in = this._sservice.twentyFourHourTime(data.time_in);
+    data.time_out = this._sservice.twentyFourHourTime(data.time_out);
+    data.auto_fill_time_in = this._sservice.twentyFourHourTime(
+      data.auto_fill_time_in
+    );
+    data.auto_fill_time_out = this._sservice.twentyFourHourTime(
+      data.auto_fill_time_out
+    );
+    //data.time_out = data.time_out + ":00";
+
+    //set the date and client id
+    data.roster_date = this._sservice.DateFormater(data.roster_date);
+    data.client_id = localStorage.getItem("client_id");
+    data.employee_id = localStorage.getItem("e_number");
+    let url = "/attendance_correction/employee_portal/attendance_correction";
+
+    this.submitData(
+      url,
+      data,
+      this.attendanceCorrectionForm,
+      formDirective,
+      true
+    );
+  }
+
+  onSubmitLeaveReversal(formDirective: FormGroupDirective) {
+    let formData = this.leaveReversalForm.value;
+    if (
+      this.componentType.type == "Emp-form" &&
+      (formData.leave_type_id == "" ||
+        formData.leave_type_id == null ||
+        formData.reason == "" ||
+        formData.reason == null ||
+        this.leaveReversalForm.controls["reason"].status == "INVALID" ||
+        formData.from_date == "" ||
+        formData.from_date == null ||
+        formData.to_date == "" ||
+        formData.to_date == null)
+    ) {
+      this.leaveReversalForm.markAllAsTouched();
+      return;
+    }
+
+    // /employee_id
+    formData.client_id = +localStorage.getItem("client_id");
+    formData.employee_id = +localStorage.getItem("e_number");
+    formData.leave_id = this.selectedReversalData.leave_id;
+    formData.from_date = this.selectedReversalData.from_date;
+    formData.to_date = this.selectedReversalData.to_date;
+    formData.file_upload = this.uploadedFile;
+    delete formData["hr_comments"];
+    delete formData["application_id"];
+    let url = "/attendance_correction/employee_portal/leave_reversal_request";
+
+    this.submitData(
+      url,
+      formData,
+      this.leaveReversalForm,
+      formDirective,
+      false
+    );
+    formData = undefined;
+  }
+  onSubmitShiftChange(formDirective: FormGroupDirective) {
+    let formdata = this.shiftChangeRequestForm.value;
+
+    if (
+      this.componentType.type == "Emp-form" &&
+      (formdata.shift_date == "" ||
+        formdata.shift_date == undefined ||
+        formdata.requested_shift == "" ||
+        formdata.requested_shift == undefined ||
+        formdata.current_shift == "" ||
+        formdata.current_shift == undefined ||
+        this.shiftChangeRequestForm.controls["reason"].status == "INVALID")
+    ) {
+      this.shiftChangeRequestForm.markAllAsTouched();
+      return;
+    }
+
+    formdata.client_id = localStorage.getItem("client_id");
+    formdata.employee_id = localStorage.getItem("e_number");
+    let fromDate = this._sservice.DateFormater(formdata.from_date);
+    formdata.from_date = undefined;
+    formdata.from_date = fromDate;
+    formdata.shift_date = this._sservice.DateFormater(formdata.shift_date);
+
+    let toDate = this._sservice.DateFormater(formdata.to_date);
+    formdata.from_date = undefined;
+    formdata.to_date = toDate;
+    let url = "/attendance_correction/employee_portal/shift_change_request";
+
+    this.submitData(
+      url,
+      formdata,
+      this.shiftChangeRequestForm,
+      formDirective,
+      false
+    );
+    formdata = undefined;
+  }
+  //on approve or disapprove by LM HR
+  onApproveStatus(aproveStatus: number, formDirective) {
+    let data = {};
+    let url;
+    let formDatadata = this.attendanceCorrectionForm.value;
+
+    data["client_id"] = localStorage.getItem("client_id");
+    data["user_id"] = localStorage.getItem("e_number");
+    data["attendance_correction_id"] = 1;
+    if (this.componentType.type == "lm-form") {
+      if (
+        formDatadata.lm_date == "" ||
+        formDatadata.lm_date == null ||
+        formDatadata.lm_time_in == "" ||
+        formDatadata.lm_time_in == null ||
+        formDatadata.lm_time_out == "" ||
+        formDatadata.lm_time_out == null ||
+        this.attendanceCorrectionForm.controls["lm_time_out"].status ==
+          "INVALID" ||
+        this.attendanceCorrectionForm.controls["lm_comments"].status ==
+          "INVALID"
+      ) {
+        this.attendanceCorrectionForm.markAllAsTouched();
+
+        return;
+      }
+      // lm data
+      data["lm_date"] = this._sservice.DateFormater(formDatadata.lm_date);
+      data["lm_time_in"] = this._sservice.twentyFourHourTime(
+        formDatadata.lm_time_in
+      );
+      data["lm_time_out"] = this._sservice.twentyFourHourTime(
+        formDatadata.lm_time_out
+      );
+      data["lm_comments"] = formDatadata.lm_comments;
+      data["lm_status"] = aproveStatus;
+      data["attendance_correction_id"] =
+        this.attendCorreMData.attendance_correction_id;
+      url = "/attendance_correction/lm_portal/attendance_correction_remarks";
+      this.submitData(
+        url,
+        data,
+        this.attendanceCorrectionForm,
+        formDirective,
+        true
+      );
+    } else if (this.componentType.type == "hr-form") {
+      if (
+        formDatadata.hr_date == "" ||
+        formDatadata.hr_date == null ||
+        formDatadata.hr_time_in == "" ||
+        formDatadata.hr_time_in == null ||
+        formDatadata.hr_time_out == "" ||
+        formDatadata.hr_time_out == null ||
+        this.attendanceCorrectionForm.controls["hr_time_out"].status ==
+          "INVALID" ||
+        this.attendanceCorrectionForm.controls["hr_comments"].status ==
+          "INVALID"
+      ) {
+        this.attendanceCorrectionForm.markAllAsTouched();
+
+        return;
+      }
+      // lm data for hr
+      // data["lm_date"] = this.DateFormater(formDatadata.lm_date);
+      // data["lm_time_in"] = this.twentyFourHourTime(formDatadata.lm_time_in);
+      // data["lm_time_out"] = this.twentyFourHourTime(formDatadata.lm_time_out);
+      // data["lm_comments"] = formDatadata.lm_comments;
+      // data["lm_status"] = this.attendCorreMData.lm_status;
+      data["attendance_correction_id"] =
+        this.attendCorreMData.attendance_correction_id;
+      //hr data
+      data["hr_date"] = this._sservice.DateFormater(formDatadata.hr_date);
+      data["hr_time_in"] = this._sservice.twentyFourHourTime(
+        formDatadata.hr_time_in
+      );
+      data["hr_time_out"] = this._sservice.twentyFourHourTime(
+        formDatadata.hr_time_out
+      );
+      data["hr_comments"] = formDatadata.hr_comments;
+      data["hr_status"] = aproveStatus;
+      url = "/attendance_correction/hr_portal/attendance_correction_remarks";
+      this.submitData(
+        url,
+        data,
+        this.attendanceCorrectionForm,
+        formDirective,
+        true
+      );
+    }
+  }
+  //on leave reversal approve or dis approve by human resource
+  onHrLRApproveStatus(aproveStatus: number, formDirective) {
+    let data: any = {};
+    let url;
+    let formDatadata = this.leaveReversalForm.value;
+    data["client_id"] = +localStorage.getItem("client_id");
+    data["hr_id"] = +localStorage.getItem("e_number");
+    data["hr_status"] = aproveStatus;
+
+    if (
+      formDatadata.from_date == "" ||
+      formDatadata.to_date == "" ||
+      formDatadata.hr_comments == "" ||
+      formDatadata.leave_type_id == "" ||
+      this.leaveReversalForm.controls["hr_comments"].status == "INVALID"
+    ) {
+      //  this._sservice.warningMessage("unvalid data");
+      // this.showWarnMessge("unvalid data");
+      // this.showWarnMessge("All input fields are required.");
+      this.leaveReversalForm.markAllAsTouched();
+      return;
+    }
+    data["hr_comments"] = formDatadata.hr_comments;
+    data["application_id"] = formDatadata.application_id;
+
+    url = "/attendance_correction/hr_portal/leave_reversal_remarks";
+    this.submitData(url, data, this.leaveReversalForm, formDirective, false);
+  }
+  //on shift change approve or dis approve by line manager
+  onLMAppveStatus(aproveStatus: number, formDirective) {
+    let data = {};
+    let url;
+    let formDatadata = this.shiftChangeRequestForm.value;
+
+    data["client_id"] = localStorage.getItem("client_id");
+    data["user_id"] = +localStorage.getItem("e_number");
+    data["lm_status"] = aproveStatus;
+
+    if (
+      formDatadata.shift_date == "" ||
+      formDatadata.shift_date == undefined ||
+      formDatadata.requested_shift == "" ||
+      formDatadata.requested_shift == undefined ||
+      formDatadata.current_shift == "" ||
+      formDatadata.current_shift == undefined ||
+      formDatadata.reason == "" ||
+      formDatadata.reason == undefined ||
+      this.shiftChangeRequestForm.controls["lm_comments"].status == "INVALID"
+    ) {
+      // this._sservice.warningMessage("unvalid data");
+
+      this.shiftChangeRequestForm.markAllAsTouched();
+      // this.showWarnMessge("All input fields are required.");
+      return;
+    }
+
+    data["shift_change_id"] = formDatadata.shift_change_id;
+    data["lm_comments"] = formDatadata.lm_comments;
+    url = "/attendance_correction/lm_portal/shift_change_remarks";
+    this.submitData(
+      url,
+      data,
+      this.shiftChangeRequestForm,
+      formDirective,
+      true
+    );
+  }
+  submitData(url, data, form, formDirective, isattendanceForm: Boolean) {
+    // for (var pair of formData.entries()) {
+    //   console.log(pair[0] + ", " + pair[1]);
+    // } ,url,form,formDirective
+    // console.log(data)
+    if (
+      url == "/attendance_correction/employee_portal/leave_reversal_request"
+    ) {
+      let formData = new FormData();
+      for (var key in data) {
+        formData.append(key, data[key]);
+      }
+      this._attendanceService.postFormDataSubmit(url, formData).subscribe({
+        next: (res) => {
+          if (isattendanceForm == true) {
+            this.attendanceCorrection();
+            this.lmData = undefined;
+          }
+          if (res.message == "The given data is invalid.") {
+            this.perepareErrorMessage(res);
+            form.reset();
+            formDirective.resetForm();
+            return;
+          }
+
+          this._attendanceService.setPostRequestData(url);
+          res.message == "This application already exists." ||
+          res.message == "Attendance Correction Application already Approved"
+            ? this.showWarnMessge(res.message)
+            : this.showSuccessMessge(res.message);
+          //this._sservice.successMessage(res.message);
+          if (isattendanceForm == true) {
+            this.attendanceCorrection();
+            this.lmData = undefined;
+          }
+          form.reset();
+          formDirective.resetForm();
+          this.uploadedFile = undefined;
+          this.fileName = undefined;
+          this.file_upload_url = undefined;
+        },
+        error: (error) => {
+          this.showErrorMessage(error.message);
+        },
+      });
+    } else {
+      this._attendanceService.postSubmit(url, data).subscribe({
+        next: (res) => {
+          if (isattendanceForm == true) {
+            this.attendanceCorrection();
+            this.lmData = undefined;
+          }
+          if (res.message == "The given data is invalid.") {
+            this.perepareErrorMessage(res);
+            form.reset();
+            formDirective.resetForm();
+            return;
+          }
+
+          this._attendanceService.setPostRequestData(url);
+          res.message == "This application already exists." ||
+          res.message == "Attendance Correction Application already Approved"
+            ? this.showWarnMessge(res.message)
+            : this.showSuccessMessge(res.message);
+          //this._sservice.successMessage(res.message);
+          form.reset();
+          formDirective.resetForm();
+          this.uploadedFile = undefined;
+          this.fileName = undefined;
+          // this.onGetMetaData();
+        },
+        error: (error) => {
+          this.showErrorMessage(error.message);
+        },
+      });
+    }
+  }
+
+  //on file upload
+  onLeaveReversalFileUpload(event) {
+    this.uploadedFile = undefined;
+    if (event.target.files.length > 0) {
+      this.uploadedFile = event.target.files[0];
+      this.fileName = this.uploadedFile.name;
+    }
+  }
+  //to  get atend Correction MetaData if it is not availabl.
+  getEmpAttendanceCorrectionData(id, date) {
+    if (this.attendCorreMData == undefined) {
+      this._attendanceService
+        .getAttendMetaData(
+          `/attendance_correction/employee_portal/get_roster_details?employee_id=${id}&roster_date=${date}`
+        )
+        .subscribe({
+          next: (res: any) => {
+            if (res.status == "success") {
+              this.attendCorreMData = res.data;
+
+              this.attendCorreMData.auto_fill_time_in =
+                this._sservice.twelveHourTime(res.data.time_in);
+              this.attendCorreMData.time_in = "";
+              this.attendCorreMData.auto_fill_time_out =
+                this._sservice.twelveHourTime(res.data.time_out);
+              this.attendCorreMData.time_out = "";
+              this.attendanceCorrectionForm.reset();
+              this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+
+              // this._sservice.successMessage(res.message);
+              this.showSuccessMessge(res.message);
+            } else {
+              this.showWarnMessge(res.message);
+              // this._sservice.warningMessage(res.message)
+              // this._sservice.warningMessage(res.message);
+            }
+          },
+          error: (error) => {
+            // this._sservice.erroMessage(error.message);
+            this.showErrorMessage(error.message);
+          },
+        });
+    } else {
+      this.attendanceCorrectionForm.reset();
+      this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+    }
+  }
+  //to get attendance lm metadata
+  getLmAttendanceCorrectionData(id, date) {
+    // if (this.attendCorreMData == undefined) {
+    this._attendanceService
+      .getAttendMetaData(
+        `/attendance_correction/lm_portal/get_employee_attendance_correction?employee_id=${id}&roster_date=${date}`
+      )
+      .subscribe({
+        next: (res: any) => {
+          if (res.status == "success") {
+            this.attendCorreMData = undefined;
+
+            let Empdata: AttendanceCorrection =
+              res.data.attendance_correction_data;
+            //Empdata.auto_fill_time_in = Empdata.time_in;
+            Empdata.auto_fill_time_in = this._sservice.twelveHourTime(
+              Empdata.time_in
+            );
+            Empdata.time_in = undefined;
+            // Empdata.auto_fill_time_out = Empdata.time_out;
+            Empdata.auto_fill_time_out = this._sservice.twelveHourTime(
+              Empdata.time_out
+            );
+            Empdata.time_out = undefined;
+            Empdata.employee_id = id;
+            Empdata.reason = res.data.attendance_correction_data.brief_reason;
+            Empdata.lm_date = res.data.attendance_correction_data.roster_date;
+            this.attendCorreMData = Empdata;
+            // patch value with formate
+            this.attendanceCorrectionForm.reset();
+            this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            // this._sservice.successMessage(res.message);
+            this.showSuccessMessge(res.message);
+          } else {
+            this.attendCorreMData = undefined;
+            this.attendanceCorrectionForm.reset();
+            // this._sservice.warningMessage(res.message);
+            this.showWarnMessge(res.message);
+          }
+        },
+        error: (error) => {
+          //this._sservice.erroMessage(error.message);
+          this.showErrorMessage(error.message);
+        },
+      });
+    // }
+    //  else {
+    //   this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+    // }
+  }
+  //to get shift change  for lm of any employee
+  getLmShiftChangeData(id, date) {
+    // if (this.attendCorreMData == undefined) {
+    this._attendanceService
+      .getAttendMetaData(
+        `/attendance_correction/lm_portal/get_employee_attendance_correction?employee_id=${id}&roster_date=${date}`
+      )
+      .subscribe({
+        next: (res: any) => {
+          if (res.status == "success") {
+            let shiftChangeData: ShiftChangeData;
+            let data = res.data.shift_change_data;
+            data.shift_date = date;
+            data.reason = data.brief_reason;
+            data.requested_shift = data.requested_shift_id;
+            data.current_shift = data.current_shift_id;
+            data.current_shift_string= data.current_shift_type;
+            data.requested_shift_string= data.requested_shift_type;
+            data.shift_change_id = res.data.shift_change_data.shift_change_id;
+            this.shiftChangeRequestForm.patchValue(data);
+            //this._sservice.successMessage(res.message);
+            window.scrollTo({ top: 150, behavior: "smooth" });
+            this.showSuccessMessge(res.message);
+          } else {
+            this.attendCorreMData = undefined;
+            this.attendanceCorrectionForm.reset();
+            // this._sservice.warningMessage(res.message);
+            this.showWarnMessge(res.message);
+          }
+        },
+        error: (error) => {
+          // this._sservice.erroMessage(error.message);
+          this.showErrorMessage(error.message);
+        },
+      });
+    // }
+    //  else {
+    //   this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+    // }
+  }
+  // to get Hr attendance metadata
+  getHrAttendanceCorrectionData(rowData, id, date) {
+    let data: any = {};
+    data.employee_id = id;
+    data.roster_date = date;
+    // if (this.attendCorreMData == undefined) {
+    this._attendanceService
+      .getAttendMetaData(
+        `/attendance_correction/hr_portal/get_employee_lm_remarks`,
+        data
+      )
+      .subscribe({
+        next: (res: any) => {
+          if (res.status == "success") {
+            this.attendanceCorrectionForm.reset();
+            this.attendCorreMData = undefined;
+            this.lmData = undefined;
+            let Empdata: any = {};
+            let resData = res.data.employee_data;
+            this.lmData = res.data.lm_data;
+            //Emp Data
+            Empdata.roster_date = resData.roster_date;
+            Empdata.auto_fill_time_in = this._sservice.twelveHourTime(
+              resData.emp_time_in
+            );
+            Empdata.auto_fill_time_out = this._sservice.twelveHourTime(
+              resData.emp_time_out
+            );
+
+            Empdata.employee_id = resData.employee_id;
+            Empdata.reason = resData.emp_brief_reason;
+            Empdata.attendance_correction_id = rowData.application_id;
+
+            //Lm data binding portion start here
+            let i = 0;
+            for (let x of this.lmData) {
+              let time_in = this._sservice.twelveHourTime(
+                x.lm_time_in.split(" ").pop()
+              );
+              let time_out = this._sservice.twelveHourTime(
+                x.lm_time_out.split(" ").pop()
+              );
+
+              let timeInFormControl = "lm_time_in_" + i;
+              this.attendanceCorrectionForm.addControl(
+                timeInFormControl,
+                new FormControl(time_in, Validators.required)
+              );
+              let timeOutFormControl = "lm_time_out_" + i;
+              this.attendanceCorrectionForm.addControl(
+                timeOutFormControl,
+                new FormControl(time_out, Validators.required)
+              );
+
+              this.attendanceCorrectionForm.addControl(
+                "lm_comments_" + i,
+                new FormControl(x.lm_comments, Validators.required)
+              );
+              i++;
+            }
+
+            // Empdata.lm_date = this.lmData.lm_time_in.split(" ").shift();
+
+            /*
+
+            Empdata.lm_time_out = this._sservice.twelveHourTime(
+              lmData.lm_time_out.split(" ").pop()
+            );
+            Empdata.lm_comments = lmData.lm_comments;
+            Empdata.lm_status = rowData.lm_status;
+            */
+            //Lm data binding portion Ends here
+            Empdata.lm_date = rowData.roster_date;
+            Empdata.hr_date = rowData.roster_date;
+            // // patch value with formate
+            this.attendCorreMData = Empdata;
+
+            this.attendanceCorrectionForm.patchValue(Empdata);
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            //this._sservice.successMessage(res.message);
+            this.showSuccessMessge(res.message);
+          } else {
+            this.attendCorreMData = undefined;
+            this.attendanceCorrectionForm.reset();
+            // this._sservice.warningMessage(res.message);
+            this.showWarnMessge(res.message);
+          }
+        },
+        error: (error) => {
+          // this._sservice.erroMessage(error.message);
+          this.showErrorMessage(error.message);
+        },
+      });
+    // }
+    //  else {
+    //   this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+    // }
+  }
+  // to get Hr leave reversal metadata
+  gethrLRMetaData(rowData) {
+    let data: any = {};
+    //correct approch
+
+    data.employee_id = rowData.employee_id;
+    data.leave_type_id = this.leaveReversalMetaData[0].leave_type_id;
+    data.date = rowData.leave_date;
+    //let application_id=rowData.application_id;
+    //
+
+    //for test approch start
+    // if (this.isTesting == true) {
+    //   data.employee_id = 17275;
+    //   data.from_date = "2022-05-12";
+    //   data.leave_type_id = 2;
+    //   data.date = "2021-07-13";
+    // }
+    //test approch end
+    // if (this.attendCorreMData == undefined) {
+    //  '/attendance_correction/get_application_details?application_id=103'
+    // `/attendance_correction/hr_portal/get_leave_reversal_application`
+    this._attendanceService
+      .getLRMetaData(
+        `/attendance_correction/get_application_details?application_id=${rowData.application_id}`
+      )
+      .subscribe({
+        next: (res: any) => {
+          let resData = res.data.emp_details;
+
+          let data: any = {};
+          data.from_date = resData.employee_from_date;
+          data.to_date = resData.employee_to_date;
+          data.leave_type_id = resData.leave_type_id;
+
+          data.reason = resData.brief_reason_employee;
+          data.application_id = rowData.application_id;
+          this.file_upload_url = resData.file_upload;
+          this.leaveReversalForm.patchValue(data);
+          window.scrollTo({ top: 280, behavior: "smooth" });
+
+          this.showSuccessMessge(res.message);
+          /*
+          if (res.status == "success") {
+
+            if (res.data != undefined) {
+              let data: any = {};
+              data.from_date = "2022-05-12";
+              data.to_date = "2022-05-12";
+              data.leave_type_id = 2;
+              console.log(res.data.file_upload)
+              data.reason = res.data.emp_brief_reason;
+              data.application_id = rowData.application_id;
+              this.leaveReversalForm.patchValue(data);
+              window.scrollTo({ top: 280, behavior: "smooth" });
+            }
+
+            //this._sservice.successMessage(res.message);
+            this.showSuccessMessge(res.message);
+          } else {
+            this.attendCorreMData = undefined;
+            this.attendanceCorrectionForm.reset();
+            // this._sservice.warningMessage(res.message);
+            this.showWarnMessge(res.message);
+          }
+    */
+        },
+        error: (error) => {
+          // this._sservice.erroMessage(error.message);
+          this.showErrorMessage(error.message);
+        },
+      });
+    // }
+    //  else {
+    //   this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+    // }
+  }
+  //handle date change  event for employee
+  onRosterDateChange() {
+    if (this.componentType.type == "Emp-form") {
+      if (this.attendanceCorrectionForm.value.roster_date != null) {
+        let date = this._sservice.DateFormater(
+          this.attendanceCorrectionForm.value.roster_date
+        );
+        this.attendCorreMData = undefined;
+        this.getEmpAttendanceCorrectionData(this.employeeId, date);
+
+        //this.componentType=='emp-form'?this.getEmpAttendanceCorrectionData(this.employeeId,date):'';
+      }
+    } else {
+      return;
+    }
+  }
+  //to get shift date for employee when he  select the date
+  onShiftDateChange() {
+    // $(".alert").alert('close')
+    // $
+
+    if (this.shiftChangeRequestForm.value.shift_date != null) {
+      let date = this._sservice.DateFormater(
+        this.shiftChangeRequestForm.value.shift_date
+      );
+      this.getEmpShiftChangeData(this.employeeId, date);
+      //this.getEmpAttendanceCorrectionData(this.employeeId, date);
+      //this.componentType=='emp-form'?this.getEmpAttendanceCorrectionData(this.employeeId,date):'';
+    }
+  }
+  //on select leave type for employee
+  onSelectLeaveType(event) {
+    this.selectedReversalData = undefined;
+    if (this.componentType.type == "Emp-form") {
+      let leaveType = this.leaveReversalMetaData.filter(
+        (leave) => leave.leave_type_id == event.value
+      )[0];
+      let leaveReversalData: any = {};
+      //this.DateFormater()
+      //let Fromdate =this.DateFormater(leaveType.from_date)
+      //leaveReversalData.from_date = leaveType.from_date;
+      // leaveReversalData.to_date = leaveType.to_date;
+
+      this.selectedReversalData = leaveType;
+
+      //to patch the exact day on date picker increse the day by on
+      let fromDate = new Date(leaveType.from_date);
+      let year = fromDate.getFullYear();
+      let date = this._sservice.numberFormater(fromDate.getDate() + 2);
+      let month = this._sservice.numberFormater(fromDate.getMonth() + 1);
+      let fromDateformated = `${year}-${month}-${date}`;
+      //to patch the exact day on date picker increse the day by on
+      let toDate = new Date(leaveType.to_date);
+      let toYear = toDate.getFullYear();
+      let toDay = this._sservice.numberFormater(toDate.getDate() + 2);
+      let toMonth = this._sservice.numberFormater(toDate.getMonth() + 1);
+      let toDateformated = `${toYear}-${toMonth}-${toDay}`;
+
+      leaveReversalData.from_date = fromDateformated;
+      leaveReversalData.to_date = toDateformated;
+
+      this.leaveReversalForm.patchValue(leaveReversalData);
+    } else {
+      return;
+    }
+  }
+  getEmpShiftChangeData(id, date) {
+    let data: any = {};
+    data.employee_id = id;
+    data.shift_date = date;
+    this._attendanceService
+      .getShiftMData(
+        `/attendance_correction/employee_portal/get_shift_details`,
+        data
+      )
+      .subscribe({
+        next: (res: any) => {
+          if (res.status == "success") {
+            data.current_shift = res.data[0].current_shift;
+            data.current_shift_string= res.data[0].shift_name;
+            this.currentShiftname= res.data[0].shift_name;
+            this.shiftChangeRequestForm.patchValue(data);
+            //this._sservice.successMessage(res.message);
+            this.showSuccessMessge(res.message);
+          } else {
+            this.attendCorreMData = undefined;
+            this.attendanceCorrectionForm.reset();
+            // this._sservice.warningMessage(res.message);
+            this.showWarnMessge(res.message);
+          }
+        },
+        error: (error) => {
+          // this._sservice.erroMessage(error.message);
+          this.showErrorMessage(error.message);
+        },
+      });
+    // }
+    //  else {
+    //   this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+    // }
+  }
+  getAllShiftsTypes() {
+    // if (this.attendCorreMData == undefined) {
+    this._attendanceService
+      .getShiftMData(`/attendance_correction/employee_portal/get_shift_types`)
+      .subscribe({
+        next: (res: any) => {
+          if (res.status == "pass") {
+            this.allShiftTypes = res.data;
+            this.options = res.data;
+
+            this.filteredOptions = this.shiftChangeRequestForm.controls[
+              "current_shift_string"
+            ].valueChanges.pipe(
+              startWith(""),
+
+              map((value) => this._filter(value || ""))
+            );
+
+            this.filterdReqShifts = this.shiftChangeRequestForm.controls[
+              "requested_shift_string"
+            ].valueChanges.pipe(
+              startWith(""),
+
+              map((value) => this._filter(value || ""))
+            );
+          }
+        },
+        error: (error) => {
+          // this._sservice.erroMessage(error.message);
+          this.showErrorMessage(error.message);
+        },
+      });
+    // }
+    //  else {
+    //   this.attendanceCorrectionForm.patchValue(this.attendCorreMData);
+    // }
+  }
+
+  // setCredintials(){
+  //   if(this.componentType.type == "Emp-form"){
+  //     this._attendanceService.empLogin()
+  //   }else if(this.componentType.type == "lm-form"){
+  //     this._attendanceService.lmLogin()
+  //   }
+  //   else if(this.componentType.type == "hr-form"){
+  //     this._attendanceService.hrLogin()
+  //   }
+  // }
+  private _filter(value: any): any[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter((option) =>
+      option.name.toLowerCase().includes(filterValue)
+    );
+  }
+
+  showSuccessMessge(message) {
+    this.isSccessMessage = true;
+    this.alertMessage = message;
+    this.isSnaksBarDisplay = true;
+    this.isWarnMessage = false;
+    this.isFailMessage = false;
+    setTimeout(() => {
+      this.isSnaksBarDisplay = false;
+      this.isSccessMessage = false;
+    }, 4000);
+  }
+  showErrorMessage(message) {
+    this.isSccessMessage = false;
+    this.alertMessage = message;
+    this.isSnaksBarDisplay = true;
+    this.isWarnMessage = false;
+    this.isFailMessage = true;
+    setTimeout(() => {
+      this.isSnaksBarDisplay = false;
+      this.isFailMessage = false;
+    }, 4000);
+  }
+  showWarnMessge(message) {
+    this.isSccessMessage = false;
+    this.alertMessage = message;
+    this.isSnaksBarDisplay = true;
+    this.isWarnMessage = true;
+    this.isFailMessage = false;
+    setTimeout(() => {
+      this.isSnaksBarDisplay = false;
+      this.isWarnMessage = false;
+    }, 4000);
+  }
+  perepareErrorMessage(res) {
+    this.errorList = [];
+    let errorkeys = Object.keys(res.error);
+
+    errorkeys.forEach((key: any) => {
+      let subkey = Object.keys(res.error[key]);
+
+      subkey.forEach((skey: any) => {
+        this.errorList.push(res.error[key][skey]);
+      });
+    });
+
+    this.showErrorMessage("no");
+  }
+  openFile() {
+    window.open(this.file_upload_url);
+  }
+  currentshiftclick(shift) {
+    this.shiftChangeRequestForm.controls["current_shift"].setValue(
+      shift.shift_id
+    );
+    this.currentShiftname = shift.name;
+  }
+  currentShiftChange() {
+    let currentshiftName =
+      this.shiftChangeRequestForm.value.current_shift_string;
+    if (
+      (currentshiftName == "" ||
+        currentshiftName == " " ||
+        currentshiftName != this.currentShiftname) &&
+      this.currentShiftname != undefined
+    ) {
+      this.shiftChangeRequestForm.controls["current_shift"].setValue("");
+    }
+  }
+  requestedShiftChange() {
+    let requestedshiftName =
+      this.shiftChangeRequestForm.value.current_shift_string;
+    if (
+      (requestedshiftName == "" ||
+        requestedshiftName == " " ||
+        requestedshiftName != this.requestedShiftname) &&
+      this.requestedShiftname != undefined
+    ) {
+      this.shiftChangeRequestForm.controls["requested_shift"].setValue("");
+    }
+  }
+  reqShiftclick(shift) {
+    this.shiftChangeRequestForm.controls["requested_shift"].setValue(
+      shift.shift_id
+    );
+    this.requestedShiftname = shift.name;
+  }
+}

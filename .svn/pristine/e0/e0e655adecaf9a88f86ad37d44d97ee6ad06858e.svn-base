@@ -1,0 +1,14 @@
+<div class="portal-container">
+  <h4 class="people-title-heading">Portals</h4>
+  <p>Please select the portal you wish to access:</p>
+  <div class="portal-content">
+    <a (click)="setStorage(portal.link)" [href]="portal.link" *ngFor="let portal of portals"
+      [class.disabled]="!portal.status">
+      <img src="../../../../../assets/portals/{{portal.img}}" [alt]="portal.name">
+      <div class="d-inline-block">
+        <div class="portal-title"> {{portal.name}} </div>
+        <p>{{portal.description}}</p>
+      </div>
+    </a>
+  </div>
+</div>

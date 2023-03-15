@@ -1,0 +1,148 @@
+import { Component, OnInit, Input } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { GrievanceService } from "../grievance.service";
+import { SharedService } from "../../../shared/Service/shared.service";
+import { Observable } from "rxjs/internal/Observable";
+import { map, startWith } from "rxjs/operators";
+@Component({
+  selector: "app-grievance-form",
+  templateUrl: "./grievance-form.component.html",
+  styleUrls: ["./grievance-form.component.css"],
+})
+export class GrievanceFormComponent implements OnInit {
+  @Input() applicationType;
+  grievanceForm: any;
+  allDepartments: any;
+  allDesignations: any;
+  myControl = new FormControl("");
+  options: string[] = ["One", "Two", "Three"];
+  filteredOptions: Observable<string[]>;
+  employee_list: any;
+  isAudioStatement = false;
+  isWrittenStatement = false;
+  isVideoStatement = false;
+  isPicture = false;
+  constructor(
+    private _grievanceService: GrievanceService,
+    private _sservice: SharedService
+  ) {}
+
+  ngOnInit(): void {
+    // this.filteredOptions = this.myControl.valueChanges.pipe(
+    //   startWith(''),
+    //   map(value => this._filter(value || '')),
+    // );
+    this.applicationType.ComponenttypeId;
+    this.loadGrievanceForm();
+    // console.log(this.applicationType);
+    this.onGetMetaData();
+  }
+
+  // load form
+  loadGrievanceForm() {
+    this.grievanceForm = new FormGroup({
+      employee_name: new FormControl("", Validators.required),
+      issue_type_id: new FormControl("", Validators.required),
+      grievance_against_id: new FormControl("", Validators.required),
+      department_id: new FormControl("", Validators.required),
+      designation_id: new FormControl("", Validators.required),
+      target_type_id: new FormControl("", Validators.required),
+      against_department: new FormControl("", Validators.required),
+      against_designation: new FormControl("", Validators.required),
+      statement: new FormControl("", Validators.required),
+      from: new FormControl(""),
+      to: new FormControl(""),
+    });
+  }
+  //  on SaveDraft
+  onSaveDraft() {
+    let formData = this.grievanceForm.value;
+    formData.from = this._sservice.DateFormater(formData.from);
+    formData.to = this._sservice.DateFormater(formData.to);
+    console.log(formData);
+  }
+
+  //  on SaveDraft
+  onSendToLM() {
+    let formData = this.grievanceForm.value;
+    formData.from = this._sservice.DateFormater(formData.from);
+    formData.to = this._sservice.DateFormater(formData.to);
+    console.log(formData);
+    console.log(this.myControl);
+  }
+  //  on SaveDraft
+  onSendToHR() {
+    let formData = this.grievanceForm.value;
+    formData.from = this._sservice.DateFormater(formData.from);
+    formData.to = this._sservice.DateFormater(formData.to);
+    console.log(formData);
+  }
+  // file upload
+  fileUpload(event) {
+    console.log(event.target.files);
+    console.log(event);
+  }
+  //Get meta data
+  onGetMetaData() {
+    //get employee form section start
+
+    if (this.applicationType.type == "Emp-portal") {
+      this.getEmpFormData("/get_emp_portal_meta_data");
+    }
+  }
+  getEmpFormData(url) {
+    //to get data for  emp portal form
+    this._grievanceService.getData(url).subscribe({
+      next: (res: any) => {
+        console.log(res);
+        let serverData = res[0];
+        this.allDepartments = serverData.Departments;
+        this.allDesignations = serverData.Designations;
+        this.employee_list = serverData.Employees;
+        this.grievanceForm.patchValue(serverData.employee);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
+  }
+  onChangeAudio(event) {
+    if (event.checked == true) {
+      this.isAudioStatement = true;
+      this.isPicture = false;
+      this.isVideoStatement = false;
+      this.isWrittenStatement = false;
+    }
+  }
+  onChangeVideoStatement(event) {
+    if (event.checked == true) {
+      this.isVideoStatement = true;
+      this.isPicture = false;
+      this.isAudioStatement = false;
+      this.isWrittenStatement = false;
+    }
+  }
+  onChangePicture(event) {
+    if (event.checked == true) {
+      this.isPicture = true;
+      this.isAudioStatement = false;
+      this.isVideoStatement = false;
+      this.isWrittenStatement = false;
+    }
+  }
+  onChangeWrittenStatement(event) {
+    if (event.checked == true) {
+      this.isWrittenStatement = true;
+      this.isAudioStatement = false;
+      this.isVideoStatement = false;
+      this.isPicture = false;
+    }
+  }
+}

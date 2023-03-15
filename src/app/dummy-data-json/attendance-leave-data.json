@@ -1,0 +1,92 @@
+{
+  "employmentTypeList": [
+    { "Id": 1, "Value": "Permanent" },
+    { "Id": 2, "Value": "Outsourced"},
+    { "Id": 3, "Value": "Contractual"},
+    { "Id": 4, "Value": "Consultant"}
+  ],
+  "yearList": [
+    { "Id": 1, "Value": 2023},
+    { "Id": 2, "Value": 2022},
+    { "Id": 3, "Value": 2021},
+    { "Id": 4, "Value": 2020}
+  ],
+  "eligibiltyFromList":[
+    {"Id":1, "Value": "From DOJ"}
+  ],
+  "entitlementClanderList":[
+    {"Id":1, "Value": "Calendar Days"}
+  ],
+  "attendanceTypeList":[
+    {"Id":1, "Value": "Mobile App"},
+    {"Id":2, "Value": "Manual"}
+  ],
+  "workingWeekDaysList":[
+    {"Id":1, "Value": "Mon-Sat"},
+    {"Id":2, "Value": "Mon-Thu"},
+    {"Id":3, "Value": "Friday"},
+    {"Id":4, "Value": "Saturday"}
+  ],
+  "leaveEncashmentTypeList":[
+    {"Id":1, "Value": "At Year End"},
+    {"Id":2, "Value": "On Resignation"}
+  ],
+  "shiftName2List":[
+    {"Id":1, "Value": "Part Time"},
+    {"Id":2, "Value": "Full Time"}
+  ],
+  "leavesOfferData":[
+    {"leaveType": "Annual Leave", "full": true, "short": false, "half": true, "entitlementDays": 21, "entitlementClanderDays": 1, "eligibiltyCount": 1, "eligibiltyYear": 4, "eligibiltyFrom": 1, "employmentType": 1, "carryforward": 12, "earned": true, "proRated": false, "encashment": false, "comments": "Employees cannot apply less than 4 leavse at a time."}
+  ],
+  "leaveAuthorizationData":[
+    {"lmApproval": true, "lmApprovalCount": 2, "hrApproval": true, "hrApprovalCount": 1, "ceoApproval": false}
+  ],
+  "leaveAuthorizationComment": "2 Multi level LM approval provide for leave authorization.",
+  "markAttendanceData":[
+    {"employmentType": 1, "attendanceType":1,"name": "People-i"}
+  ],
+  "markAttendanceComment": "Employees mark their attendance using our mobile app.",
+  "workingWeekDays":1 , "workingStartTime": "9:00 AM", "workingEndTime": "5:30 PM",
+  "midBreakData":[
+    {"weekDays": 2, "startTime": "1:00 PM", "endTime": "2:00 PM"}
+  ],
+  "quarterBreakData":[
+    {"weekDays": 3, "startTime": "12:30 PM", "endTime": "2:30 PM"}
+  ],
+  "halfBreakData":[
+    {"weekDays": 4, "startTime": "2:30 PM", "endTime": "5:30 PM"}
+  ],
+  "workingComment": "No Comment",
+  "leaveEncashmentData":[
+    {"employmentType": 1, "leaveEncashmentType": 1, "comment": "Comments"},
+    {"employmentType": 2, "leaveEncashmentType": 2, "comment": "Comments"}
+  ],
+  "compensateHoursData":[
+    {"employmentType": 1, "overTimePaid": true, "compensatoryLeave": true}
+  ],
+  "compensateHoursComment": "No Comments",
+  "isWorkInShifts": true, "shiftName1": "Morning", "shiftName2": 2, "shiftTimingsStart": "9:00 AM", "shiftTimingsEnd": "5:30 PM",
+  "shiftMidBreakData":[
+    {"startTime": "1:00 PM", "endTime":"2:00 PM"}
+  ],
+  "shiftQuarterBreakData":[
+    {"title":"Tea Break","startTime": "10:00 AM", "endTime":"11:00 AM"}
+  ],
+  "lateArrivalTolerance": 10, "consecutiveLate": 3, "attendanceTolerance": 30, "shiftComment": "Employees have only 10 mins late arrival tolerance, 30 mins Attendance tolerance and 3 consecutive late.",
+  "regularConsecutiveArrivalData":[
+    {"isConsecutiveArrival": true, "consecutiveArrivalNumber1": 3, "consecutiveArrivalNumber2": 10}
+  ],
+  "regularLateArrivalData":[
+    {"isLateArrival": true, "lateArrivalNumber1": 1, "lateArrivalNumber2": 30}
+  ],
+  "lateArrivalRegularLWOP1": true, "lateArrivalRegularOther1": false, "lateArrivalRegularOtherComment1": "No Comment",
+  "lateArrivalRegularPaidLeave": true, "lateArrivalRegularLWOP2": true, "lateArrivalRegularOther2": false, "lateArrivalRegularOtherComment2": "No Comment", "lateArrivalsRegularComment": "No Comment",
+  "rosterConsecutiveArrivalData":[
+    {"isConsecutiveArrival": true, "consecutiveArrivalNumber1": 3, "consecutiveArrivalNumber2": 10}
+  ],
+  "rosterLateArrivalData":[
+    {"isLateArrival": true, "lateArrivalNumber1": 1, "lateArrivalNumber2": 30}
+  ],
+  "lateArrivalRosterLWOP1": true, "lateArrivalRosterNotRequired1": false,
+  "lateArrivalRosterPaidLeave": true, "lateArrivalRosterLWOP2": true, "lateArrivalRosterNotRequired2": false, "lateArrivalsRosterComment": "No Comment"
+}

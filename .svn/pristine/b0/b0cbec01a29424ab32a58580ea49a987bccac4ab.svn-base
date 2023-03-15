@@ -1,0 +1,13 @@
+{
+  "nodeApiUrl": "http://localhost:3000/api2/3.0/",
+  "phpApiHeader_300_23": "http://192.168.99.231/qa/3.0.0/dev/api/v2.3/",
+  "phpApiHeader_300": "http://192.168.99.231/qa/3.0.0/dev/api/",
+  "phpApiHeader": "http://192.168.99.29:180/ppiapis/public/api/",
+
+  "mongoApiUrl": "http://localhost:3000/",
+  "laravelApiUrl": "http://localhost:3000/api/",
+  "phpSiteUrl": "http://localhost/ppi_people/login.php",
+  "stagingHeader": "http://ppiapi.peoplei.tech/api/",
+  "imageUIServer": "http://localhost/ppi_people/",
+  "phpSiteLink": "http://localhost/ppi_people"
+}

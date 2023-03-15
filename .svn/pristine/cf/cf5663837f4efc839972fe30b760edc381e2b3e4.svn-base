@@ -1,0 +1,63 @@
+{
+  "typesPerformanceAppraisalData":[
+    {"performanceAppraisalType": "Annual Appraisal", "eligibility": "Permanent Staff of All Departments, Hired during the months of July to December", "cycle": "1st July to 30th June", "launchDate": "1st July"},
+    {"performanceAppraisalType": "Mid-Year Appraisal", "eligibility": "Permanent Staff of All Departments, Hired during the months of January to March", "cycle": "Date of joining to 31st December", "launchDate": "1st January"}
+  ],
+  "probationEvaluationData":[
+    {"eligibility": "Probationary staff of All Departments", "cycle": "3 months from DOJ", "extension": "Maximum 3 times with 1 month tenure", "launchDate": "1st of Every Month"}
+  ],
+  "performanceGoalSetData":[
+    {"performanceSetGoalType": "Line Managers/Team Leaders"},
+    {"performanceSetGoalType": "HR"}
+  ],
+  "appraisalsExecutedData":[
+    {"appraisalsExecutedType" :"Monthly"},
+    {"appraisalsExecutedType" :"Quarterly"},
+    {"appraisalsExecutedType" :"Yearly"}
+  ],
+  "appraisalsConductedData":[
+    {"appraisalsConductedType": "Goals"},
+    {"appraisalsConductedType": "KPI’s"},
+    {"appraisalsConductedType": "Competencies"},
+    {"appraisalsConductedType": "Achievements"}
+  ],
+  "approvalAppraisalData":[
+    {"approvalAppraisalHeading": "1st Approval"},
+    {"approvalAppraisalHeading": "2nd Approval"},
+    {"approvalAppraisalHeading": "3rd Approval"},
+    {"approvalAppraisalHeading": "4th Approval"}
+  ],
+  "approvalAppraisalTypeData":[
+    {"approvalAppraisalTypeColumn":[
+      {"approvalType": "LM"},
+      {"approvalType": "LM"},
+      {"approvalType": "HR"},
+      {"approvalType": "HR"}
+    ]}
+  ],
+  "companyPerformanceAppraisalObjectivesData":[
+    {"companyPerformanceAppraisalObjectivesType": "Filling positions with qualified and competent personnel"},
+    {"companyPerformanceAppraisalObjectivesType": "Seeking out and identifying prospective management talent in the employment career as far as possible"},
+    {"companyPerformanceAppraisalObjectivesType": "Rewarding the high achievers and leading performance deliverers"},
+    {"companyPerformanceAppraisalObjectivesType": "Relieving constant under achievers"},
+    {"companyPerformanceAppraisalObjectivesType": "improving performance of adequate performers through training"},
+    {"companyPerformanceAppraisalObjectivesType": "Feedback of Line Manager"},
+    {"companyPerformanceAppraisalObjectivesType": "Competencies Awareness"}
+  ],
+  "treatmentOfPoorPerformersData":[
+    {"treatmentOfPoorPerformersType": "Training"},
+    {"treatmentOfPoorPerformersType": "Improvement Coaching"},
+    {"treatmentOfPoorPerformersType": "Dismissal"}
+  ],
+  "appraisalGradingSystemData":[
+    {"rating": "1", "interpretation": "Leading Performance", "performanceMeasure": "Exceeds Expectations", "additionalInfo": ""},
+    {"rating": "2", "interpretation": "Adequate Performance", "performanceMeasure": "Meets Expectations", "additionalInfo": ""},
+    {"rating": "3", "interpretation": "Inadequate Performance", "performanceMeasure": "Doesn’t Meet Expectations", "additionalInfo": ""}
+  ],
+  "flowOfEvaluationData": [
+    { "action": "Employee Self Evaluation", "additionalInfo": "Self-evaluation by the employees"},
+    { "action": "Line Manager Review", "additionalInfo": "Review of Appraisals by Line Manager"},
+    { "action": "Employee Sign Off", "additionalInfo": "Appraisal’s Sign Off by Employees"},
+    { "action": "HR Review", "additionalInfo": "Review of Appraisals by HR for financial summary preparation"}
+  ]
+}

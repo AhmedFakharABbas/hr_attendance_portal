@@ -1,0 +1,15 @@
+<app-portals-home [s01]="'Administration Manager Profile'" [s02]="'Notifications'" [s03]="'Applications Status'"
+  [s11]="'New Requisitions'">
+  <div class="s0-1">
+    <app-section-profile></app-section-profile>
+  </div>
+  <div class="s0-2">
+    <app-section-update></app-section-update>
+  </div>
+  <div class="s0-3 p-1">
+    <app-section-application-status></app-section-application-status>
+  </div>
+  <div class="s1-1 p-1">
+    <app-section-new-application></app-section-new-application>
+  </div>
+</app-portals-home>

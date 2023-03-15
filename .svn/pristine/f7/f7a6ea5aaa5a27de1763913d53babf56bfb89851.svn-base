@@ -1,0 +1,14 @@
+<app-portals-home [s01]="'CEO Profile'" [s02]="'Updates'" [s03]="'Applications Status'" [s11]="'New Employees'">
+  <div class="s0-1">
+    <app-section-profile></app-section-profile>
+  </div>
+  <div class="s0-2">
+    <app-section-update></app-section-update>
+  </div>
+  <div class="s0-3 p-1">
+    <app-section-application-status></app-section-application-status>
+  </div>
+  <div class="s1-1 p-1">
+    <app-section-new-employees></app-section-new-employees>
+  </div>
+</app-portals-home>

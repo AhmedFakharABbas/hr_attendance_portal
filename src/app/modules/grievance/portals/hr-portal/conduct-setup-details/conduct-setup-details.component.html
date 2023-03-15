@@ -1,0 +1,35 @@
+<table class="table table-striped">
+      <thead>
+        <tr >
+          <th class="table-title" rowspan="2">Enquiry Types</th>
+          <th class="table-title" rowspan="2">Sections</th>
+          <th class="table-title" rowspan="2">Anonymous</th>
+          <th class="table-title" [attr.colspan]="investigatorsRowSpan">Investigator</th>
+          <th class="table-title"  [attr.colspan]="decesionMakersRowSpan">Decision Maker</th>
+        </tr>
+        <tr *ngIf="enquiriesTableData[0]!=undefined">
+          <th class="table-title" *ngFor="let investigator of enquiriesTableData[0].investigators let investigatorIndex =index">Level {{investigatorIndex+1}}</th>
+          <th class="table-title" *ngFor="let decesionMaker of enquiriesTableData[0].decision_makers let decesionMakerIndex =index">Level {{decesionMakerIndex+1}}</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let enquiry of enquiriesTableData" (click)="addNewItem(enquiry)">
+          <td>{{enquiry.enquiry_type_name}}</td>
+          <td>
+            <span *ngIf="enquiry.responder_section=='enable'">Responder, </span>
+            <span *ngIf="enquiry.provision_policy_section=='enable'">Provision of Policy, </span>
+            <span *ngIf="enquiry.legal_opinion_section=='enable'">Legal Openion, </span>
+            <span *ngIf="enquiry.recommendation_section=='enable'">Recommendations, </span>
+          </td>
+          <td>{{enquiry.anonymous_application=='allow'?'Allowed':'Not Allowed'}}</td>
+          <td *ngFor="let investigator of enquiry.investigators">{{investigator.employee.name
+          }}</td>
+          <td *ngFor="let decesionMaker of enquiry.decision_makers">{{decesionMaker.employee.name
+          }}</td>
+        </tr>
+
+      </tbody>
+</table>
+
+

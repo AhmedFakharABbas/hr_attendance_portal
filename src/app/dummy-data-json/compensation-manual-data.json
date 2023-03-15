@@ -1,0 +1,78 @@
+{
+  "baseSalaryData": [
+    {"header": "Basic", "calculationBasis": "1.1 division of gross salary"},
+    {"header": "Medical", "calculationBasis": "10% of basic"},
+    {"header": "Gratuity", "calculationBasis": "Included in salary, calculation on Pro-rata basis"}
+  ],
+  "fixedAllowanceData": [
+    {"header": "Fuel Allow", "calculationBasis": "Band (4, 5, 6, 7 & NM)"},
+    {"header": "Meal Allow", "calculationBasis": "Rs. 1000/month to NM staff only"},
+    {"header": "Mobile Allow", "calculationBasis": "Band 4 (5000), Band 5 (3000), Band 6 (2000), Band 7 (1500)"}
+  ],
+  "bandsData":[
+    {"band": 1, "salaryRange": "1,100,000 - 2,100,000"},
+    {"band": 2, "salaryRange": "600,000 - 1,000,000"},
+    {"band": 3, "salaryRange": "400,000 - 600,000"},
+    {"band": 4, "salaryRange": "150,000 - 400,000"}
+  ],
+  "groupHealthInsuranceHeading":[
+    {"planList": "Plan A"},
+    {"planList": "Plan B"},
+    {"planList": "Plan C"}
+  ],
+  "eligibilityData":[
+    {"eligibility": "Permanent, Band 1-3"},
+    {"eligibility": "Permanent, Band 4-5"},
+    {"eligibility": "Permanent, Band 6 & NM"}
+  ],
+  "hospitalLimitData":[
+    {"hospitalLimit": "Rs. 500,000"},
+    {"hospitalLimit": "Rs. 400,000"},
+    {"hospitalLimit": "Rs. 300,000"}
+  ],
+  "roomLimitData":[
+    {"roomLimit": "Rs. 8,000"},
+    {"roomLimit": "Rs. 7,000"},
+    {"roomLimit": "Rs. 5,000"}
+  ],
+  "additionalInfo": "“All confirmed employees are covered in the GHI on Company’s expense. However, employees can avail same benefits for their family members i.e. their spouse and children by paying extra premiums deducted from their monthly salaries.”",
+  "groupLifeInsuranceHeading":[
+    {"planList": "Plan A"}
+  ],
+  "eligibility1Data":[
+    {"eligibility": "Permanent, All Bands, 3 months from DOJ"}
+  ],
+  "gLIData":[
+    {"gLI": "Up to Rs.500,000"}
+  ],
+  "groupAccidentalInsuranceData":[
+    {"groupAccidentalInsurance": "Up to Rs. 1,000,000"}
+  ],
+  "groupAccidentalDisabilityData":[
+    {"groupAccidentalDisability": "Up to Rs. 500,000"}
+  ],
+  "additionalInfoData":[
+    {"additionalInfo": "Additional info will be shown here"}
+  ],
+  "otherBenefitsData":[
+    {"name": "Maternity Allowance", "eligibility": "Permanent, Band NM, 1 year from DOJ", "expenseLimit": "Up to 2 pregnancies", "additionalInfo": "Entitlement for benefits will be up to Rs. 13000 for normal Pregnancy & up to Rs. 20000 for C-Section"},
+    {"name": "Education Assistance", "eligibility": "Permanent, 3 years from DOJ", "expenseLimit": "As per Actual", "additionalInfo": "Full or partial sponsorship for job related or other approved training, Employee with DME Rating is not eligible to apply for reimbursement."},
+    {"name": "Outpatient Coverage", "eligibility": "Permanent, Band 7 & NM, 3 months from DOJ", "expenseLimit": "1 monthly salary per year", "additionalInfo": "It covers employees, their spouses, children and parents only"}
+  ],
+  "terminalBenefitsData":[
+    {"name": "Gratuity", "eligibility": "Permanent, 1 year from DOJ", "calculationCriteria": "Monthly Gross Salary divided by 360 days is earned daily", "entitlement": "No interest, no employee share, no employer share", "additionalInfo": ""},
+    {"name": "Provident Fund", "eligibility": "Permanent, 1 year from DOJ", "calculationCriteria": "Monthly Gross Salary divided by 360 days is earned daily", "entitlement": "No interest, employee share 10%, employer share 10%", "additionalInfo": ""},
+    {"name": "Pension Fund", "eligibility": "Permanent, 1 year from DOJ", "calculationCriteria": "Monthly Gross Salary divided by 360 days is earned daily", "entitlement": "No interest, employee share 10%, employer share 10%", "additionalInfo": ""}
+  ],
+  "employmentType": "Permanent", "from" : 25, "to": 27,
+  "employmentType1": "Permanent", "from1" : 28, "to1": 30,
+  "unpaidLeaveData":[
+    {"employmentType": "Permanent", "noOfDays": 30, "typeOfDays": "working days", "additionalInfo": "“Additional Info”"},
+    {"employmentType": "Contract", "noOfDays": 26, "typeOfDays": "working days", "additionalInfo": "“Additional Info”"}
+  ],
+  "overtimeCalculationData":[
+    {"eligibility": "Permanent, All Band, All Dept", "entitlement": "Hourly Rate * 1", "calculation": "31 days, 8 hours per day", "additionalInfo": ""},
+    {"eligibility": "Contract, All Band, All Dept", "entitlement": "Hourly Rate * 1", "calculation": "31 days, 8 hours per day", "additionalInfo": ""},
+    {"eligibility": "Daily Wager, All Band, All Dept", "entitlement": "Hourly Rate * 1", "calculation": "31 days, 8 hours per day", "additionalInfo": ""}
+  ]
+}

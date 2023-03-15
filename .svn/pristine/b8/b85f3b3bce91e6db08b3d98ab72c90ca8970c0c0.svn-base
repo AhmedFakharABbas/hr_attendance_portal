@@ -1,0 +1,199 @@
+<div class="ac-container">
+  <div class="w-100">
+    <div class="ac-box mt-2">
+      <div class="ac-title-with-input">
+        <span class="title-text">Grievance Applicaitons</span>
+        <span class="float-right">
+          <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status"(change)="filterChange(filter,$event)">
+              <mat-option value="Pending">Pending</mat-option>
+              <mat-option value="Approved">Approved</mat-option>
+              <mat-option value="Disapproved">Disapproved</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- <mat-form-field appearance="outline">
+            <mat-label>Employee name</mat-label>
+            <mat-select>
+              <mat-option value="option">Jack</mat-option>
+              <mat-option value="option">Miller</mat-option>
+              <mat-option value="option">James</mat-option>
+            </mat-select>
+          </mat-form-field> -->
+        </span>
+      </div>
+
+      <div>
+        <mat-table
+          matSort
+          class="ac-table"
+          #table
+          [dataSource]="dataSource"
+          (scroll)="onTableScroll($event)"
+        >
+          <!-- employee_id Column -->
+          <ng-container matColumnDef="employee_id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Employee ID
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.employee_id }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Against Employee Name Column -->
+          <ng-container matColumnDef="against_employee_name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header
+              >{{
+                this.applicationType.type == "Emp-portal"
+                  ? "Grievance Against"
+                  : "Application Against"
+              }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.against_employee_name }}
+            </mat-cell>
+          </ng-container>
+          <!--complaiant Name Column -->
+          <ng-container matColumnDef="complaiant_name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header
+              >Name
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.complaiant_name }}
+            </mat-cell>
+          </ng-container>
+          <!-- Application Date Column -->
+          <ng-container matColumnDef="application_date">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Application Date
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.application_date }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Month Column -->
+          <ng-container matColumnDef="type">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Type
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.type }} </mat-cell>
+          </ng-container>
+          <!-- correction_date Column -->
+          <ng-container matColumnDef="grievance_from">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              From
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{
+                element.grievance_from == null ? "  -" : element.grievance_from
+              }}
+            </mat-cell>
+          </ng-container>
+          <!-- correction_date Column -->
+          <ng-container matColumnDef="grievance_to">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              To
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.grievance_to }}
+            </mat-cell>
+          </ng-container>
+          <!-- application_status -->
+          <ng-container matColumnDef="application_status">
+            <mat-header-cell *matHeaderCellDef mat-sort-header
+              >Status
+            </mat-header-cell>
+            <mat-cell
+              *matCellDef="let element"
+              [ngClass]="
+                element.application_status == 'Pending' ||
+                element.application_status == 1
+                  ? 'pending'
+                  : element.application_status == 'Approved' ||
+                    element.application_status == 2
+                  ? 'approved'
+                  : 'disapproved'
+              "
+            >
+              {{
+                element.application_status == 1 ||
+                element.application_status == "Pending"
+                  ? "Pending"
+                  : element.application_status == "Approved" ||
+                    element.application_status == 2
+                  ? "Approved"
+                  : "Disapproved"
+              }}
+            </mat-cell>
+          </ng-container>
+          <!-- lm_status -->
+          <ng-container matColumnDef="lm_status">
+            <mat-header-cell *matHeaderCellDef mat-sort-header
+              >LM Status
+            </mat-header-cell>
+            <mat-cell
+              *matCellDef="let element"
+              [ngClass]="
+                element.lm_status == 'Pending' || element.lm_status == 1
+                  ? 'pending'
+                  : element.lm_status == 'Approved' || element.lm_status == 2
+                  ? 'approved'
+                  : 'disapproved'
+              "
+            >
+              {{
+                element.lm_status == 1 || element.lm_status == "Pending"
+                  ? "Pending"
+                  : element.lm_status == "Approved" || element.lm_status == 2
+                  ? "Approved"
+                  : "Disapproved"
+              }}
+            </mat-cell>
+          </ng-container>
+          <!-- hr_status Column -->
+          <ng-container matColumnDef="hr_status">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              HR Status
+            </mat-header-cell>
+            <mat-cell
+              *matCellDef="let element"
+              [ngClass]="
+                element.hr_status == 'Pending' || element.hr_status == 1
+                  ? 'pending'
+                  : element.hr_status == 'Approved' || element.hr_status == 2
+                  ? 'approved'
+                  : 'disapproved'
+              "
+            >
+              {{
+                element.hr_status == 1 || element.hr_status == "Pending"
+                  ? "Pending"
+                  : element.hr_status == "Approved" || element.hr_status == 2
+                  ? "Approved"
+                  : "Disapproved"
+              }}
+            </mat-cell>
+          </ng-container>
+          <!-- statusmonth Column -->
+          <ng-container matColumnDef="month_name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Month
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.month_name }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- (click)="onRowClick(row)" -->
+          <mat-header-row
+            *matHeaderRowDef="columnsToDisplay"
+            class="tableHeader"
+          ></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+  </div>
+</div>

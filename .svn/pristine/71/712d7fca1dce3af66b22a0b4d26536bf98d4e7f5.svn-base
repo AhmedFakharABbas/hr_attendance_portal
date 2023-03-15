@@ -1,0 +1,17 @@
+<div class="row w-100 m-0 bg-white rounded queue">
+  <div class="col-md-12 p-0">
+    <div class="modal fade" [id]="modalName" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered" [ngClass]="modalSize">
+        <div class="modal-content">
+          <ng-content select=".popup-header"></ng-content>
+          <button class="btn-close" type="button" id="button" data-dismiss="modal" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="modal-body">
+            <ng-content select=".popup-body"></ng-content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<svg id="Checked" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <rect id="Rectangle_154" data-name="Rectangle 154" width="14" height="14" rx="2" fill="#3080ea"/>
+  <g id="tick" transform="translate(3.5 4.201)">
+    <g id="Group_135" data-name="Group 135">
+      <path id="Path_30" data-name="Path 30" d="M7.517,68.109a.381.381,0,0,0-.539,0l-4.57,4.57L.651,70.923a.381.381,0,1,0-.539.539l2.026,2.026a.382.382,0,0,0,.539,0l4.84-4.84A.381.381,0,0,0,7.517,68.109Z" transform="translate(0 -67.997)" fill="#fff" stroke="#fff" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

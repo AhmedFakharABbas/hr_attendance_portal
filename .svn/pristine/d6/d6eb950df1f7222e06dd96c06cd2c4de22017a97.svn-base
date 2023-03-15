@@ -1,0 +1,4 @@
+.showLoader {
+    display: none;
+  }
+

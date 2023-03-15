@@ -1,0 +1,47 @@
+.sec0-1,
+.sec0-2 {
+  padding: 5px;
+  font-size: 11px;
+  height: 116px;
+  overflow: auto;
+}
+
+.sec1-1 td {
+  font-size: 11px;
+}
+
+.sec0-1 tr {
+  line-height: 19px;
+}
+
+.sec0-2 a {
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.sec0-2 li {
+  line-height: 22px;
+}
+
+.sec0-2 li:hover {
+  background: #F3F3F3;
+}
+
+.sec0-2 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sec1-1 th,
+.sec0-3 th,
+.sec0-1 .value {
+  font-weight: 600;
+}
+
+.sec1-1 th,
+.sec1-1 td,
+.sec0-3 th,
+.sec0-3 td {
+  line-height: 1.6em;
+}

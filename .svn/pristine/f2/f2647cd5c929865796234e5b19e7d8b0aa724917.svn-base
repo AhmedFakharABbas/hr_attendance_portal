@@ -1,0 +1,38 @@
+    <form [formGroup]="HRPopupForm" (ngSubmit)="submit()">
+    <div class="tooltiptext">
+      <div class="custom-card-header card-header heading">
+          <h4 >Select Response</h4>
+      </div>
+      
+      <div class="p-1">
+        <div class="body p-1">
+        <div class="row pl-3">
+          <mat-checkbox class="checkboxes" formControlName="notMatch">
+            Information doesn't match with documents submitted.
+          </mat-checkbox>
+        </div>
+        <div class="row pl-3">
+          <mat-checkbox class="checkboxes" formControlName="incomplete">
+            Incomplete information provided.
+          </mat-checkbox>
+        </div>
+
+        <div class="row pl-3">
+          <mat-checkbox class="checkboxes" formControlName="invalid">
+            Invalid information provided.
+          </mat-checkbox>
+        </div>
+      </div>
+      <div class="col-md-12 pt-2">
+      <div class="row float-right mr-1">
+        <button mat-raised-button style="background-color: #0078bd; color: white;margin-right: 10px;">Save</button>
+        <button type="button" mat-raised-button style="color: #0078bd ;" (click)="remove()">Cancel</button>
+        </div>
+        <div class="row pt-5 float" style="text-align: left;color: grey;">
+          <p class="mb-0">* Double click the field to edit it.</p>
+      </div>
+      </div>
+
+    </div>
+    </div>
+</form>

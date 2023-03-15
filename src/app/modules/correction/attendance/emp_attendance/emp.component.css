@@ -1,0 +1,113 @@
+/* ================ Attendance Correction */
+.ac-box {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+.mat-table {
+  overflow: auto;
+  max-height: 599px !important;
+}
+.ac-container {
+  position: relative;
+  clear: both;
+  display: flex;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+.ac-form-container {
+  position: relative;
+  clear: both;
+  display: flex;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+
+}
+.ac-left-container {
+  width: 820px;
+  float: left;
+  background-color: #ffffff;
+}
+.ac-right-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 380px;
+  margin-right: 20px;
+  float: right;
+  background-color: #ffffff;
+  height: 100%;
+  overflow: auto;
+}
+.ac-right-box {
+  display: block;
+  flex-direction: row-reverse;
+  margin-top: 0% !important;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px 4px 0px 0px;
+
+}
+.ac-title {
+  background-image: linear-gradient(#f7f7f7, #d6d6d6);
+  cursor: pointer;
+  padding: 8px 10px;
+  font: 13px Roboto;
+  border-radius: 4px 4px 0px 0px;
+  color: #343434;
+  font-weight: bold;
+}
+.ac-box {
+  display: block;
+  background: #fcfcfc !important;
+  border: 1px solid #e7e7e7;
+  flex-direction: row;
+  width: 1210px;
+  border-radius: 4px 4px 0px 0px;
+}
+::ng-deep.mat-select-trigger {
+  display: inline-table;
+  color: #343434 !important;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  top: -1px !important;
+  font-size: 11px;
+}
+.fr {
+  float: right;
+}
+/* section end */
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(128, 25, 25);
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(149, 255, 43, 0.3);
+}
+/* scrollbar end */
+div.ac-title[aria-expanded="false"] > .fr >img {
+  transform: rotate(180deg);
+}
+.body-container{
+background-color: #ffffff;
+min-height: 95vh;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #B1B8C2;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+}
+::-webkit-scrollbar-track {
+  background: #F1F6F9;
+  border-radius: 10px;
+}
+/* scrollbar */

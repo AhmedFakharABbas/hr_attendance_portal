@@ -1,0 +1,161 @@
+<!-- Table section start -->
+<div class="example-container mat-elevation-z8">
+  <mat-table
+    [ngClass]="
+      componentType.type == 'Emp-Correction-Status'
+        ? 'emp-ac-table'
+        : componentType.type == 'lm-Correction-Status'
+        ? 'lm-ac-table'
+        : componentType.type == 'hr-Correction-Status'
+        ? 'hr-ac-table'
+        : 'ac-table'
+    "
+    #table
+    [dataSource]="dataSource"
+    (scroll)="onTableScroll($event)"
+  >
+    <!-- employee_id Column -->
+    <ng-container matColumnDef="employee_id">
+      <mat-header-cell *matHeaderCellDef> Employee ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.employee_id }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="employee_name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.employee_name }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Application Date Column -->
+    <ng-container matColumnDef="application_date">
+      <mat-header-cell *matHeaderCellDef> Application Date </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.application_date }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Month Column -->
+    <ng-container matColumnDef="month">
+      <mat-header-cell *matHeaderCellDef> Month </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.month }} </mat-cell>
+    </ng-container>
+    <!-- correction_date Column -->
+    <ng-container matColumnDef="correction_date">
+      <mat-header-cell *matHeaderCellDef> Correction Date </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.correction_date == null ? "  -" : element.correction_date }}
+      </mat-cell>
+    </ng-container>
+    <!-- correction_date Column -->
+    <ng-container matColumnDef="correction_type">
+      <mat-header-cell *matHeaderCellDef> Correction Type </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.correction_type }}
+      </mat-cell>
+    </ng-container>
+    <!-- lm_status Column -->
+    <ng-container matColumnDef="lm_status">
+      <mat-header-cell *matHeaderCellDef> LM Status </mat-header-cell>
+      <mat-cell
+        *matCellDef="let element"
+        [ngClass]="
+          element.lm_status == 'Pending' || element.lm_status == 1
+            ? 'pending'
+            : element.lm_status == 'Approved' || element.lm_status == 2
+            ? 'approved'
+            : 'disapproved'
+        "
+      >
+        {{
+          element.lm_status == 1 || element.lm_status == "Pending"
+            ? "Pending"
+            : element.lm_status == "Approved" || element.lm_status == 2
+            ? "Approved"
+            : "Disapproved"
+        }}
+      </mat-cell>
+    </ng-container>
+    <!-- hr_status Column -->
+    <ng-container matColumnDef="hr_status">
+      <mat-header-cell *matHeaderCellDef> HR Status </mat-header-cell>
+      <mat-cell
+        *matCellDef="let element"
+        [ngClass]="
+          element.hr_status == 'Pending' || element.hr_status == 1
+            ? 'pending'
+            : element.hr_status == 'Approved' || element.hr_status == 2
+            ? 'approved'
+            : 'disapproved'
+        "
+      >
+        {{
+          element.hr_status == 1 || element.hr_status == "Pending"
+            ? "Pending"
+            : element.hr_status == "Approved" || element.hr_status == 2
+            ? "Approved"
+            : "Disapproved"
+        }}
+      </mat-cell>
+    </ng-container>
+    <!-- statusmonth Column -->
+    <ng-container matColumnDef="month_name">
+      <mat-header-cell *matHeaderCellDef> Month </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.month_name }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Corrections Column -->
+    <ng-container matColumnDef="corrections">
+      <mat-header-cell *matHeaderCellDef> Correction </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.corrections }}
+      </mat-cell>
+    </ng-container>
+    <!-- approved Column -->
+    <ng-container matColumnDef="statusApproved">
+      <mat-header-cell *matHeaderCellDef> Approved </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.approved }}
+      </mat-cell>
+    </ng-container>
+    <!-- Pending Column -->
+    <ng-container matColumnDef="pending">
+      <mat-header-cell *matHeaderCellDef> Pending </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.pending }}
+      </mat-cell>
+    </ng-container>
+    <!-- Reject Column -->
+    <ng-container matColumnDef="rejected">
+      <mat-header-cell *matHeaderCellDef>Rejected </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.rejected }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row
+      *matHeaderRowDef="displayedColumns"
+      class="tableHeader"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      (click)="onRowClick(row)"
+    ></mat-row>
+  </mat-table>
+  <mat-paginator
+    [hidden]="
+      this.componentType.type == 'Emp-Correction-Status' ||
+      this.componentType.type == 'lm-Correction-Status' ||
+      this.componentType.type == 'hr-Correction-Status'
+    "
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+    (page)="handlePage($event)"
+  >
+  </mat-paginator>
+</div>

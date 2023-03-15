@@ -1,0 +1,57 @@
+{
+  "vehicleData":[
+    {"category": "Car", "eligibility": "Permanent, Band 1, All Dept", "tenure": "3 months from DOJ", "specifications": "2400 cc, local, up to PKR 6.5 M", "fuelAllow": "300 Ltr/month, Rs. 50000", "additionalInfo": ""},
+    {"category": "", "eligibility": "Permanent, Band 2, All Dept", "tenure": "3 months from DOJ", "specifications": "1800 cc, local, up to PKR 2.0 M", "fuelAllow": "300 Ltr/month, Rs. 50000", "additionalInfo": ""},
+    {"category": "", "eligibility": "Permanent, Band 3, All Dept", "tenure": "3 months from DOJ", "specifications": "1800 cc, local, up to PKR 1.9 M", "fuelAllow": "300 Ltr/month, Rs. 50000", "additionalInfo": ""},
+    {"category": "", "eligibility": "Permanent, Band 4.1, All Dept", "tenure": "3 months from DOJ", "specifications": "1300 cc, local, up to PKR 1.6 M", "fuelAllow": "300 Ltr/month, Rs. 50000", "additionalInfo": ""},
+    {"category": "", "eligibility": "Permanent, Band 4.2, All Dept", "tenure": "3 months from DOJ", "specifications": "1000 cc, local, up to PKR 1.0 M", "fuelAllow": "300 Ltr/month, Rs. 50000", "additionalInfo": ""},
+    {"category": "Motorbike", "eligibility": "Permanent, Band 7, All Dept", "tenure": "3 months from DOJ", "specifications": "70 cc, local, up to PKR 50000", "fuelAllow": "50 Ltr/month, Rs. 2000", "additionalInfo": ""},
+    {"category": "", "eligibility": "Permanent, Band 6, All Dept", "tenure": "3 months from DOJ", "specifications": "100 cc, local, up to PKR 70000", "fuelAllow": "70 Ltr/month, Rs. 2500", "additionalInfo": ""}
+  ],
+  "vehicleRunningCostData":[
+    {"vehicleRunningCostType": "Company", "vehicleRunningCostDescription": "repair & maintenance"},
+    {"vehicleRunningCostType": "Company", "vehicleRunningCostDescription": "insurance & taxes"},
+    {"vehicleRunningCostType": "Employee", "vehicleRunningCostDescription": "accident & theft"}
+  ],
+  "vehicleWithdrawalData":[
+    {"vehicleWithdrawalType": "vehicle", "vehicleWithdrawalPolicy": " assigned to an Employee is subject to withdrawal at the sole discretion of the Company, in case of abuse of the privilege."}
+  ],
+  "vehicleReplacementDisposalData":[
+    {"vehicleReplacementDisposalType": "vehicle", "vehicleReplacementDisposalPolicy": " will normally be replaced or disposed after 5 years from the date of purchase."}
+  ],
+  "laptopData":[
+    {"eligibility": "Permanent, Band 1, 2, All Dept", "tenure": "3 months from DOJ", "specifications": "Dell, HP, Lenovo i-7 8GB RAM, 500 GB Hard", "internetAllow": "", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 3, 4, All Dept", "tenure": "3 months from DOJ", "specifications": "Dell, HP, Lenovo i-5 4GB RAM, 320 GB Hard", "internetAllow": "", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 7, All Dept", "tenure": "3 months from DOJ", "specifications": "Dell, HP, Lenovo i-5 4GB RAM, 320 GB Hard", "internetAllow": "", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 6, All Dept", "tenure": "3 months from DOJ", "specifications": "Dell, HP, Lenovo i-5 4GB RAM, 320 GB Hard", "internetAllow": "", "additionalInfo": ""}
+  ],
+  "laptopRunningCostData":[
+    {"laptopRunningCostType": "Company", "laptopRunningCostDescription": "repair & maintenance"},
+    {"laptopRunningCostType": "Company", "laptopRunningCostDescription": "insurance & taxes"},
+    {"laptopRunningCostType": "Employee", "laptopRunningCostDescription": "accident & theft"}
+  ],
+  "laptopWithdrawalData":[
+    {"laptopWithdrawalType": "laptop", "laptopWithdrawalPolicy": "  assigned to an Employee is subject to withdrawal at the sole discretion of the Company, in case of abuse of the privilege."}
+  ],
+  "laptopReplacementDisposalData":[
+    {"laptopReplacementDisposalType": "laptop", "laptopReplacementDisposalPolicy": "  will normally be replaced or disposed after 5 years from the date of purchase."}
+  ],
+  "mobilePhoneData":[
+    {"eligibility": "Permanent, Band 1, All Dept", "tenure": "3 months from DOJ", "specifications": "Blackberry, Up to Rs. 30000", "mobileAllow": "Connection, Up to Rs. 6000", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 2, 3, All Dept", "tenure": "3 months from DOJ", "specifications": "Blackberry, Up to Rs. 25000", "mobileAllow": "Connection, Up to Rs. 4000", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 4, All Dept", "tenure": "3 months from DOJ", "specifications": "Blackberry, Up to Rs. 20000", "mobileAllow": "Connection, Up to Rs.2000", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 5, 6, All Dept", "tenure": "3 months from DOJ", "specifications": "All Brand, Up to Rs. 15000", "mobileAllow": "Connection, Up to Rs. 1500", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band NM, All Dept", "tenure": "3 months from DOJ", "specifications": "All Brand, Up to Rs. 4000", "mobileAllow": "Connection, Up to Rs. 1000", "additionalInfo": ""}
+  ],
+  "mobilePhoneRunningCostData":[
+    {"mobilePhoneRunningCostType": "Company", "mobilePhoneRunningCostDescription": "repair & maintenance"},
+    {"mobilePhoneRunningCostType": "Company", "mobilePhoneRunningCostDescription": "insurance & taxes"},
+    {"mobilePhoneRunningCostType": "Employee", "mobilePhoneRunningCostDescription": "accident & theft"}
+  ],
+  "mobilePhoneWithdrawalData":[
+    {"mobilePhoneWithdrawalType": "mobile ", "mobilePhoneWithdrawalPolicy": "  assigned to an Employee is subject to withdrawal at the sole discretion of the Company, in case of abuse of the privilege."}
+  ],
+  "mobilePhoneReplacementDisposalData":[
+    {"mobilePhoneReplacementDisposalType": "mobile", "mobilePhoneReplacementDisposalPolicy": "  will normally be replaced or disposed after 5 years from the date of purchase."}
+  ]
+}

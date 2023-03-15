@@ -1,0 +1,41 @@
+.portal-container{
+  margin: 10px 5px;
+}
+
+.portal-container>p {
+  background-color: #fcfcfc;
+  padding: 8px;
+}
+
+.portal-content a {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 3%;
+}
+
+.portal-content {
+  margin: 0 10px 10px;
+}
+
+.portal-content img {
+  vertical-align: top;
+}
+
+.portal-content a p {
+  margin-top: 1px;
+  border-top: 2px solid #e6e6e6 !important;
+  width: 195px;
+  padding: 5px;
+  height: 95px;
+  text-align: justify;
+  color: #000;
+}
+
+.portal-content a:hover .portal-title {
+  text-decoration: underline;
+}
+
+.portal-title {
+  font-weight: 600;
+  color: #0078bd;
+}

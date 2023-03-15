@@ -1,0 +1,35 @@
+{
+  "companyList": [
+    { "Id": 1, "Value": "People" },
+    { "Id": 2, "Value": "KeyStone"}
+  ],
+  "countryList": [
+    {"Id": 1, "Value": "Pakistan"},
+    {"Id": 2, "Value": "Dubai"},
+    {"Id": 3, "Value": "UK"}
+  ],
+  "marketList":[
+    {"Id": 1, "Value": "Global"},
+    {"Id": 2, "Value": "Local"}
+  ],
+  "provinceStateList":[
+    {"Id": 1, "Value": "Punjab"},
+    {"Id": 2, "Value": "KPK"},
+    {"Id": 3, "Value": "Sindh"}
+  ],
+  "clusterList": [
+    {"Id": 1, "Value": "MENA"}
+  ],
+  "cityList":[
+    {"Id": 1, "Value": "Faisalabad"},
+    {"Id": 2, "Value": "Lahore"},
+    {"Id": 3, "Value": "Multan"},
+    {"Id": 4, "Value": "Islamabad"}
+  ],
+  "subClusterList":[
+    {"Id": 1, "Value": "MENA"}
+  ],
+  "branchList":[
+    {"Id": 1, "Value": "N/A"}
+  ]
+}

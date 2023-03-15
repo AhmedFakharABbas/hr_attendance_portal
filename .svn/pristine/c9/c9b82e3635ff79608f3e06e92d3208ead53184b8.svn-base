@@ -1,0 +1,10 @@
+<!-- website footer -->
+<div class="footer_wrapper">
+  <div class="container">
+    <div id="footer" class="row">
+      <div class="content">Powered by People™ ©2019. All Rights Reserved
+        <!--&nbsp;&nbsp;&nbsp;|<a href="#">Privacy Policy</a>|<a href="#">Terms and Conditions</a-->
+      </div>
+    </div>
+  </div>
+</div>

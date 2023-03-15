@@ -1,0 +1,37 @@
+{
+  "employmentTypeList": [
+    { "Id": 1, "Value": "Permanent" },
+    { "Id": 2, "Value": "Outsourced"},
+    { "Id": 3, "Value": "Contractual"},
+    { "Id": 4, "Value": "Consultant"}
+  ],
+  "yearList": [
+    { "Id": 1, "Value": 2023},
+    { "Id": 2, "Value": 2022},
+    { "Id": 3, "Value": 2021},
+    { "Id": 4, "Value": 2020}
+  ],
+  "eligibiltyFromList":[
+    {"Id":1, "Value": "From DOI"}
+  ],
+  "bandList": [
+    { "Id": 1, "Value": "Band 1"},
+    { "Id": 2, "Value": "Band 2"},
+    { "Id": 3, "Value": "Band 3"},
+    { "Id": 4, "Value": "Band 4"}
+  ],
+  "departmentsList":[
+    {"Id": 1, "Value": "Software Development"},
+    {"Id": 2, "Value": "Marketing"},
+    {"Id": 3, "Value": "HR"}
+  ],
+  "monthDropdownList":[
+    {"Id": 1, "Value": "Month"},
+    {"Id": 2, "Value": "Year"},
+    {"Id": 3, "Value": "Week"}
+  ],
+  "payList":[
+    {"Id": 1, "Value": "Gross Pay"},
+    {"Id": 2, "Value": "Net Pay"}
+  ]
+}

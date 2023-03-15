@@ -1,0 +1,258 @@
+<!-- Raised by -->
+<form [formGroup]="grievanceForm">
+  <p class="ac-title">Issue Raised by</p>
+  <div class="row">
+    <div class="col-3 p-10 mb-15">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Issue Type*</mat-label>
+        <!--    <mat-select formControlName="grievance_against_id"> -->
+        <mat-select formControlName="issue_type_id">
+          <mat-option value="1">Grievance</mat-option>
+          <mat-option value="2">Blowing a whistle</mat-option>
+          <mat-option value="3">Harassment related concern</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-3 pl-10 mb-15">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label> Employee name</mat-label>
+        <input formControlName="employee_name" matInput placeholder="" />
+      </mat-form-field>
+    </div>
+    <div class="col-3 pl-10 mb-15">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Department*</mat-label>
+        <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+        <mat-select formControlName="department_id">
+          <mat-option
+            *ngFor="let depart of allDepartments"
+            [value]="depart.department_id"
+            >{{ depart.department_title }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-3 pr-20 mb-15">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Designation</mat-label>
+        <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+        <mat-select formControlName="designation_id">
+          <mat-option
+            *ngFor="let depart of allDesignations"
+            [value]="depart.designation_id"
+            >{{ depart.designation_title }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <!-- Raised againest -->
+  <p class="ac-title">Issue Raised against</p>
+  <div class="row">
+    <div class="col-3 p-10 mb-15">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label> Target type dropdown*</mat-label>
+        <mat-select formControlName="target_type_id">
+          <mat-option value="1">General</mat-option>
+          <mat-option value="2">Specific Employee *</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-3 pl-10 mb-15">
+      <!-- <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Department*</mat-label>
+        <input formControlName="against_department" matInput placeholder="" />
+      </mat-form-field> -->
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Department</mat-label>
+        <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+        <mat-select formControlName="against_department">
+          <mat-option
+            *ngFor="let depart of allDepartments"
+            [value]="depart.department_id"
+            >{{ depart.department_title }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-3 pl-10 mb-15">
+      <!-- <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Designation*</mat-label>
+        <input formControlName="againstDesignation" matInput placeholder="" />
+      </mat-form-field> -->
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Designation</mat-label>
+        <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+        <mat-select formControlName="against_designation">
+          <mat-option
+            *ngFor="let depart of allDesignations"
+            [value]="depart.designation_id"
+            >{{ depart.designation_title }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div
+      *ngIf="this.grievanceForm.value.target_type_id == 2"
+      class="col-3 pr-20 mb-15"
+    >
+      <!-- <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Number</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field> -->
+      <!-- <input formControlName="employeeDeprtment" matInput placeholder="" /> -->
+      <!-- <mat-option
+          *ngFor="let depart of allDesignations"
+          [value]="depart.designation_id"
+          >{{ depart.designation_title }}</mat-option> -->
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Grievance Against</mat-label>
+        <mat-select formControlName="grievance_against_id">
+          <mat-option
+            *ngFor="let employee of employee_list"
+            [value]="employee.employee_id"
+            >{{ employee.employee_name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <!-- seprator -->
+  <hr class="customHR" />
+  <!-- details -->
+  <div class="grayborder">
+    <p class="py-1">
+      <span
+        *ngIf="applicationType.ComponenttypeId == 3"
+        class="ac-title-withoutpic title-text pl-2 pr-1"
+      >
+        Issue Raised</span
+      >
+      <span
+        *ngIf="applicationType.ComponenttypeId == 4"
+        class="ac-title-withoutpic title-text px-2"
+      >
+        Details</span
+      >
+      <span class="links text-center">
+        <a *ngIf="isWrittenStatement">Written Statement</a>
+        <a *ngIf="isAudioStatement" class="mx-1">Audio Statement</a>
+        <a *ngIf="isVideoStatement" class="ml-1">Video Statement </a>
+        <a *ngIf="isPicture"> Picture</a>
+      </span>
+      <span class="float-right">
+        <mat-form-field appearance="outline">
+          <mat-label>From</mat-label>
+          <input
+            formControlName="from"
+            matInput
+            [matDatepicker]="picker1"
+            (click)="picker1.open()"
+            readonly
+          />
+          <mat-icon matSuffix (click)="picker1.open()">calendar_today</mat-icon>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>To</mat-label>
+          <input
+            formControlName="to"
+            matInput
+            [matDatepicker]="picker2"
+            (click)="picker2.open()"
+            readonly
+          />
+          <mat-icon matSuffix (click)="picker2.open()">calendar_today</mat-icon>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </span>
+    </p>
+
+    <textarea
+      formControlName="statement"
+      rows="4"
+      cols="100"
+      class="w-100"
+    ></textarea>
+  </div>
+
+  <!-- Line Manager Section -->
+  <div *ngIf="applicationType.ComponenttypeId == 3" class="grayborder mt-1">
+    <p class="py-1">
+      <span class="ac-title-withoutpic title-text px-3">
+        Line Manager's Section</span
+      >
+      <span class="links text-center">
+        <a>Written Statement</a> <a class="mx-1">Audio Statement</a>
+        <a class="ml-1">Video Statement </a> <a> Picture</a></span
+      >
+    </p>
+    <textarea rows="4" cols="100" class="w-100"></textarea>
+  </div>
+  <!--  evidence-->
+  <div *ngIf="applicationType.ComponenttypeId == 4" class="grayborder pt-2">
+    <div class="row">
+      <div class="col">
+        <mat-checkbox
+          [checked]="isWrittenStatement"
+          (change)="onChangeWrittenStatement($event)"
+          class="example-margin"
+          >Written statement
+        </mat-checkbox>
+      </div>
+      <div class="col">
+        <mat-checkbox
+          [checked]="isAudioStatement"
+          (change)="onChangeAudio($event)"
+          class="example-margin"
+        >
+          audio statement</mat-checkbox
+        >
+      </div>
+      <div class="col">
+        <mat-checkbox
+          class="example-margin"
+          [checked]="isVideoStatement"
+          (change)="onChangeVideoStatement($event)"
+          >video statement</mat-checkbox
+        >
+      </div>
+      <div class="col">
+        <mat-checkbox
+          class="example-margin"
+          [checked]="isPicture"
+          (change)="onChangePicture($event)"
+          >Picture</mat-checkbox
+        >
+      </div>
+      <!--  <button class="ac-title" mat-button> + Add</button>  -->
+      <div class="col"><input (change)="fileUpload($event)" type="file" /></div>
+    </div>
+  </div>
+  <!-- submit -->
+  <div *ngIf="applicationType.ComponenttypeId == 4" class="ac-footer">
+    <div id="ac-button-list" class="text-right">
+      <button (click)="onSaveDraft()" type="submit" class="submitButton ml-2">
+        Save Draft
+      </button>
+      <button (click)="onSendToLM()" type="submit" class="submitButton ml-2">
+        Send to LM
+      </button>
+      <button (click)="onSendToHR()" type="submit" class="submitButton ml-2">
+        Send to HR
+      </button>
+    </div>
+  </div>
+</form>

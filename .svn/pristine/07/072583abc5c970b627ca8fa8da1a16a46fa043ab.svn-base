@@ -1,0 +1,7 @@
+<div class="error-block" *ngIf="(userIntimationBoxService.formErrorMessage | async).msg"
+  [ngClass]="(userIntimationBoxService.formErrorMessage | async).type">
+  <div class="error-block-inner">
+    {{(userIntimationBoxService.formErrorMessage | async).msg}}
+    <button class="btn btn-white"><img src="../../../assets/images/system-icon.png" alt="Close" (click)="reset()"></button>
+  </div>
+</div>

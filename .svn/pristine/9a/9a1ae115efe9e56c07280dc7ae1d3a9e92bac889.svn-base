@@ -1,0 +1,128 @@
+<div class="body-container">
+  <div class="ac-form-container">
+    <div class="ac-left-container">
+      <app-attendance-form [componentType]="empForm"></app-attendance-form>
+    </div>
+
+    <!-- Correction Status -->
+    <div class="ac-right-container">
+      <div class="w-100 h-100">
+        <div class="rightside-dropdown-containers">
+          <div class="ac-right-box-bottom mt-2">
+            <app-direct-attendance-correction></app-direct-attendance-correction>
+          </div>
+          <div class="ac-right-box mt-2">
+            <div
+              class="ac-title"
+              data-toggle="collapse"
+              data-target="#hrCorrectionStatus"
+              aria-expanded="true"
+            >
+              Correction Status
+              <span class="fr"
+                ><img src="../../../../../assets/icons/Up Arrow.svg"
+              /></span>
+            </div>
+            <div
+              style="width: 100%"
+              class="collapse show"
+              id="hrCorrectionStatus"
+            >
+              <app-attendance-table
+                [componentType]="correctionStatus"
+              ></app-attendance-table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Correction Applications -->
+  <div class="ac-container">
+    <div class="w-100">
+      <div class="ac-box ml-2">
+        <div class="ac-title">
+          Correction Applications
+
+          <span class="fr-with-search">
+            <span>
+              <mat-form-field class="pr-2" appearance="outline">
+                <mat-label>Correction Type</mat-label>
+                <mat-select [formControl]="application_type">
+                  <mat-option value="-1">All</mat-option>
+                  <mat-option value="attendance_correction"
+                    >Attendance Correction</mat-option
+                  >
+                  <mat-option value="leave_reversal">leave reversal</mat-option>
+                </mat-select>
+                <!--attendance_correction <input  (keyup)="applyFilter($event.target.value)" matInput placeholder="" /> -->
+              </mat-form-field>
+            </span>
+            <span>
+              <mat-form-field class="pr-2" appearance="outline">
+                <mat-label>HR Status</mat-label>
+                <mat-select [formControl]="application_status">
+                  <mat-option value="-1">All</mat-option>
+                  <mat-option value="1">Pending</mat-option>
+                  <mat-option value="2">Approved</mat-option>
+                  <mat-option value="auto_approved ">Auto Approved</mat-option>
+                  <mat-option value="3">Disapproved</mat-option>
+                </mat-select>
+                <!--attendance_correction <input  (keyup)="applyFilter($event.target.value)" matInput placeholder="" /> -->
+              </mat-form-field>
+            </span>
+            <span>
+              <mat-form-field class="pr-2" appearance="outline">
+                <mat-label> Search By </mat-label>
+                <mat-select [formControl]="searched_by">
+                  <mat-option (click)="searchTerm.reset()" value="-1"
+                    >All</mat-option
+                  >
+                  <mat-option value="search_by_name">Employee Name</mat-option>
+                  <mat-option value="search_by_id">Employee Id</mat-option>
+                </mat-select>
+
+                <!--attendance_correction <input  (keyup)="applyFilter($event.target.value)" matInput placeholder="" /> -->
+              </mat-form-field>
+            </span>
+            <span>
+              <mat-form-field class="width-260 pr-1" appearance="outline">
+                <input matInput placeholder="" [formControl]="searchTerm" [readonly]="!(searched_by.value=='search_by_name'||searched_by.value=='search_by_id')"/>
+              </mat-form-field>
+            </span>
+            <span class="pr-3">
+              <button
+                type="button"
+                class="submitButton"
+                (click)="applyFilter()"
+              >
+                Search
+              </button>
+            </span>
+
+            <span
+              data-toggle="collapse"
+              data-target="#hrCorrectionApplication"
+              aria-expanded="true"
+            >
+              <img class="prb-4" src="../../../../../assets/icons/Up Arrow.svg"
+            /></span>
+          </span>
+        </div>
+        <div class="ac-content">
+          <!-- table  start-->
+          <div
+            style="width: 100%"
+            class="collapse show"
+            id="hrCorrectionApplication"
+          >
+            <app-attendance-table
+              [componentType]="correctionApplication"
+            ></app-attendance-table>
+          </div>
+          <!-- table end-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

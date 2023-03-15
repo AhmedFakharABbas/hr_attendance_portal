@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-body">
+    <p><b>Conduct</b> / <span style="color: #007bff">Raise a Concern</span></p>
+    <app-grievance-form [applicationType]="data"></app-grievance-form>
+   <div class="custom-padding"> <app-grievance-table [applicationType]="tableType"></app-grievance-table></div>
+  </div>
+</div>
+
