@@ -1,0 +1,260 @@
+.checkboxes,
+.card-body mat-form-field {
+  margin: 0px 5px;
+  width: 190px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 10px;
+}
+
+.mat-form-field-infix {
+  width: 200px !important;
+}
+
+.people-title-heading h3 {
+  display: inline-block;
+  font: 12px/1.0em Roboto, Sans-Serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.head-class {
+  font: 13px Roboto, Sans-Serif;
+  color: #1A73E8;
+  font-weight: 500 !important;
+  /* padding: 5px 7px 5px 10px; */
+  text-align: left;
+}
+
+.mat-checkbox {
+  padding: 0 5px;
+}
+
+.checkboxes .mat-checkbox-inner-container {
+  margin-right: 3px
+}
+
+.checkboxes {
+  display: inline-block;
+  text-align: left;
+}
+
+.mat-raised-button.mat-primary {
+  background-color: #1A73E8 !important;
+}
+
+.mat-raised-button {
+  min-width: 30px !important;
+  line-height: 25px !important;
+}
+
+mat-expansion-panel .mat-expansion-panel-body {
+  padding: 0 15px;
+}
+
+.reasons {
+  display: inline-block;
+}
+
+.reasons mat-form-field {
+  width: 260px;
+  margin: 5px 10px
+}
+
+.reasons .mat-form-field-infix {
+  width: 255px !important;
+}
+
+.mat-icon-button:focus {
+  outline: 0;
+}
+
+.mat-icon-button {
+  top: -6px;
+}
+
+.mat-accordion .mat-expansion-panel {
+  margin: 10px 0;
+}
+
+mat-form-field .mat-form-field-label-wrapper {
+  top: -13px;
+}
+
+.bottom-fields .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+mat-form-field.mat-form-field-wrapper {
+  padding-bottom: 0.74375em;
+}
+
+mat-form-field .mat-form-field-infix {
+  padding: 5px;
+  border-top: 0.34375em solid transparent;
+}
+
+mat-form-field button:focus {
+  outline: none;
+}
+
+.document input:focus {
+  outline: none;
+}
+
+.document input {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  width: auto;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+  font-size: 10px !important;
+  width: 1.7em !important;
+  height: 1.7em !important;
+}
+
+mat-expansion-panel .mat-expansion-panel-content {
+  font: 12px/1.5em Roboto, Sans-Serif;
+}
+
+.form-container {
+  padding: 20px;
+  padding-bottom: 5px
+}
+
+.checkboxes mat-label {
+  color: #1A73E8;
+  padding-right: 5px;
+}
+
+.mat-checkbox-background,
+.mat-checkbox-frame {
+  border-color: #767676ba;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #1A73E8;
+}
+
+.document,
+.checkboxes label {
+  margin-bottom: 5px;
+}
+
+.people-title-heading {
+  padding: 8px 20px;
+  height: 32px;
+  position: relative;
+  margin-right: 0 !important;
+}
+
+.leaveList .geoSetup {
+  padding: 0;
+}
+
+.geogroup .card-body {
+  margin: auto;
+}
+
+
+.document,
+mat-form-field {
+  /* margin: 0 1px; */
+  margin-right: 8px;
+}
+
+.document input:focus {
+  outline: none;
+}
+
+.document input:hover {
+  box-shadow: 0 0 0pt 1.5pt #101010;
+}
+
+.document input::before {
+  content: '...';
+  border-left: 1px solid #e0e0e0;
+  padding: 3px 8px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  float: right;
+}
+
+.document input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.paginator {
+  position: relative;
+  height: 30px;
+}
+
+.paginator span a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.paginator span {
+  top: 6px;
+  position: absolute;
+}
+
+.paginator .mat-paginator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e6e6e6;
+}
+
+mat-paginator .mat-paginator-page-size {
+  display: none;
+}
+
+mat-paginator .mat-icon-button {
+  line-height: 30px;
+  height: 30px;
+}
+
+mat-paginator .mat-paginator-container {
+  min-height: 30px;
+}
+
+mat-paginator .mat-form-field-flex>.mat-form-field-infix {
+  padding: 0 !important;
+}
+
+mat-paginator .mat-paginator-page-size-select {
+  margin: 0 4px;
+}
+
+mat-paginator .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 1.45em;
+}
+
+.people-title-sub-heading {
+  color: #343434;
+  font: 11px Roboto, Sans-Serif;
+  font-weight: 700;
+}
+
+.people-title-sub-heading,
+.people-title-sub-heading .mat-paginator-outer-container {
+  background-color: #f1f1f1;
+}
+
+
+

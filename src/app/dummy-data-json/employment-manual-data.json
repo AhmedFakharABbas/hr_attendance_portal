@@ -1,0 +1,29 @@
+{
+  "categoryStaffData": [
+    { "type": "Permanent", "nature": "Managerial, Skilled, Unskilled, Roster" },
+    { "type": "Contractual", "nature": "Unskilled, Roster" },
+    { "type": "Internee", "nature": "Managerial, Skilled, Unskilled, Roster, Semi-Skilled" }
+  ],
+  "hiringApprovalAuthorityData": [
+    { "band": "1-5", "approvalAuthority": "Department Head, HCM, CEO", "additionalInfo": ""},
+    { "band": "6,7", "approvalAuthority": "Department Head, HCM", "additionalInfo": "" }
+  ],
+  "probationData": [
+    { "staff": "Permanent", "period": "3 Months", "additionalInfo": ""}
+  ],
+  "resignationDocumentationData": [
+    { "action": "Employee Resignation", "Documentation": "Sign & Upload Resignation Letter"},
+    { "action": "Acceptance by LM", "Documentation": ""},
+    { "action": "Employee Documentation", "Documentation": "Download & Complete Responsibility H/O form & Asset H/O form"},
+    { "action": "Acknowledgement from HR", "Documentation": "Sign & Upload Responsibility H/O form, Asset H/O form, Exit Clearance form, Exit Interview form"}
+  ],
+  "noticePeriodData": [
+    { "staff": "Permanent", "category": "Under Probation", "period": "2 Weeks", "additionalInfo": ""},
+    { "staff": "Permanent", "category": "After Confirmation", "period": "1 Months", "additionalInfo": ""}
+  ],
+  "separationData": [
+    { "type": "Resignation", "staff": "Permanent", "policy": "1 month notice period", "additionalInfo": "Deduction applicable in case of not serving notice period"},
+    { "type": "Retirement", "staff": "Permanent", "policy": "Mandatory at the age of 60 year", "additionalInfo": "Employee can be rehired on contract basis"},
+    { "type": "Termination/Release", "staff": "Permanent", "policy": "1 month notice or 1 month gross salary", "additionalInfo": "In case of fraud/misconduct, terminal benefits can be withheld by company"}
+  ]
+}

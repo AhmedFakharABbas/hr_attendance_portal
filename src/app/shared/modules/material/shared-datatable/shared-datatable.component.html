@@ -1,0 +1,60 @@
+<mat-table matSort #listDataSourceSort="matSort" [dataSource]="datatable" class="table-responsive">
+  <ng-container *ngFor="let column of columns; let ind = index" [cdkColumnDef]="column.columnDef">
+
+    <span *ngIf="column.header != 'Checkbox'">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header>
+        {{ column.header }}
+      </mat-header-cell>
+    </span>
+
+    <span *ngIf="column.header == 'Checkbox'">
+      <mat-header-cell *cdkHeaderCellDef>
+        <span class="checkboxes">
+
+          <mat-checkbox (change)="masterToggle()" [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </span>
+      </mat-header-cell>
+    </span>
+
+    <mat-cell *cdkCellDef="let row">
+
+      <span *ngIf="checkDataLink(row[column.columnDef])">
+        <a [routerLink]="row[column.columnDef].link+'/'+ row[column.columnDef].id">
+          {{row[column.columnDef].name}}
+        </a>
+      </span>
+
+      <span *ngIf="!checkDataType(row[column.columnDef]) && !checkDataLink(row[column.columnDef])">
+        <span *ngIf="row?.action" class="cursor-pointer" (click)="showDetail(row.action)">
+          {{ row[column.columnDef] }}
+        </span>
+        <span *ngIf="!row?.action">{{ row[column.columnDef] }}</span>
+      </span>
+
+      <span *ngIf="checkDataType(row[column.columnDef]) && !checkDataResubmit(row[column.columnDef])">
+        <a (click)="openModalWithData(row[column.columnDef].app_id)" [ngStyle]="{color:row[column.columnDef].color}"
+          data-toggle="modal" [attr.data-target]="'#'+row[column.columnDef].modal" class="status">
+          {{row[column.columnDef].value}}
+        </a>
+      </span>
+
+      <span *ngIf="checkDataResubmit(row[column.columnDef])">
+        <a (click)="bindForm(row[column.columnDef].app_id)" [ngStyle]="{color:row[column.columnDef].color}"
+          class="status">
+          {{row[column.columnDef].value}}
+        </a>
+      </span>
+
+      <span class="checkboxes" *ngIf="column.header == 'Checkbox'">
+        <mat-checkbox (click)="$event.stopPropagation()" (change)="toggle($event, row)"
+          [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </span>
+
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

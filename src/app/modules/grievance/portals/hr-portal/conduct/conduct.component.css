@@ -1,0 +1,130 @@
+.table td,
+.table th {
+  padding: 5px 5px 5px 5px;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table {
+  margin-bottom: 0px !important;
+  background-color: transparent;
+}
+div.ac-title.ml-10.mr-10[aria-expanded='false'] >.fr>  .fa-caret-up {
+  transform:  rotate(180deg);
+}
+.wrapper {
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+.ac-footer {
+  background: #D8DCDF;
+  padding: 4px 10px 4px;
+}
+.fr {
+  float: right;
+}
+.ac-title {
+  background-image: linear-gradient(#F7F7F7 , #D6D6D6);
+  /* background: url("../../../../../../assets/img/box-title.gif") repeat left top; */
+  padding: 8px 10px 8px 10px;
+  font: 13px/1em Verdana, Arial, Tahome ;
+  color: #343434;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* td{
+width: 50%;
+
+} */
+.td-50 {
+  width: 50%;
+}
+.td-33x {
+  width: 33.3%;
+}
+.row {
+  height: 32px;
+  width: 100%;
+  align-items: center;
+}
+.title {
+  color: #007bff;
+  font-size: 14px;
+  text-align: center;
+}
+textarea {
+  border: none;
+}
+textarea:focus-visible {
+  outline: none;
+}
+.submitButton {
+  color: #3080ea;
+  position: relative;
+  padding: 4px 6px 4px 6px;
+  border: 1px solid var(--unnamed-color-ffffff);
+  background: transparent linear-gradient(180deg, #ededed 0%, #fafafa 100%) 0%
+    0% no-repeat padding-box;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+
+  opacity: 1;
+  text-decoration: none;
+  font-size: 12px;
+}
+.submitButton:hover {
+  border: 1px solid #a6daee;
+  padding: 4px 6px 4px 6px;
+  background: transparent linear-gradient(0deg, #f1fafe 0%, #bde9fb 100%) 0% 0%
+    no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+  color: #343434;
+  text-decoration: none;
+  font-size: 12px;
+}
+.heading {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.io-textArea {
+  background-color: white;
+  border: none !important ;
+  padding: 0px !important;
+}
+.remaksTextArea {
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 286px !important;
+}
+.br-remarks {
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 100px !important;
+}
+.br-none {
+  border: none !important;
+}
+.card-body {
+  background-color: white;
+  padding: 0px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.card {
+  border: 1px solid white;
+}
+.mb-10{
+  margin-bottom: 10px;
+}

@@ -1,0 +1,45 @@
+.main {
+  min-height: 93.6%;
+  position: relative;
+  background: #FFFFFF url(../../../../assets/images/img/header_bgtile.gif) top repeat-x;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+
+.statusMenu {
+  padding: 0px;
+  height: 50px;
+  width: auto;
+  float: right;
+  background: url(../../../../assets/images/img/login_statusbar_bgtile.gif) top repeat-x;
+  font: 11px Tahoma, Arial, Verdana;
+  color: #4c4c4c;
+  text-align: left;
+}
+
+.list {
+  list-style-type: none;
+  padding: 6px 8px 0px 35px;
+  margin: 0;
+  height: 26px;
+  width: auto;
+  background: url(../../../../assets/images/img/login_statusbar_left.gif) left top no-repeat;
+}
+
+.list li {
+  display: inline-block;
+}
+
+.iso {
+  margin-top: 3px;
+  margin-left: 100px;
+  margin-right: 15px;
+  width: 115px;
+  height: 78px;
+}
+
+.logo {
+  display: inline-block;
+  margin: 27px;
+}

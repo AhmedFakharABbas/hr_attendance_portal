@@ -1,0 +1,628 @@
+<div class="card">
+  <div class="card-body">
+    <p class="ml-10">
+      <b>Conduct \ Enquiries</b> \
+      <span style="color: #007bff">Applications</span>
+    </p>
+    <app-grievance-form [applicationType]="data"></app-grievance-form>
+
+    <div
+      class="ac-title ml-10 mr-10"
+      data-toggle="collapse"
+      data-target="#decisionMaker"
+      aria-expanded="true"
+    >
+      Decision Maker
+      <span class="fr"> <i class="fas fa-caret-up"></i></span>
+    </div>
+    <div class="mb-10">
+    <div class="collapse show ml-10 mr-10" id="decisionMaker">
+      <table class="table table-striped">
+        <thead>
+          <tr style="background-color: rgba(0, 0, 0, 0.05)">
+            <td *ngIf="type == 'iOfficer' || type == 'Head/OD'" colspan="2">
+              <div class="row">
+                <div class="co-12">
+                  <span *ngIf="type == 'iOfficer'" class="heading pl-4"
+                    >Recommendation investigator officer</span
+                  >
+                  <span *ngIf="type == 'Head/OD'" class="heading pl-4"
+                    >Head of HCM & OD</span
+                  >
+                </div>
+              </div>
+            </td>
+            <td *ngIf="type == 'recomendation'" colspan="3">
+              <div class="row">
+                <div class="co-12">
+                  <span class="heading pl-4" *ngIf="type == 'recomendation'"
+                    >Recommendation</span
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              *ngIf="type == 'iOfficer' || type == 'iOfficer'"
+              scope="col"
+              class="title"
+            >
+              Actions
+            </td>
+            <td
+              *ngIf="type == 'iOfficer' || type == 'iOfficer'"
+              scope="col"
+              class="title"
+            >
+              Remarks
+            </td>
+            <td *ngIf="type == 'recomendation'" scope="col" class="title">
+              investigator
+            </td>
+            <td *ngIf="type == 'recomendation'" scope="col" class="title">
+              Head of HCM & OD
+            </td>
+            <td *ngIf="type == 'recomendation'" scope="col" class="title">
+              CEO
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Show Cause</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+
+            <td
+              *ngIf="type == 'Head/OD' || type == 'iOfficer'"
+              class="io-textArea"
+              rowspan="7"
+            >
+              <mat-form-field class="w-100 ml-0" appearance="outline">
+                <!-- <mat-label>Remarks</mat-label> -->
+                <!-- placeholder="Ex. It makes me feel..." -->
+                <textarea
+                  class="remaksTextArea"
+                  matInput
+                  placeholder="Ex. It makes me feel..."
+                ></textarea>
+              </mat-form-field>
+              <!-- <textarea  id="w3review" rows="16" cols="80"></textarea> -->
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Show Cause</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Show Cause</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <!-- <td style="background-color: white;"  rowspan="7">
+
+          </td> -->
+          </tr>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Penalty</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Penalty</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Penalty</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <!-- <td></td> -->
+          </tr>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Amount</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label"> Amount</mat-label>
+                    <input
+                      formControlName="employee_name"
+                      matInput
+                      placeholder=""
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Amount</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label"> Amount</mat-label>
+                    <input
+                      formControlName="employee_name"
+                      matInput
+                      placeholder=""
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Amount</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label"> Amount</mat-label>
+                    <input
+                      formControlName="employee_name"
+                      matInput
+                      placeholder=""
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <!-- <td></td> -->
+          </tr>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Warning</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Warning</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Warning</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <!-- <td></td> -->
+          </tr>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Suspension</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Suspension</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Suspension</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <!-- <td></td> -->
+          </tr>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Suspension Type</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Suspension Type</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Suspension Type</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <!-- <td></td> -->
+          </tr>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Termination</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Termination</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td
+              *ngIf="type == 'recomendation'"
+              [ngClass]="
+                type == 'iOfficer' || type == 'Head/OD' ? 'td-50' : 'td-33x'
+              "
+            >
+              <div class="row">
+                <div class="col-4 pl-4 pr-0">Termination</div>
+                <div class="col-7 pl-0">
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="label">Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option1</mat-option>
+                      <mat-option value="option2">Option2</mat-option>
+                      <mat-option value="option3">Option3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <!-- <td></td> -->
+          </tr>
+          <tr *ngIf="type == 'recomendation'">
+            <td class="p-0">
+              <tr>
+                <!-- class="pl-5 pr-5 pt-4" -->
+                <td class="p-5 br-none">Remarks</td>
+                <td style="background-color: #f2f2f2;    width: 262px;" class="io-textArea">
+                  <mat-form-field
+                    style="background-color: white"
+                    class="w-100 ml-1"
+                    appearance="outline"
+                  >
+                    <!-- <mat-label>Leave a comment</mat-label> -->
+                    <textarea
+                      class="br-remarks"
+                      matInput
+                      placeholder="investigator remarks ......"
+                    ></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!-- <tr>
+              <td>
+
+              </td>
+
+            </tr> -->
+            </td>
+            <td class="p-0">
+              <tr>
+                <!-- class="pl-5 pr-5 pt-4" -->
+                <td class="p-5 br-none">Remarks</td>
+                <td style="background-color: #f2f2f2  ; width: 262px;" class="io-textArea">
+                  <mat-form-field
+                    style="background-color: white"
+                    class="w-100 ml-1"
+                    appearance="outline"
+                  >
+                    <!-- <mat-label>Leave a comment</mat-label> -->
+                    <textarea
+                      class="br-remarks"
+                      matInput
+                      placeholder="Head of HCM & OD remarks ......"
+                    ></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!-- <tr>
+              <td>
+
+              </td>
+
+            </tr> -->
+            </td>
+            <td class="p-0">
+              <tr>
+                <!-- class="pl-5 pr-5 pt-4" -->
+                <td class="p-5 br-none">Remarks</td>
+                <td style="background-color: #f2f2f2;   width: 262px;" class="io-textArea">
+                  <mat-form-field
+                    style="background-color: white"
+                    class="w-100 ml-1"
+                    appearance="outline"
+                  >
+                    <!-- <mat-label>Leave a comment</mat-label> -->
+                    <textarea
+                      class="br-remarks"
+                      matInput
+                      placeholder="CEO remarks ......"
+                    ></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!-- <tr>
+              <td>
+
+              </td>
+
+            </tr> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ac-footer">
+        <div id="ac-button-list" class="text-right">
+          <button
+            *ngIf="type == 'iOfficer'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Submit
+          </button>
+
+          <button
+            *ngIf="type == 'Head/OD' || type == 'recomendation'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Approve
+          </button>
+          <button
+            *ngIf="type == 'Head/OD' || type == 'recomendation'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Disapprove
+          </button>
+          <button
+            *ngIf="type == 'Head/OD' || type == 'recomendation'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Resubmit
+          </button>
+          <button
+            *ngIf="type == 'Head/OD'"
+            type="submit"
+            class="submitButton ml-2"
+          >
+            Send to CEO
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</div>

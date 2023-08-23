@@ -1,0 +1,2 @@
+people_code,date_in,date_out,time_in,time_out,Note
+168537,06/30/20220,06/30/2022,9:30:00,17:30:00, Note: The time and time out format should be hh:mm:ss  =>  09:00:00 

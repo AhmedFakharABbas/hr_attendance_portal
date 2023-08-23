@@ -1,0 +1,83 @@
+
+.table-responsive {
+  position: relative;
+  overflow-y: auto;
+  width: auto;
+  border: 1px solid #D8DCDF;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+.table-responsive .mat-header-cell,
+.table-responsive .mat-cell,
+.table-responsive thead tr th,
+.table-responsive tbody td,
+.table-responsive tfoot tr td {
+  width: 1%;
+  padding: 8px 0;
+  font-size: 11px;
+  color: #343434;
+}
+
+.table-responsive .mat-header-cell,
+.table-responsive thead tr th {
+  /* padding: 7px 12px !important; */
+  color: #1A73E8;
+  font: 13px Roboto, Sans-Serif;
+  font-weight: 500 !important;
+  text-align: left;
+}
+
+.table-responsive .mat-header-row,
+.table-responsive .mat-footer-row,
+.table-responsive .mat-row {
+  height: auto;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+  color: #0078bd;
+}
+
+.document mat-label {
+  color: #00000099;
+}
+
+.table-responsive .mat-footer-row,
+.mat-footer-cell,
+.mat-header-cell {
+  font-weight: 600;
+}
+
+.mat-card {
+  padding: 0 !important;
+  margin: .5rem;
+  /* width: auto;
+  border: 1px solid #D8DCDF; */
+  
+}
+
+.table-responsive .mat-cell:first-of-type,
+.table-responsive .mat-header-cell:first-of-type,
+.table-responsive .mat-footer-cell:first-of-type {
+  padding-left:12px!important ;
+}
+
+mat-row,
+mat-header-row,
+mat-footer-row {
+  min-height: auto !important;
+}
+
+
+/* ::ng-deep .mat-footer-cell .mat-header-cell{
+  padding: 7px 12px !important;
+  color: #1A73E8;
+  font: 13px Roboto, Sans-Serif;
+  font-weight: 500 !important;
+  text-align: left;
+} */

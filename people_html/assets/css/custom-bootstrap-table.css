@@ -1,0 +1,18 @@
+.custom-table-bordered {
+  border-bottom: 1px solid #0000001f !important;
+  border-top: 1px solid #0000001f !important;
+}
+
+.custom-table-bordered th,
+.custom-table-bordered td {
+  border-bottom: 1px solid #0000001f !important;
+  border-top: 1px solid #0000001f !important;
+}
+
+.custom-table-striped tbody tr:nth-of-type(even) {
+  background-color: #fafafa !important;
+}
+
+.custom-table-striped thead tr {
+  background-color: #fafafa !important;
+}

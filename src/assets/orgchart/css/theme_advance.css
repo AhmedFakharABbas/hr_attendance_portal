@@ -1,0 +1,129 @@
+.node_container {
+    color: #000000;
+}
+.node {
+    width: 200px !important;
+    margin-top: 60px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.node_parent {
+    background: rgb(89,106,114);
+    background: -moz-linear-gradient(-45deg, rgba(89,106,114,1) 0%, rgba(206,220,231,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(89,106,114,1) 0%,rgba(206,220,231,1) 100%);
+    background: linear-gradient(135deg, rgba(89,106,114,1) 0%,rgba(206,220,231,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#596a72', endColorstr='#cedce7',GradientType=1 );
+
+
+    /*background: rgb(206,220,231); 
+    background: -moz-radial-gradient(center, ellipse cover, rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%); 
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); 
+    background: radial-gradient(ellipse at center, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=1 ); */
+}
+
+.child_only {
+    background: rgb(6,109,171); 
+    background: -moz-linear-gradient(-45deg, rgba(6,109,171,1) 0%, rgba(138,187,215,1) 69%, rgba(197,222,234,1) 100%); 
+    background: -webkit-linear-gradient(-45deg, rgba(6,109,171,1) 0%,rgba(138,187,215,1) 69%,rgba(197,222,234,1) 100%); 
+    background: linear-gradient(135deg, rgba(6,109,171,1) 0%,rgba(138,187,215,1) 69%,rgba(197,222,234,1) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#066dab', endColorstr='#c5deea',GradientType=1 );
+
+
+    
+    /*background: rgb(213,235,251); 
+    background: -moz-radial-gradient(center, ellipse cover, rgba(213,235,251,1) 0%, rgba(137,195,235,1) 49%, rgba(171,211,238,1) 69%, rgba(235,241,246,1) 100%); 
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(213,235,251,1) 0%,rgba(137,195,235,1) 49%,rgba(171,211,238,1) 69%,rgba(235,241,246,1) 100%); 
+    background: radial-gradient(ellipse at center, rgba(213,235,251,1) 0%,rgba(137,195,235,1) 49%,rgba(171,211,238,1) 69%,rgba(235,241,246,1) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5ebfb', endColorstr='#ebf1f6',GradientType=1 ); */
+}
+.orgchart .node:hover, .orgchart .node.focused {
+  background-color: #039BE5;
+  cursor: pointer;
+ }
+
+ .orgchart .node .edge {
+    font-size: 30px;
+    position: absolute;
+    color: #ffffff;
+    cursor: default;
+    transition: .2s;
+    bottom: -17px !important;
+}
+.edge.fa-minus-circle:before, .edge.fa-plus-circle::before {
+  background-color: #a3a3a3;
+  border-radius: 50%;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.orgchart > table > tbody > tr.lines > td,
+.orgchart table tr.lines td,
+.orgchart .lines .rightLine,
+.orgchart .lines .topLine,
+.orgchart .lines .downLine {
+    border-color: #039be5 !important;
+}
+.orgchart .lines .downLine {
+    background-color: #039be5 !important;
+}
+p.comp_name {
+    font-weight: 100 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.verticalNodes div.node {
+    margin: 10px auto !important;
+}
+
+.orgchart {
+    transition-duration: 0.12s;
+}
+
+p.number_image {
+    font-size: 52px;
+    color: #0078BD;
+}
+.orgchart .verticalNodes ul>li {
+    padding-top: 65px !important;
+}
+.orgchart .verticalNodes>td>ul>li:first-child::before,
+.orgchart .verticalNodes ul>li::before {
+    height: 150px;
+}
+.orgchart .verticalNodes ul>li:first-child::after,
+.orgchart .verticalNodes ul>li::after {
+    top: 145px;
+}
+.orgchart .verticalNodes ul>li::before, .orgchart .verticalNodes ul>li::after {
+    border-color: #039be5 !important;
+}
+a.node_options {
+    color: #000000 !important;
+}
+.border-div > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+h1.department_title {
+    width: 104% !important;
+    position: relative !important;
+    /* top: -57px; */
+    right: 8px !important;
+}
+.department_title ~ .node {
+    margin: 10px auto 10px !important;
+}
+.data_wrapper > .inner_wrapper > .node {
+    width: 95% !important;
+    margin-top: 0px !important;
+}
+.data_wrapper > .inner_wrapper > .node > .node {
+    margin-top: 67px !important;
+}

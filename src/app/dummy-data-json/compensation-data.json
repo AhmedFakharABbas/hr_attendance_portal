@@ -1,0 +1,115 @@
+{
+  "employmentTypeList": [
+    { "Id": 1, "Value": "Permanent" },
+    { "Id": 2, "Value": "Outsourced"},
+    { "Id": 3, "Value": "Contractual"},
+    { "Id": 4, "Value": "Consultant"}
+  ],
+  "benefitsTypeList": [
+    { "Id": 1, "Value": "Gratuity" },
+    { "Id": 2, "Value": "Provident Fund"}
+  ],
+  "workingDaysList": [
+    { "Id": 1, "Value": "Working Days" },
+    { "Id": 2, "Value": "Weeks"},
+    { "Id": 3, "Value": "Month"}
+  ],
+  "fromList": [
+    { "Id": 1, "Value": 21 },
+    { "Id": 2, "Value": 22},
+    { "Id": 3, "Value": 23},
+    { "Id": 4, "Value": 24}
+  ],
+  "toList": [
+    { "Id": 1, "Value": 28 },
+    { "Id": 2, "Value": 29},
+    { "Id": 3, "Value": 30}
+  ],
+  "departmentList": [
+    { "Id": 1, "Value": "Software Development"},
+    { "Id": 2, "Value": "Marketing"},
+    { "Id": 3, "Value": "Finance"},
+    { "Id": 4, "Value": "HR"}
+  ],
+  "bandList": [
+    { "Id": 1, "Value": "Band 1"},
+    { "Id": 2, "Value": "Band 2"},
+    { "Id": 3, "Value": "Band 3"},
+    { "Id": 4, "Value": "Band 4"}
+  ],
+  "entitlementList": [
+    { "Id": 1, "Value": "Hourly Rate * 1"},
+    { "Id": 2, "Value": "Weekly Rate * 0.5"}
+  ],
+  "daysList": [
+    { "Id": 1, "Value": "31 days"},
+    { "Id": 2, "Value": "6 Month"},
+    { "Id": 3, "Value": "3 Weeks"}
+  ],
+  "hoursList": [
+    { "Id": 1, "Value": "8 hours"},
+    { "Id": 2, "Value": "5 hours"}
+  ],
+  "yearList": [
+    { "Id": 1, "Value": 2023 },
+    { "Id": 2, "Value": 2022},
+    { "Id": 3, "Value": 2021},
+    { "Id": 4, "Value": 2020}
+  ],
+  "eligibiltyFromList":[
+    {"Id":1, "Value": "From DOJ"}
+  ],
+  "criteriaList":[
+    {"Id":1, "Value": "300 Days"},
+    {"Id":2, "Value": "9 Month"}
+  ],
+  "calculationOnList":[
+    {"Id":1, "Value": "Gross Salary"},
+    {"Id":2, "Value": "Net Salary"}
+  ],
+  "actualBaseSalaryData": [
+    {"header": "Basic Salary", "calculationBasis": "66.67% of Gross Salary"},
+    {"header": "House Rent", "calculationBasis": "30.00% of Gross Salary"},
+    {"header": "Utility", "calculationBasis": "3.33% of Gross Salary"}
+  ],
+  "fixedAllowancesData":[
+    {"header": "Fuel Allowance", "calculationBasis": "Band 4 & 5 only"},
+    {"header": "Medical Allowance", "calculationBasis": "Rs.2000 to all staff"},
+    {"header": "Special Allowance", "calculationBasis": "Band 6 & above all"}
+  ],
+  "yes": true,
+  "jobBandSalaryData": [
+    {"band": 1, "minSalary": "1,100,000", "maxSalary": "2,100,000"},
+    {"band": 2, "minSalary": "600,000", "maxSalary": "1,000,000"},
+    {"band": 3, "minSalary": "400,000", "maxSalary": "800,000"}
+  ],
+  "unpaidLeaveCalculationData":[
+    {"staff": 1, "workingDays": 1, "days": 30, "comments": ""},
+    {"staff": 2, "workingDays": 2, "days": 12, "comments": ""},
+    {"staff": 3, "workingDays": 3, "days": 2, "comments": ""}
+  ],
+  "payrollProcessing1Data":[
+    {"staff": 1, "from": 1, "to": 1}
+  ],
+  "payrollProcessing2Data":[
+    {"staff": 1, "from": 1, "to": 2}
+  ],
+  "overtime": true,
+  "overtimeCalculationData":[
+    {"eligibility1": 1, "eligibility2": 1, "eligibility3": 1, "entitlement": 1, "days": 1, "hours": 1, "additionalInfo": "No Comment"},
+    {"eligibility1": 2, "eligibility2": 2, "eligibility3": 2, "entitlement": 2, "days": 2, "hours": 2, "additionalInfo": "Overtime Calculation"},
+    {"eligibility1": 3, "eligibility2": 3, "eligibility3": 3, "entitlement": 2, "days": 2, "hours": 2, "additionalInfo": "Overtime Calculation"}
+  ],
+  "terminalBenefitsData":[
+    {"type": 1, "eligibiltyCount": 1, "eligibiltyYear": 3, "eligibiltyFrom": 1, "employmentType": 1, "criteria": 1, "calculationOn": 1, "isInterestBased": true, "interestBased": "Yes", "isEmployeeShare": true, "employeeShare": "20%", "isEmployerShare": true, "employerShare": "0.2%", "comments": "Terminal Benefits offer to employees."}
+  ],
+  "groupLifeDisabilityData":[
+    {"type": "Plan A", "eligibiltyCount": 1, "eligibiltyYear": 3, "eligibiltyFrom": 1, "employmentType": 1, "bandRange": 1, "gLILimit": "Up to Rs.500000", "accidentalLimit": "Up to Rs.1000000", "accidentalDisability": "Up to Rs.500000", "comments": "Group Life Disability to your staff."}
+  ],
+  "groupHealthData":[
+    {"type": "Plan A", "eligibiltyCount": 1, "eligibiltyYear": 3, "eligibiltyFrom": 1, "employmentType": 1, "bandRange": 1, "hospitalLimit": "Up to Rs.500000", "roomLimit": "Up to Rs.1000000", "comments": "Group Health offer to your staff."}
+  ],
+  "otherBenefitsData":[
+    {"type": "Maternity Plan", "eligibiltyCount": 1, "eligibiltyYear": 3, "eligibiltyFrom": 1, "employmentType": 1, "bandRange": 1, "expenseLimit": "Up to Rs.500000", "comments": "Other benifits offer to your staff."}
+  ]
+}

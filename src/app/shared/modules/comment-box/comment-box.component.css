@@ -1,0 +1,11 @@
+.comment-box-container {
+  transform: scale(.65, .85);
+  /* color: rgb(196 198 199); */
+  display: inline-block;
+  width: 0px;
+}
+
+.mat-icon-button {
+  width: auto;
+  height: 0px;
+}

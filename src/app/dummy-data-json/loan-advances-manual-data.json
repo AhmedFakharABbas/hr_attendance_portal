@@ -1,0 +1,78 @@
+{
+  "criteriaForSalaryAdvancesData":[
+    {"eligibility": "Permanent, All Band, All Dept", "tenure": "1 year from DOJ", "limit": "50% of Gross Salary, 2 times a year", "additionalInfo": ""},
+    {"eligibility": "Permanent, All Band, All Dept", "tenure": "1 year from DOJ", "limit": "50% of Gross Salary, 2 times a year", "additionalInfo": ""},
+    {"eligibility": "Permanent, All Band, All Dept", "tenure": "1 year from DOJ", "limit": "50% of Gross Salary, 2 times a year", "additionalInfo": ""},
+    {"eligibility": "Permanent, All Band, All Dept", "tenure": "1 year from DOJ", "limit": "50% of Gross Salary, 2 times a year", "additionalInfo": ""}
+  ],
+  "conditionsSalaryAdvancesData":[
+    {"conditionsSalaryAdvancesType": "Applicable for unexpected or unavoidable occurrence"},
+    {"conditionsSalaryAdvancesType": "Have no disciplinary action"}
+  ],
+  "paymentSalaryAdvancesData":[
+    {"employmentType": "Permanent Staff", "paymentSalaryAdvancesType1": "Cash", "paymentSalaryAdvancesType2": "Cheque", "paymentSalaryAdvancesType3": "Account Transfer"}
+  ],
+  "paybackPeriodData":[
+    {"employmentType": "Permanent Staff", "paybackPeriodDataType": "At current month end"}
+  ],
+  "reasonsSalaryAdvancesData":[
+    {"reasonsSalaryAdvancesType": "Relocation"},
+    {"reasonsSalaryAdvancesType": "Own Marriage"},
+    {"reasonsSalaryAdvancesType": "Credit Card Bill Payment"},
+    {"reasonsSalaryAdvancesType": "Very Pressing Situation"}
+  ],
+  "reschedulingData":[
+    {"employmentType": "Permanent Staff", "reschedulingType": 1}
+  ],
+  "advSalaryApprovalAuthorityData":[
+    {"advSalaryApprovalAuthorityHeading": "1st Approval"},
+    {"advSalaryApprovalAuthorityHeading": "2nd Approval"},
+    {"advSalaryApprovalAuthorityHeading": "3rd Approval"},
+    {"advSalaryApprovalAuthorityHeading": "4th Approval"}
+  ],
+  "advSalaryApprovalAuthorityTypeData":[
+    {"advSalaryApprovalAuthorityTypeColumn":[
+      {"approvalType": "LM"},
+      {"approvalType": "LM"},
+      {"approvalType": "HR"},
+      {"approvalType": "HR"}
+    ]}
+  ],
+  "typeForLoansData":[
+    {"loanType": "Emergency Loan", "eligibility": "Permanent, 1 year from DOJ, Bands 5,4,3,2,1", "limit": "1 Gross Salary", "rescheduling": "2 times", "paybackPeriod": "1 year", "topUp": "Allowed, 1 time", "interest": "No Interest", "additionalInfo": ""},
+    {"loanType": "Emergency Loan", "eligibility": "Permanent, 6 months from DOJ, Bands 6,7 & NM ", "limit": "1 Gross Salary", "rescheduling": "2 times", "paybackPeriod": "1 year", "topUp": "Allowed, 1 time", "interest": "No Interest", "additionalInfo": ""},
+    {"loanType": "Emergency Loan", "eligibility": "Permanent, 1 year from DOJ, Bands 6,7 & NM", "limit": "2 Gross Salary", "rescheduling": "2 times", "paybackPeriod": "1 year", "topUp": "Allowed, 1 time", "interest": "No Interest", "additionalInfo": ""},
+    {"loanType": "Special Transfer Loan", "eligibility": "Permanent, All Bands", "limit": "No Limit ", "rescheduling": "Not Allowed", "paybackPeriod": "1 year", "topUp": "", "interest": "", "additionalInfo": ""}
+  ],
+  "conditionsLoansData":[
+    {"conditionsLoansType": "Applicable for unexpected or unavoidable occurrence"},
+    {"conditionsLoansType": "Has not taken any other company loan"},
+    {"conditionsLoansType": "Have no disciplinary action"}
+  ],
+  "paymentLoansData":[
+    {"employmentType": "Permanent Staff", "paymentLoansType1": "Cash", "paymentLoansType2": "Cheque", "paymentLoansType3": "Account Transfer"}
+  ],
+  "paybackPeriodLoanData":[
+    {"employmentType": "Permanent Staff", "paybackPeriodDataLoanType": "At current month end"}
+  ],
+  "reasonsLoansData":[
+    {"reasonsLoansType": "Relocation"},
+    {"reasonsLoansType": "Own Marriage"},
+    {"reasonsLoansType": "Credit Card Bill Payment"},
+    {"reasonsLoansType": "Very Pressing Situation"}
+  ],
+  "loansApprovalAuthorityData":[
+    {"loansApprovalAuthorityHeading": "1st Approval"},
+    {"loansApprovalAuthorityHeading": "2nd Approval"},
+    {"loansApprovalAuthorityHeading": "3rd Approval"},
+    {"loansApprovalAuthorityHeading": "4th Approval"}
+  ],
+  "loansApprovalAuthorityTypeData":[
+    {"loansApprovalAuthorityTypeColumn":[
+      {"approvalType": "LM"},
+      {"approvalType": "LM"},
+      {"approvalType": "HR"},
+      {"approvalType": "HR"}
+    ]}
+  ]
+}

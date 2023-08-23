@@ -1,0 +1,96 @@
+{
+  "employmentTypeList": [
+    { "Id": 1, "Value": "Permanent" },
+    { "Id": 2, "Value": "Outsourced"},
+    { "Id": 3, "Value": "Contractual"},
+    { "Id": 4, "Value": "Consultant"}
+  ],
+  "yearList": [
+    { "Id": 1, "Value": 2023},
+    { "Id": 2, "Value": 2022},
+    { "Id": 3, "Value": 2021},
+    { "Id": 4, "Value": 2020}
+  ],
+  "eligibiltyFromList":[
+    {"Id":1, "Value": "From DOI"}
+  ],
+  "bandList": [
+    { "Id": 1, "Value": "Band 1"},
+    { "Id": 2, "Value": "Band 2"},
+    { "Id": 3, "Value": "Band 3"},
+    { "Id": 4, "Value": "Band 4"}
+  ],
+  "departmentsList":[
+    {"Id": 1, "Value": "Software Development"},
+    {"Id": 2, "Value": "Marketing"},
+    {"Id": 3, "Value": "HR"}
+  ],
+  "monthDropdownList":[
+    {"Id": 1, "Value": "Month"},
+    {"Id": 2, "Value": "Year"},
+    {"Id": 3, "Value": "Week"}
+  ],
+  "payList":[
+    {"Id": 1, "Value": "Gross Pay"},
+    {"Id": 2, "Value": "Net Pay"}
+  ],
+  "domesticPayList":[
+    {"Id": 1, "Value": "PKR"}
+  ],
+  "internationalPayList":[
+    {"Id": 1, "Value": "USD"},
+    {"Id": 2, "Value": "GBP"}
+  ],
+  "domesticClassList":[
+    {"Id": 1, "Value": "Business Class"},
+    {"Id": 2, "Value": "First Class"},
+    {"Id": 3, "Value": "Economy Class"}
+  ],
+  "expensesReimbursementData":[
+    {"type": "Phone Call", "employmentType": 1, "bandRange": 1, "departments": 1, "noOfDays": 3, "monthDropdown": 1, "eligibiltyFrom": 1, "limitPay": 1, "limitNumber": 50, "comments": "Permanent employees get 50% reimbursement on Phone Call."},
+    {"type": "Visa Expense", "employmentType": 1, "bandRange": 1, "departments": 1, "noOfDays": 3, "monthDropdown": 1, "eligibiltyFrom": 1, "limitPay": 1, "limitNumber": 50, "comments": "Permanent employees get 50% reimbursement on Expense Visa."}
+  ],
+  "expenseAuthorizationData":[
+    {"lmApproval": true, "lmApprovalCount": 2, "hrApproval": true, "hrApprovalCount": 1, "ceoApproval": false}
+  ],
+  "expenseAuthorizationComment": "2 line manager approval and 1 HR approval required for expense authorization.",
+  "travelAuthorizationData":[
+    {"lmApproval": true, "lmApprovalCount": 2, "hrApproval": true, "hrApprovalCount": 1, "ceoApproval": false}
+  ],
+  "travelAuthorizationComment": "2 line manager approval and 1 HR approval required for travel authorization.",
+  "businessTravelOfferData":[
+    {"type": "Company Business", "employmentType": 1, "bandRange": 1, "departments": 1, "entitlement": "Entitlement 50% on travel allowance", "comments": "No Comments"},
+    {"type": "Seminar", "employmentType": 1, "bandRange": 1, "departments": 1, "entitlement": "Entitlement 50% on travel allowance", "comments": "No Comments"}
+  ],
+  "domesticAccommodationData":[
+    {"employmentType": 1, "bandRange": 1, "city": "Karachi", "hotelName": "Sheraton, Pearl Continental"},
+    {"employmentType": 1, "bandRange": 2, "city": "Karachi", "hotelName": "Marriott, Avari Tower"},
+    {"employmentType": 1, "bandRange": 1, "city": "Lahore", "hotelName": "Pearl Continental"},
+    {"employmentType": 1, "bandRange": 2, "city": "Lahore", "hotelName": "Holiday Inn"}
+  ],
+  "internationalAccommodationData":[
+    {"employmentType": 1, "bandRange": 1, "country": "Dubai", "hotelName": "Gloria Hotel"},
+    {"employmentType": 1, "bandRange": 2, "country": "Dubai", "hotelName": "Radisson Bin"},
+    {"employmentType": 1, "bandRange": 1, "country": "Sharjah", "hotelName": "H72 Hues"},
+    {"employmentType": 1, "bandRange": 2, "country": "Sharjah", "hotelName": "Golden Tulip Hotel"}
+  ],
+  "isNo": false, "isAdvancePayment": true, "isClaimOnReturn": false,
+  "personalArrangementsData":[
+    {"employmentType": 1, "bandRange": 1, "departments": 1, "domesticPay": 1, "domesticNumber": 5000, "internationalPay": 1, "internationalNumber": 200, "comments": "No Comments"}
+  ],
+  "classTravelData":[
+    {"employmentType": 1, "bandRange": 1, "departments": 1, "domesticClass": 3, "internationalClass": 1, "comments": "No Comments"}
+  ],
+  "dailyAllowanceLimitData":[
+    {"employmentType": 1, "bandRange": 1, "departments": 1, "domesticPay": 1, "domesticNumber": 1300, "internationalPay": 1, "internationalNumber": "On Arrival", "comments": "No Comments"}
+  ],
+  "kilometerAllowanceData":[
+    {"type": "Public Transport", "employmentType": 1, "bandRange": 1, "departments": 1, "limitPay": 1, "limitNumber": 3, "comments": "Permanent employees get 3 Rs/KM on Public Transport."},
+    {"type": "Motor Bike", "employmentType": 1, "bandRange": 1, "departments": 1, "limitPay": 1, "limitNumber": 8, "comments": "Permanent employees get 8 Rs/KM on Motor Bike."},
+    {"type": "Personal Car & Fuel", "employmentType": 1, "bandRange": 1, "departments": 1, "limitPay": 1, "limitNumber": 15, "comments": "Permanent employees get 15 Rs/KM on Personal Car & Fuel."}
+  ],
+  "transferallowancesData":[
+    {"type": "Moving Allowance", "employmentType": 1, "bandRange": 1, "departments": 1, "noOfDays": 3, "monthDropdown": 1, "eligibiltyFrom": 1, "limitPay": 1, "limitNumber": 50, "comments": "Permanent employees get 50% reimbursement on Moving Allowance."},
+    {"type": "Hotel Accommodation", "employmentType": 1, "bandRange": 1, "departments": 1, "noOfDays": 3, "monthDropdown": 1, "eligibiltyFrom": 1, "limitPay": 1, "limitNumber": 50, "comments": "Permanent employees get 50% reimbursement on Hotel Accommodation."}
+  ]
+}

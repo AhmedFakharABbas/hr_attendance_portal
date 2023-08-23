@@ -102,3 +102,28 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output
+dist/
+
+# Ignore environment files (adjust if necessary)
+src/environments/*.js
+src/environments/*.js.map
+
+# Ignore any sensitive or private configuration files
+src/app/config.secret.ts
+
+# Ignore editor specific files
+.vscode/
+.idea/
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore cache
+.cache/
+*.cache

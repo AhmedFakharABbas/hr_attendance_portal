@@ -1,0 +1,9 @@
+.btn-close {
+  position: absolute !important;
+  right: 9px;
+  top: -2px;
+}
+
+.modal-body {
+  padding: 10px;
+}

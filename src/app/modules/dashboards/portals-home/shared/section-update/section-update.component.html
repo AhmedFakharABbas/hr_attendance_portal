@@ -1,0 +1,8 @@
+<div class="sec0-2">
+  <ul>
+    <li *ngFor="let update of updates">
+      <img [src]="update.icon" alt="icon" width="15px">
+      <a [routerLink]="update.link">{{update.news}}</a>
+    </li>
+  </ul>
+</div>

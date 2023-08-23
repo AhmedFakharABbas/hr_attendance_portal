@@ -1,0 +1,4 @@
+<div *ngIf="(control.touched && control.invalid)">
+  <div class="text-danger" *ngIf="control.errors.required">{{requiredMsg}}</div>
+  <div class="text-danger" *ngIf="control.errors.pattern">{{patternMsg}}</div>
+</div>

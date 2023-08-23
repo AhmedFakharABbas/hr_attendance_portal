@@ -1,0 +1,98 @@
+<!-- Table section start -->
+<div class="example-container mat-elevation-z8">
+  <mat-table
+    matSort
+    [ngClass]="
+      componentType.type == 'Emp-Correction-Status'
+        ? 'emp-ac-table'
+        : componentType.type == 'lm-Correction-Status'
+        ? 'lm-ac-table'
+        : componentType.type == 'hr-Correction-Status'
+        ? 'hr-ac-table'
+        : 'ac-table'
+    "
+    #table
+    [dataSource]="dataSource"
+    (scroll)="onTableScroll($event)"
+  >
+
+  <ng-container matColumnDef="employee_name">
+    <mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header>
+      Employee
+    </mat-header-cell>
+    <mat-cell class="hr-employee-cell" *matCellDef="let element">
+      {{ element.employee_name }}
+    </mat-cell>
+  </ng-container>
+
+
+    <!-- Month Column -->
+    <ng-container matColumnDef="month">
+      <mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header>
+        Month
+      </mat-header-cell>
+      <mat-cell class="custom-cell" *matCellDef="let element">
+        {{ element.month }}
+      </mat-cell>
+    </ng-container>
+
+
+
+
+    <!-- statusmonth Column -->
+    <ng-container matColumnDef="month_name">
+      <mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header>
+        Month
+      </mat-header-cell>
+      <mat-cell class="custom-cell" *matCellDef="let element">
+        {{ element.month_name }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Corrections Column -->
+    <ng-container matColumnDef="corrections">
+      <mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header>
+        Correction
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.corrections }}
+      </mat-cell>
+    </ng-container>
+    <!-- approved Column -->
+    <ng-container matColumnDef="approved">
+      <mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header>
+        Approved
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.approved }}
+      </mat-cell>
+    </ng-container>
+    <!-- Pending Column -->
+    <ng-container matColumnDef="pending">
+      <mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header>
+        Pending
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.pending }}
+      </mat-cell>
+    </ng-container>
+    <!-- Reject Column -->
+    <ng-container matColumnDef="rejected">
+      <mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+        >Rejected
+      </mat-header-cell>
+      <mat-cell class="custom-cell" *matCellDef="let element">
+        {{ element.rejected }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row
+      *matHeaderRowDef="displayedColumns"
+      class="tableHeader"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: displayedColumns"
+
+    ></mat-row>
+  </mat-table>
+</div>

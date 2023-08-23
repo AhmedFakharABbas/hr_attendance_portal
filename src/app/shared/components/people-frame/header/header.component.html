@@ -1,0 +1,133 @@
+<div class="header-wrapper row">
+  <div class="col-md-12 p-0">
+    <div class="statusMenu">
+      <ul class="main-list">
+        <li><img src="assets/img/header_person.png"></li>
+        <li><b class="align-middle">{{employeeName}}</b></li>
+        <li><img src="assets/img/login_statusbar_saperator.gif"></li>
+        <li class="select">
+
+          <div class="btn-group" dropdown>
+            <button type="button" class="btn btn-white label-btn" dropdownToggle>
+              {{getPortalName()}}
+              <span class="caret-img"></span>
+            </button>
+            <ul id="dropdown-split" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-split">
+              <li role="menuitem">
+                <a class="dropdown-item" *ngFor="let portal of portals" (click)="selectPortal(portal.val)"
+                  [ngClass]="{'dropdown-menu-selected': getPortalName() === portal.name}"
+                  [title]="portal.name">{{portal.name}}</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-group disabledDiv ml-2" dropdown>
+            <button type="button" class="btn btn-white label-btn" dropdownToggle>People
+              <span class="caret-img"></span>
+            </button>
+            <ul id="dropdown-split" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-split">
+              <li role="menuitem">
+                <a class="dropdown-item" title="People">People</a>
+                <a class="dropdown-item" title="Keystone">Keystone</a>
+                <a class="dropdown-item" title="Heritage">Heritage</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li><img src="assets/img/login_statusbar_saperator.gif"></li>
+        <li>
+          <a href="#" title="HR Policy Manual" target="_blank">
+            <img src="assets/img/book.png">
+          </a>
+        </li>
+        <li><img src="assets/img/login_statusbar_saperator.gif"></li>
+        <li>
+          <a class="disabled" href="#" title="Help Center" target="_blank">
+            <img src="assets/img/help.png">
+          </a>
+        </li>
+        <li><img src="assets/img/login_statusbar_saperator.gif"></li>
+        <li>
+          <a href="#" id="link_user_manual" title="User Manual" target="_blank">
+            <img src="assets/img/ico_info.png">
+          </a>
+        </li>
+        <li><img src="assets/img/login_statusbar_saperator.gif"></li>
+        <li>
+          <a class="disabled" href="#" title="Change Password">
+            <img src="assets/img/ico_logout.png">
+          </a>
+        </li>
+        <li><img src="assets/img/login_statusbar_saperator.gif"></li>
+        <li><a href="#" title="Logout">Logout</a></li>
+      </ul>
+      <div class="statusMenuDate">{{currentDate | date:'EEEE, d LLLL, yyyy'}} &nbsp;&nbsp;|&nbsp;&nbsp;
+        <span id="miniclock">{{clock}}</span>
+      </div>
+    </div>
+    <img src="assets/img/logo.png" alt="People" class="cropLogo" title="people" height="60" />
+  </div>
+
+  <div class="w-100" (mouseleave)="openLink('', '', false)">
+    <ul class="main_navigation">
+      <li
+        [ngClass]="[main.status === 1 ? '' : 'disabled_top', headerService.levelOneActive == main.id ? 'current':'', ind == 0 ? 'first_item ml-0' : 'inner_item', ind ==  (headerService.header | async)?.length -1? 'last_item inner_item' : '']"
+        (mouseenter)="headerService.menuHoverSelection(main.id, 1)"
+        (click)="openLink(main.component_name, main.file_name, true)"
+        *ngFor="let main of (headerService.header | async); let ind= index">
+        <a [ngClass]=" main.status === 1 ? '' : 'disabled'">
+          <span class="image"><img src="assets/icons/{{main.icon}}" /></span>
+          {{main.menu_title}}
+        </a>
+      </li>
+    </ul>
+    <ul class="second_tier_menu second_tier_menu_height">
+      <li [ngClass]="mainSubMenu.status === 1 ? 'current' : 'disabled_top'"
+        *ngFor="let mainSubMenu of (headerService.levelOne | async)"
+        (mouseenter)="headerService.menuHoverSelection(mainSubMenu.id, 2)"
+        (click)="openLink(mainSubMenu.component_name, mainSubMenu.file_name, true)">
+        <a
+          [ngClass]="[mainSubMenu.status === 1  ? '' : 'disabled', mainSubMenu.id === headerService.levelTwoActive ? 'active' : '', mainSubMenu.id === headerService.levelTwoHover ? 'hover_color' : '']">
+          <span>{{mainSubMenu.menu_title}}</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="second_tier_menu">
+      <ng-container *ngFor="let menu of (headerService.levelTwo | async)">
+        <li
+          [ngClass]="[menu.status === 1 ? 'current' : 'disabled_top', (menu.component_name === 'lm_employee_attendance' || menu.component_name === 'hr_employee_attendance') ? 'd-none' : '']"
+          (click)="openLink(menu.component_name, menu.file_name, true)">
+          <a [ngClass]="[
+            menu.status === 1 ? '' : 'disabled',
+            menu.id === headerService.levelThreeActive ? 'active' : '',
+            (menu.id === 118 && router.url === '/hr_employee_attendance' ) ? 'active':''
+            ]">
+            <span>{{menu.menu_title}}</span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+
+  <div class="path">
+    <span class="gray" *ngIf="headerService.breadCrumbHead"
+      [ngClass]="{'active': !headerService.breadCrumbSecond}">{{headerService.breadCrumbHead}}</span>
+    <span class="gray" *ngIf="headerService.breadCrumbSecond" [ngClass]="{'active': !headerService.breadCrumbThird}">
+      / {{headerService.breadCrumbSecond}}
+    </span>
+    <span class="gray" *ngIf="router.url === '/hr_employee_attendance'"> / Profiles</span>
+    <span class="gray" *ngIf="headerService.breadCrumbThird"
+      [ngClass]="{'active': (!(headerService.breadCrumbForth | async).length && !empName)}">
+      / {{headerService.breadCrumbThird}}
+    </span>
+
+    <ng-template ngIf="(headerService.breadCrumbForth | async).length">
+      <span class="gray" *ngFor="let forth of (headerService.breadCrumbForth | async); let ind = index"
+        [ngClass]="{'active': ind+1 === (headerService.breadCrumbForth | async).length}">
+        / {{forth}}
+      </span>
+    </ng-template>
+    <span class="gray" *ngIf="empName"> / {{empName}} </span>
+  </div>
+
+</div>
