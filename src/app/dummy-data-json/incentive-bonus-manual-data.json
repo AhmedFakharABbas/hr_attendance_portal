@@ -1,0 +1,23 @@
+{
+  "incentiveTypeHeading": "Individual Performance",
+  "incentiveOfferData":[
+    {"incentiveType": "Sales Incentive", "eligibility": "Permanent Staff, All Bands, Sales Department", "entitlement": "1% of Sale", "paymentOfIncentive": " Monthly", "additionalInfo": "Till probation, company will provide gross salary to employees and after probation if there is no sale in a month, company will pay salary to employee however it will be adjusted with the commission from coming sales. In case of third party involvement, 1% commission will be borne by third party instead of company."}
+  ],
+  "bonusTypeHeading": "Individual Performance",
+  "bonusOfferData":[
+    {"bonusType": "Cash Award", "eligibility": "Permanent Staff of All Departments", "entitlement": "Up to 1 Gross Salary", "paymentOfBonus": " Quarterly", "additionalInfo": "will be recommended by line manager for any individual exceptional performance."}
+  ],
+  "statutoryBonusData": [
+    {"eligibility": " Permanent Staff, All Band, All Department", "tenure": "3 months from DOJ", "limit": "50% of Gross Salary", "frequency": "1 time", "dueMonth": "December", "additionalInfo": "will be paid every year to staff on completing 180 days"}
+  ],
+  "festivalOccasionalBonusData":[
+    {"festivalOccasionalBonusType": "Eid Bonus", "eligibility": "Permanent Staff, Band 6 & NM, All Department, Muslims", "tenure": "3 months from DOJ", "limit": "50% of Gross Salary", "frequency": "2 times", "additionalInfo": "Shall be awarded on Eid-ul-Fitr and Eid-ul-Adha respectively to workers and supervisors."},
+    {"festivalOccasionalBonusType": "Christmas Bonus", "eligibility": "Permanent Staff, Band 6 & NM, All Department, Christians", "tenure": "3 months from DOJ", "limit": "50% of Gross Salary", "frequency": "2 times", "additionalInfo": "Shall be awarded on Easter and Christmas respectively to workers and supervisors."}
+  ],
+  "longServiceAwardData":[
+    {"awardTitle": "3 Years Service Award", "eligibility": "Permanent, All Band, All Dept", "tenure": "1 Year to 3 Years", "limit": "1 gross salary", "additionalInfo": "Certificate"},
+    {"awardTitle": "5 Years Service Award", "eligibility": "Permanent, All Band, All Dept", "tenure": "3 Year to 5 Years", "limit": "1.5 gross salary", "additionalInfo": "Certificate"},
+    {"awardTitle": "7 Years Service Award", "eligibility": "Permanent, All Band, All Dept", "tenure": "5 Year to 7 Years", "limit": "2 gross salary", "additionalInfo": "Certificate"},
+    {"awardTitle": "10 Years Service Award", "eligibility": "Permanent, All Band, All Dept", "tenure": "10 Year & above", "limit": "3 gross salary", "additionalInfo": "Certificate"}
+  ]
+}

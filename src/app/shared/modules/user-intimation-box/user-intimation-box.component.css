@@ -1,0 +1,31 @@
+.error-block .error-block-inner {
+  position: relative;
+  padding-left: 50px;
+}
+
+.error-block button {
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  line-height: 0;
+}
+
+.error-block {
+  font: 12px Tahoma, Arial, Verdana;
+  margin: 10px;
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+.warning {
+  border: 1px solid #E4BBBC;
+  background: #F8E9E9 url(../../../../assets/images/icon-error.png) no-repeat 10px 8px;
+  color: #b80000;
+}
+
+.success {
+  background: url(../../../../assets/images/icon-succes.png) no-repeat 10px 8px #EBF9E2;
+  border: 1px solid #BEE4A5;
+  color: #6aa500;
+}

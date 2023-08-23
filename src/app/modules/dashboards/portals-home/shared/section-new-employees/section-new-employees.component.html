@@ -1,0 +1,16 @@
+<div class="sec1-1">
+  <table>
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of newEmployees">
+        <td><a [routerLink]="employee.link">{{employee.name}}</a></td>
+        <td>{{employee.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

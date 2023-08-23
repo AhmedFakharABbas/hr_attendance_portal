@@ -1,0 +1,16 @@
+div#chart-container > .orgchart > table > tr:first-child > td > .node {
+    visibility: hidden !important;
+    width: 100% !important;
+    display: none;
+}
+
+div#chart-container > .orgchart > table > tr:first-child + .verticalNodes>td::before,
+div#chart-container > .orgchart > table > tr:first-child + .verticalNodes ul>li:before,
+div#chart-container > .orgchart > table > tr:first-child + .verticalNodes ul>li:after {
+    display: none !important;
+}
+
+div#chart-container > .orgchart > table > tr.lines {
+    visibility: hidden !important;
+    display: none !important;
+}

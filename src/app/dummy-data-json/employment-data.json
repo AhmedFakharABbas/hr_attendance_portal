@@ -1,0 +1,85 @@
+{
+  "staffList": [
+    { "Id": 1, "Value": "Permanent" },
+    { "Id": 2, "Value": "Outsourced"},
+    { "Id": 3, "Value": "Contractual"},
+    { "Id": 4, "Value": "Consultant"}
+  ],
+  "periodMonthList": [
+    {"Id": 1, "Value": "Months"},
+    {"Id": 2, "Value": "Weeks"}
+  ],
+  "categoryList": [
+    {"Id": 1, "Value": "Under Probation"},
+    {"Id": 2, "Value": "After Confirmation"}
+  ],
+  "seprationTypeList": [
+    {"Id": 1, "Value": "Termination"}
+  ],
+  "policyNoticeList": [
+    {"Id": 1, "Value": "1 Month"},
+    {"Id": 2, "Value": "3 Month"}
+  ],
+  "policyNoticeOrList": [
+    {"Id": 1, "Value": "Gross Salary"}
+  ],
+  "policyAtAgeOfList": [
+    {"Id": 1, "Value": "60 Year"},
+    {"Id": 2, "Value": "45 Year"}
+  ],
+  "actionList": [
+    {"Id": 1, "Value": "Employee Resignation"},
+    {"Id": 2, "Value": "Line Manager Approval"},
+    {"Id": 3, "Value": "Employee Documentation Completion"},
+    {"Id": 4, "Value": "HR Acknowledgement"}
+  ],
+  "documentActionList":[
+    {"Id": 1, "Value": "Upload Signed"},
+    {"Id": 2, "Value": "Download Template"}
+  ],
+  "categoryStaffData": [
+    { "type": "Permanent", "managerial": true, "skilled": false, "unSkilled": false, "semiSkilled": true, "roaster": false },
+    { "type": "Outsourced", "managerial": false, "skilled": true, "unSkilled": false, "semiSkilled": false, "roaster": true },
+    { "type": "Contractual", "managerial": false, "skilled": true, "unSkilled": false, "semiSkilled": false, "roaster": true },
+    { "type": "Daily Wager", "managerial": true, "skilled": false, "unSkilled": false, "semiSkilled": true, "roaster": false },
+    { "type": "Consultant", "managerial": true, "skilled": true, "unSkilled": true, "semiSkilled": true, "roaster": false },
+    { "type": "Part Timer", "managerial": false, "skilled": false, "unSkilled": false, "semiSkilled": true, "roaster": false },
+    { "type": "Internee", "managerial": false, "skilled": false, "unSkilled": false, "semiSkilled": false, "roaster": true }
+  ],
+  "comment" : "Personality developemnt is required.",
+  "approvalAuthorityData": [
+    { "band": "1-5", "department_head": true, "head_HR": false, "cEO": false, "other": true, "additional_info": "No Comment" },
+    { "band": "6-9", "department_head": false, "head_HR": false, "cEO": false, "other": true, "additional_info": "Documents is pending." }
+  ],
+  "probationaryPeriodData":[
+    { "staff": 2, "period_number": 3, "period_months": 1, "additional_info": "No Comment." },
+    { "staff": 1, "period_number": 6, "period_months": 2, "additional_info": "Permanent employee don't need to inform before resign." }
+  ],
+  "noticePeriodData": [
+    { "staff": 2, "category": 2, "period_number": 3, "period_months": 1, "additional_info": "No Comment" }
+  ],
+  "seprationProcess1Data": [
+    {"seprationType" : 1, "employmentType": 2, "policy_notice": 1, "policy_notice_or": 1 , "additional_info": "No Comment"}
+  ],
+  "seprationProcess2Data": [
+    {"seprationType" : 1, "employmentType": 3, "policy_at_age_of": 1, "additional_info": "Sepration Process Information."}
+  ],
+  "seprationProcess3Data": [
+    {"seprationType" : 1, "employmentType": 2, "policy_notice": 1, "additional_info": "No Comment"}
+  ],
+  "documentationRequiredProcessData": [
+    {"action": 1, "document_action": 1, "additional_info": "", "documentArrays" : [
+      {"document" : "Resignation Letter"}
+    ]},
+    {"action": 2, "document_action": 0, "additional_info": "", "documentArrays" : [
+      {"document": "Responsibility Handover Form"}
+    ]},
+    {"action": 3, "document_action": 2, "additional_info": "", "documentArrays" : [
+      {"document": "Asset Handover Form"}
+    ]},
+    {"action": 4, "document_action": 1, "additional_info": "", "documentArrays" : [
+      {"document": "Exit Clearance Form"}
+    ]}
+  ]
+
+}

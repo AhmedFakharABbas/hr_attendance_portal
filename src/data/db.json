@@ -1,0 +1,1588 @@
+{
+  "get_emp_portal_meta_data":[
+   {
+  "employee":{
+  "employee_id": 1,
+  "employee_name":"Abdul kareem",
+  "department_id":5,
+  "designation_id":3
+          },
+  "Departments": [
+            {
+              "department_id": 1,
+              "department_title": "Marketing"
+             },
+             {
+              "department_id": 2,
+              "department_title": "Operations"
+             },
+             {
+              "department_id": 3,
+              "department_title": "Finance"
+             },
+             {
+              "department_id": 4,
+              "department_title": "Sales"
+             },
+             {
+              "department_id": 5,
+              "department_title": "Tactical"
+             }
+            ],
+  "Designations": [
+              {
+                "designation_id": 1,
+                "designation_title": "Major General"
+               },
+               {
+                "designation_id": 2,
+                "designation_title": "Major"
+               },
+               {
+                "designation_id": 3,
+                "designation_title": "Captain"
+               },
+               {
+                "designation_id": 4,
+                "designation_title": "Lieutenant Colonel"
+               },
+               {
+                "designation_id": 5,
+                "designation_title": "Corporal"
+               }
+              ],
+  "Employees": [
+                {
+                  "employee_id": 1,
+                  "employee_name": "Ahmed"
+                 },
+                 {
+                  "employee_id": 2,
+                  "employee_name": "Abdullah"
+                 },
+                 {
+                  "employee_id": 3,
+                  "employee_name": "Jatana"
+                 },
+                 {
+                  "employee_id": 4,
+                  "employee_name": "Ravinder"
+                 },
+                 {
+                  "employee_id": 5,
+                  "employee_name": "jack"
+                 }
+                ]
+   }
+  ],
+  "get_grievance_applicaitons_list&page=1":[
+    {
+      "application_status": "success",
+      "statusCode": 200,
+      "message": "Grievance Applicaitons List.",
+      "data": {
+        "current_page": 1,
+      "data":[
+        {
+        "employee_id": 1,
+          "employee_name": "Anthony",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId": 32423,
+          "application_date": "12-Nov-2020",
+          "type": "AType",
+          "grievance_from": "12-Nov-2020",
+          "grievance_to": "12-Nov-2020",
+          "application_status": "Pending"
+        },
+        {
+        "employee_id": 2,
+          "employee_name": "Bobby",
+          "against_employee_name": "William",
+          "grievanceAgainstId": 32423,
+          "application_date": "13-Nov-2020",
+          "type": "bType",
+          "grievance_from": "13-Nov-2020",
+          "grievance_to": "13-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 3,
+          "employee_name": "Charles",
+          "against_employee_name": "Richard",
+          "grievanceAgainstId": 32423,
+          "application_date": "14-Nov-2020",
+          "type": "cType",
+          "grievance_from": "14-Nov-2020",
+          "grievance_to": "14-Nov-2020",
+          "application_status": "Approved"
+        },
+        {
+        "employee_id": 4,
+          "employee_name": "Daniel",
+          "against_employee_name": "Joseph",
+          "grievanceAgainstId": 32423,
+          "application_date": "15-Nov-2020",
+          "type": "dType",
+          "grievance_from": "15-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Pending"
+        },
+        {
+        "employee_id": 5,
+          "employee_name": "Edward",
+          "against_employee_name": "Thomas",
+          "grievanceAgainstId": 32423,
+          "application_date": "16-Nov-2020",
+          "type": "eType",
+          "grievance_from": "26-Nov-2020",
+          "grievance_to": "26-Nov-2020",
+          "application_status": "Pending"
+        },
+        {
+        "employee_id": 6,
+          "employee_name": "Frank",
+          "against_employee_name": "Charles",
+          "grievanceAgainstId": 32423,
+          "application_date": "17-Nov-2020",
+          "type": "fType",
+          "grievance_from": "27-Nov-2020",
+          "grievance_to": "27-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 7,
+          "employee_name": "George",
+          "against_employee_name": "Christopher",
+          "grievanceAgainstId": 32423,
+          "application_date": "18-Nov-2020",
+          "type": "gType",
+          "grievance_from": "28-Nov-2020",
+          "grievance_to": "24-Nov-2020",
+          "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+        },
+        {
+        "employee_id": 8,
+          "employee_name": "Henry",
+          "against_employee_name": "Daniel",
+          "grievanceAgainstId": 32423,
+          "application_date": "29-Nov-2020",
+          "type": "hType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Pending"
+        },
+        {
+        "employee_id": 9,
+          "employee_name": "Philip",
+          "against_employee_name": "Matthew",
+          "grievanceAgainstId": 32423,
+          "application_date": "19-Nov-2020",
+          "type": "iType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Pending"
+        },
+        {
+        "employee_id": 10,
+          "employee_name": "Zachary",
+          "against_employee_name": "Anthony",
+          "grievanceAgainstId": 32423,
+          "application_date": "20-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "30-Nov-2020",
+          "grievance_to": "30-Nov-2020",
+          "application_status": "Approved"
+        },
+         {
+          "employee_id": 11,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          },  {
+          "employee_id": 12,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },  {
+          "employee_id": 13,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 14,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 15,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 16,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          },
+          {
+          "employee_id": 17,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 18,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Approved"
+          },
+          {
+          "employee_id": 19,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 20,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          }
+          ],
+        "first_page_url": "http://localhost:3000/get_emp_portal_meta_data",
+        "from": 1,
+        "last_page": 2,
+        "last_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "next_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "path":          "http://localhost:3000/get_grievance_applicaitons_list",
+        "per_page": "20",
+        "to":20,
+        "prev_page_url": null,
+  
+        "total": 40
+    }
+    }
+  ],
+  "get_grievance_applicaitons_list&page=2":[
+    {
+      "application_status": "success",
+      "statusCode": 200,
+      "message": "Grievance Applicaitons List.",
+      "data": {
+        "current_page": 1,
+      "data":[
+        {
+          "employee_id": 21,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          },
+          {
+          "employee_id": 22,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 23,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Approved"
+          },
+          {
+          "employee_id": 24,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Pending"
+          },
+          {
+          "employee_id": 25,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Pending"
+          },
+          {
+          "employee_id": 26,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 27,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 28,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Pending"
+          },
+          {
+          "employee_id": 29,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          },
+          {
+          "employee_id": 30,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id":31,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          },  {
+          "employee_id": 32,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },  {
+          "employee_id": 33,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 34,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 35,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved"
+          },
+          {
+          "employee_id": 36,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          },
+          {
+          "employee_id": 37,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 38,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Approved"
+          },
+          {
+          "employee_id": 39,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 40,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          }
+          ],
+        "first_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=1",
+        "from": 21,
+        "last_page": 2,
+        "last_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "next_page_url": null,
+        "path": "http://localhost:3000/get_grievance_applicaitons_list",
+        "per_page": "20",
+        "prev_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=1",
+        "to":40,
+        "total": 40
+    }
+    }
+  ],
+  "get_hr_enquiries_list":[
+    {
+      "application_status": "success",
+      "statusCode": 200,
+      "message": "Grievance Applicaitons List.",
+      "data": {
+        "current_page": 1,
+      "data":[
+        {
+          "employee_id": 1,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Pending"
+          },
+          {
+          "employee_id": 2,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Approved"
+          },
+          {
+          "employee_id": 3,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 4,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 5,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 6,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Approved"
+          },
+          {
+          "employee_id": 7,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 8,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 9,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Pending"
+          },
+          {
+          "employee_id": 10,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Approved"
+          },
+          {
+          "employee_id": 11,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Pending"
+          },  {
+          "employee_id": 12,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Approved"
+          },  {
+          "employee_id": 13,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 14,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Approved"
+          },
+          {
+          "employee_id": 15,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Approved"
+          },
+          {
+          "employee_id": 16,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Pending"
+          },
+          {
+          "employee_id": 17,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Approved"
+          },
+          {
+          "employee_id": 18,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 19,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 20,
+          "complaiant_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "lm_status": "Pending"
+          }
+          ],
+        "first_page_url": "http://localhost:3000/attendance_correction/employee_portal/correction_application_list?page=1",
+        "from": 1,
+        "last_page": 2,
+        "last_page_url": "http://localhost:3000/attendance_correction/employee_portal/correction_application_list?page=2",
+        "next_page_url": "http://localhost:3000/attendance_correction/employee_portal/correction_application_list?page=2",
+        "path": "http://localhost:3000/attendance_correction/employee_portal/correction_application_list",
+        "per_page": "20",
+        "prev_page_url": null,
+        "grievance_to": 20,
+        "total": 20
+    }
+    }
+  ],
+  "get_grievance_applicaitons&status=pending":[
+    {
+      "application_status": "success",
+      "statusCode": 200,
+      "message": "Grievance Applicaitons List.",
+      "data": {
+        "current_page": 1,
+      "data":[
+        {
+        "employee_id": 1,
+          "employee_name": "Anthony",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId": 32423,
+          "application_date": "12-Nov-2020",
+          "type": "AType",
+          "grievance_from": "12-Nov-2020",
+          "grievance_to": "12-Nov-2020",
+          "application_status": "Pending",
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 2,
+          "employee_name": "Bobby",
+          "against_employee_name": "William",
+          "grievanceAgainstId": 32423,
+          "application_date": "13-Nov-2020",
+          "type": "bType",
+          "grievance_from": "13-Nov-2020",
+          "grievance_to": "13-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 3,
+          "employee_name": "Charles",
+          "against_employee_name": "Richard",
+          "grievanceAgainstId": 32423,
+          "application_date": "14-Nov-2020",
+          "type": "cType",
+          "grievance_from": "14-Nov-2020",
+          "grievance_to": "14-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 4,
+          "employee_name": "Daniel",
+          "against_employee_name": "Joseph",
+          "grievanceAgainstId": 32423,
+          "application_date": "15-Nov-2020",
+          "type": "dType",
+          "grievance_from": "15-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 5,
+          "employee_name": "Edward",
+          "against_employee_name": "Thomas",
+          "grievanceAgainstId": 32423,
+          "application_date": "16-Nov-2020",
+          "type": "eType",
+          "grievance_from": "26-Nov-2020",
+          "grievance_to": "26-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 6,
+          "employee_name": "Frank",
+          "against_employee_name": "Charles",
+          "grievanceAgainstId": 32423,
+          "application_date": "17-Nov-2020",
+          "type": "fType",
+          "grievance_from": "27-Nov-2020",
+          "grievance_to": "27-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 7,
+          "employee_name": "George",
+          "against_employee_name": "Christopher",
+          "grievanceAgainstId": 32423,
+          "application_date": "18-Nov-2020",
+          "type": "gType",
+          "grievance_from": "28-Nov-2020",
+          "grievance_to": "24-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 8,
+          "employee_name": "Henry",
+          "against_employee_name": "Daniel",
+          "grievanceAgainstId": 32423,
+          "application_date": "29-Nov-2020",
+          "type": "hType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 9,
+          "employee_name": "Philip",
+          "against_employee_name": "Matthew",
+          "grievanceAgainstId": 32423,
+          "application_date": "19-Nov-2020",
+          "type": "iType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+        {
+        "employee_id": 10,
+          "employee_name": "Zachary",
+          "against_employee_name": "Anthony",
+          "grievanceAgainstId": 32423,
+          "application_date": "20-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "30-Nov-2020",
+          "grievance_to": "30-Nov-2020",
+          "application_status": "Pending"
+          ,
+          "lm_status": "Pending"
+        },
+         {
+          "employee_id": 11,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending",
+          "lm_status": "Pending"
+          },  {
+          "employee_id": 12,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending",
+          "lm_status": "Pending"
+          },  {
+          "employee_id": 13,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 14,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 15,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 16,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          },
+          {
+          "employee_id": 17,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 18,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Pending"
+          },
+          {
+          "employee_id": 19,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending",
+          "lm_status": "Pending"
+          },
+          {
+          "employee_id": 20,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Pending"
+          }
+          ],
+        "first_page_url": "http://localhost:3000/get_emp_portal_meta_data",
+        "from": 1,
+        "last_page": 2,
+        "last_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "next_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "path":          "http://localhost:3000/get_grievance_applicaitons_list",
+        "per_page": "20",
+        "to":20,
+        "prev_page_url": null,
+  
+        "total": 40
+    }
+    }
+  ],
+  "get_grievance_applicaitons&status=approved":[
+    {
+      "application_status": "success",
+      "statusCode": 200,
+      "message": "Grievance Applicaitons List.",
+      "data": {
+        "current_page": 1,
+      "data":[
+        {
+        "employee_id": 1,
+          "employee_name": "Anthony",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId": 32423,
+          "application_date": "12-Nov-2020",
+          "type": "AType",
+          "grievance_from": "12-Nov-2020",
+          "grievance_to": "12-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 2,
+          "employee_name": "Bobby",
+          "against_employee_name": "William",
+          "grievanceAgainstId": 32423,
+          "application_date": "13-Nov-2020",
+          "type": "bType",
+          "grievance_from": "13-Nov-2020",
+          "grievance_to": "13-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 3,
+          "employee_name": "Charles",
+          "against_employee_name": "Richard",
+          "grievanceAgainstId": 32423,
+          "application_date": "14-Nov-2020",
+          "type": "cType",
+          "grievance_from": "14-Nov-2020",
+          "grievance_to": "14-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 4,
+          "employee_name": "Daniel",
+          "against_employee_name": "Joseph",
+          "grievanceAgainstId": 32423,
+          "application_date": "15-Nov-2020",
+          "type": "dType",
+          "grievance_from": "15-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Approved"
+        },
+        {
+        "employee_id": 5,
+          "employee_name": "Edward",
+          "against_employee_name": "Thomas",
+          "grievanceAgainstId": 32423,
+          "application_date": "16-Nov-2020",
+          "type": "eType",
+          "grievance_from": "26-Nov-2020",
+          "grievance_to": "26-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 6,
+          "employee_name": "Frank",
+          "against_employee_name": "Charles",
+          "grievanceAgainstId": 32423,
+          "application_date": "17-Nov-2020",
+          "type": "fType",
+          "grievance_from": "27-Nov-2020",
+          "grievance_to": "27-Nov-2020",
+          "application_status": "Approved"
+        },
+        {
+        "employee_id": 7,
+          "employee_name": "George",
+          "against_employee_name": "Christopher",
+          "grievanceAgainstId": 32423,
+          "application_date": "18-Nov-2020",
+          "type": "gType",
+          "grievance_from": "28-Nov-2020",
+          "grievance_to": "24-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 8,
+          "employee_name": "Henry",
+          "against_employee_name": "Daniel",
+          "grievanceAgainstId": 32423,
+          "application_date": "29-Nov-2020",
+          "type": "hType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Approved"
+        },
+        {
+        "employee_id": 9,
+          "employee_name": "Philip",
+          "against_employee_name": "Matthew",
+          "grievanceAgainstId": 32423,
+          "application_date": "19-Nov-2020",
+          "type": "iType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Approved",
+          "lm_status": "Approved"
+        },
+        {
+        "employee_id": 10,
+          "employee_name": "Zachary",
+          "against_employee_name": "Anthony",
+          "grievanceAgainstId": 32423,
+          "application_date": "20-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "30-Nov-2020",
+          "grievance_to": "30-Nov-2020",
+          "application_status": "Approved"
+        },
+         {
+          "employee_id": 11,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },  {
+          "employee_id": 12,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved"
+          },  {
+          "employee_id": 13,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 14,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 15,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 16,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved"
+          },
+          {
+          "employee_id": 17,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 18,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Approved"
+          },
+          {
+          "employee_id": 19,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved",
+          "lm_status": "Approved"
+          },
+          {
+          "employee_id": 20,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Approved"
+          }
+          ],
+        "first_page_url": "http://localhost:3000/get_emp_portal_meta_data",
+        "from": 1,
+        "last_page": 2,
+        "last_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "next_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "path":          "http://localhost:3000/get_grievance_applicaitons_list",
+        "per_page": "20",
+        "to":20,
+        "prev_page_url": null,
+  
+        "total": 40
+    }
+    }
+  ],
+  "get_grievance_applicaitons&status=disapproved":[
+    {
+      "application_status": "success",
+      "statusCode": 200,
+      "message": "Grievance Applicaitons List.",
+      "data": {
+        "current_page": 1,
+      "data":[
+        {
+        "employee_id": 1,
+          "employee_name": "Anthony",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId": 32423,
+          "application_date": "12-Nov-2020",
+          "type": "AType",
+          "grievance_from": "12-Nov-2020",
+          "grievance_to": "12-Nov-2020",
+          "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+        },
+        {
+        "employee_id": 2,
+          "employee_name": "Bobby",
+          "against_employee_name": "William",
+          "grievanceAgainstId": 32423,
+          "application_date": "13-Nov-2020",
+          "type": "bType",
+          "grievance_from": "13-Nov-2020",
+          "grievance_to": "13-Nov-2020",
+          "application_status": "Disapproved"
+        },
+        {
+        "employee_id": 3,
+          "employee_name": "Charles",
+          "against_employee_name": "Richard",
+          "grievanceAgainstId": 32423,
+          "application_date": "14-Nov-2020",
+          "type": "cType",
+          "grievance_from": "14-Nov-2020",
+          "grievance_to": "14-Nov-2020",
+          "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+        },
+        {
+        "employee_id": 4,
+          "employee_name": "Daniel",
+          "against_employee_name": "Joseph",
+          "grievanceAgainstId": 32423,
+          "application_date": "15-Nov-2020",
+          "type": "dType",
+          "grievance_from": "15-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Disapproved"
+        },
+        {
+        "employee_id": 5,
+          "employee_name": "Edward",
+          "against_employee_name": "Thomas",
+          "grievanceAgainstId": 32423,
+          "application_date": "16-Nov-2020",
+          "type": "eType",
+          "grievance_from": "26-Nov-2020",
+          "grievance_to": "26-Nov-2020",
+          "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+        },
+        {
+        "employee_id": 6,
+          "employee_name": "Frank",
+          "against_employee_name": "Charles",
+          "grievanceAgainstId": 32423,
+          "application_date": "17-Nov-2020",
+          "type": "fType",
+          "grievance_from": "27-Nov-2020",
+          "grievance_to": "27-Nov-2020",
+          "application_status": "Disapproved"
+        },
+        {
+        "employee_id": 7,
+          "employee_name": "George",
+          "against_employee_name": "Christopher",
+          "grievanceAgainstId": 32423,
+          "application_date": "18-Nov-2020",
+          "type": "gType",
+          "grievance_from": "28-Nov-2020",
+          "grievance_to": "24-Nov-2020",
+          "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+        },
+        {
+        "employee_id": 8,
+          "employee_name": "Henry",
+          "against_employee_name": "Daniel",
+          "grievanceAgainstId": 32423,
+          "application_date": "29-Nov-2020",
+          "type": "hType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Disapproved"
+        },
+        {
+        "employee_id": 9,
+          "employee_name": "Philip",
+          "against_employee_name": "Matthew",
+          "grievanceAgainstId": 32423,
+          "application_date": "19-Nov-2020",
+          "type": "iType",
+          "grievance_from": "29-Nov-2020",
+          "grievance_to": "29-Nov-2020",
+          "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+        },
+        {
+        "employee_id": 10,
+          "employee_name": "Zachary",
+          "against_employee_name": "Anthony",
+          "grievanceAgainstId": 32423,
+          "application_date": "20-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "30-Nov-2020",
+          "grievance_to": "30-Nov-2020",
+          "application_status": "Disapproved"
+        },
+         {
+          "employee_id": 11,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },  {
+          "employee_id": 12,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved"
+          },  {
+          "employee_id": 13,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 14,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved"
+          },
+          {
+          "employee_id": 15,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 16,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved"
+          },
+          {
+          "employee_id": 17,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 18,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+          "application_status": "Disapproved"
+          },
+          {
+          "employee_id": 19,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved",
+          "lm_status": "Disapproved"
+          },
+          {
+          "employee_id": 20,
+          "employee_name":"Jack reacher",
+          "against_employee_name": "Miller",
+          "grievanceAgainstId":32423,
+          "application_date": "25-Nov-2020",
+          "type": "Grievance",
+          "grievance_from": "25-Nov-2020",
+          "grievance_to": "25-Nov-2020",
+           "application_status": "Disapproved"
+          }
+          ],
+        "first_page_url": "http://localhost:3000/get_emp_portal_meta_data",
+        "from": 1,
+        "last_page": 2,
+        "last_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "next_page_url": "http://localhost:3000/get_grievance_applicaitons_list&page=2",
+        "path":          "http://localhost:3000/get_grievance_applicaitons_list",
+        "per_page": "20",
+        "to":20,
+        "prev_page_url": null,
+  
+        "total": 40
+    }
+    }
+  ]
+}

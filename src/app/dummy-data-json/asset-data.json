@@ -1,0 +1,119 @@
+{
+  "employmentTypeList": [
+    { "Id": 1, "Value": "Permanent" },
+    { "Id": 2, "Value": "Outsourced"},
+    { "Id": 3, "Value": "Contractual"},
+    { "Id": 4, "Value": "Consultant"}
+  ],
+  "yearList": [
+    { "Id": 1, "Value": 2023},
+    { "Id": 2, "Value": 2022},
+    { "Id": 3, "Value": 2021},
+    { "Id": 4, "Value": 2020}
+  ],
+  "eligibiltyFromList":[
+    {"Id":1, "Value": "From DOJ"}
+  ],
+  "bandList": [
+    { "Id": 1, "Value": "Band 1"},
+    { "Id": 2, "Value": "Band 2"},
+    { "Id": 3, "Value": "Band 3"},
+    { "Id": 4, "Value": "Band 4"}
+  ],
+  "departmentsList":[
+    {"Id": 1, "Value": "Software Development"},
+    {"Id": 2, "Value": "Marketing"},
+    {"Id": 3, "Value": "HR"}
+  ],
+  "monthDropdownList":[
+    {"Id": 1, "Value": "Month"},
+    {"Id": 2, "Value": "Year"},
+    {"Id": 3, "Value": "Week"}
+  ],
+  "payList":[
+    {"Id": 1, "Value": "Gross Pay"},
+    {"Id": 2, "Value": "Net Pay"}
+  ],
+  "domesticPayList":[
+    {"Id": 1, "Value": "PKR"}
+  ],
+  "internationalPayList":[
+    {"Id": 1, "Value": "USD"},
+    {"Id": 2, "Value": "GBP"}
+  ],
+  "domesticClassList":[
+    {"Id": 1, "Value": "Business Class"},
+    {"Id": 2, "Value": "First Class"},
+    {"Id": 3, "Value": "Economy Class"}
+  ],
+  "vehicleSpeedList":[
+    {"Id": 1, "Value": "2400cc"},
+    {"Id": 2, "Value": "1300cc"},
+    {"Id": 3, "Value": "600cc"}
+  ],
+  "vehicleBrandList":[
+    {"Id": 1, "Value": "Local"},
+    {"Id": 2, "Value": "Imported"}
+  ],
+  "mobileBrandList":[
+    {"Id": 1, "Value": "Samsung"},
+    {"Id": 2, "Value": "Nokia"}
+  ],
+  "laptopNameList":[
+    {"Id": 1, "Value": "Dell"},
+    {"Id": 2, "Value": "HP"}
+  ],
+  "laptopProcessorList":[
+    {"Id": 1, "Value": "i5"},
+    {"Id": 2, "Value": "i3"}
+  ],
+  "laptopHardDiskList":[
+    {"Id": 1, "Value": "1TB"},
+    {"Id": 2, "Value": "500GB"}
+  ],
+  "laptopRamList":[
+    {"Id": 1, "Value": "16GB"},
+    {"Id": 2, "Value": "8GB"}
+  ],
+  "assetTypeList":[
+    {"Id": 1, "Value": "Asset Type"}
+  ],
+  "providingVehicleData":[
+    {"type": "Car", "employmentType": 1, "bandRange": 1, "departments": 1, "count": 3, "year": 1, "eligibiltyFrom": 1, "vehicleSpeed": 1, "vehicleBrand": 1, "vehicleCountry": 1, "vehiclePrice": "6,500,000", "isAmount": false, "isLiters": true, "fuelAmount": "300 Liter", "comments": "No Comments"},
+    {"type": "Car", "employmentType": 2, "bandRange": 2, "departments": 2, "count": 3, "year": 2, "eligibiltyFrom": 1, "vehicleSpeed": 2, "vehicleBrand": 2, "vehicleCountry": 1, "vehiclePrice": "16,500,000", "isAmount": true, "isLiters": false, "fuelAmount": "3000", "comments": "No Comments"},
+    {"type": "Car", "employmentType": 3, "bandRange": 2, "departments": 3, "count": 3, "year": 3, "eligibiltyFrom": 1, "vehicleSpeed": 2, "vehicleBrand": 2, "vehicleCountry": 1, "vehiclePrice": "6,500,000", "isAmount": false, "isLiters": true, "fuelAmount": "300 Liter", "comments": "No Comments"}
+  ],
+  "bearVehicleData":[
+    {"description": "Repair & Maintenance Expense", "isEmployee": false, "isCompany": true, "additionalInfo": "Vehicle repair and maintenance expense will bear company."},
+    {"description": "Insurance & Taxes", "isEmployee": false, "isCompany": true, "additionalInfo": "Vehicle insurance & taxes expense will bear company."},
+    {"description": "Accidents & Thefts", "isEmployee": true, "isCompany": false, "additionalInfo": "Vehicle accidents & thefts expense will bear employee."}
+  ],
+  "providingMobilePhoneData":[
+    {"employmentType": 1, "bandRange": 1, "departments": 1, "count": 3, "year": 1, "eligibiltyFrom": 1, "mobileBrand": 1, "mobileCountry": 1, "mobilePrice": "50,000", "isAmount": false, "isConnection": true, "mobileAmount": "3000", "comments": "No Comments"},
+    {"employmentType": 2, "bandRange": 2, "departments": 2, "count": 3, "year": 2, "eligibiltyFrom": 1, "mobileBrand": 2, "mobileCountry": 1, "mobilePrice": "30,000", "isAmount": true, "isConnection": false, "mobileAmount": "3000", "comments": "No Comments"}
+  ],
+  "bearMobilePhoneData":[
+    {"description": "Repair & Maintenance Expense", "isEmployee": false, "isCompany": true, "additionalInfo": "Mobile repair and maintenance expense will bear company."},
+    {"description": "Insurance & Taxes", "isEmployee": false, "isCompany": true, "additionalInfo": "Mobile insurance & taxes expense will bear company."},
+    {"description": "Accidents & Thefts", "isEmployee": true, "isCompany": false, "additionalInfo": "Mobile accidents & thefts expense will bear employee."}
+  ],
+  "providingLaptopData":[
+    {"employmentType": 1, "bandRange": 1, "departments": 1, "count": 3, "year": 1, "eligibiltyFrom": 1, "laptopName": 1, "laptopProcessor": 1, "laptopHardDisk": 1, "laptopRam": 1, "isAmount": false, "isConnection": true, "laptopAmount": "300000", "comments": "No Comments"},
+    {"employmentType": 2, "bandRange": 2, "departments": 2, "count": 3, "year": 2, "eligibiltyFrom": 1, "laptopName": 2, "laptopProcessor": 2, "laptopHardDisk": 2, "laptopRam": 2, "isAmount": true, "isConnection": false, "laptopAmount": "300000", "comments": "No Comments"}
+  ],
+  "bearLaptopData":[
+    {"description": "Repair & Maintenance Expense", "isEmployee": false, "isCompany": true, "additionalInfo": "Laptop repair and maintenance expense will bear company."},
+    {"description": "Insurance & Taxes", "isEmployee": false, "isCompany": true, "additionalInfo": "Laptop insurance & taxes expense will bear company."},
+    {"description": "Accidents & Thefts", "isEmployee": true, "isCompany": false, "additionalInfo": "Laptop accidents & thefts expense will bear employee."}
+  ],
+  "assetWithdrawalData":[
+    {"assetType": 1, "policyInfo": "Policy 1:"},
+    {"assetType": 1, "policyInfo": "Policy 2:"},
+    {"assetType": 1, "policyInfo": "Policy 3:"}
+  ],
+  "assetReplacementData":[
+    {"assetType": 1, "tenure": 3, "policyInfo": "Policy 1:"},
+    {"assetType": 1, "tenure": 3, "policyInfo": "Policy 2:"},
+    {"assetType": 1, "tenure": 3, "policyInfo": "Policy 3:"}
+  ]
+}

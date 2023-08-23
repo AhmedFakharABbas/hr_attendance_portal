@@ -1,0 +1,19 @@
+<div class="row w-100 m-0 bg-white pt-2">
+  <div class="col-md-12">
+    <div class="people-title-heading p-0">
+      <h4>{{headerService.landingPageHeading}}</h4>
+    </div>
+    <div class="content">
+      <ng-container *ngFor="let menu of (headerService.pageMenus | async)">
+        <a *ngIf="menu.img && menu.page_menu_title && menu.description" (click)="setStorage(menu)"
+          [class.disabled]="menu.status == 0">
+          <img src="../../../../../assets/landingImgs/{{menu.img}}" [alt]="menu.page_menu_title">
+          <div class="d-inline-block">
+            <div class="portal-title"> {{menu.page_menu_title}} </div>
+            <p>{{menu.description}}</p>
+          </div>
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</div>

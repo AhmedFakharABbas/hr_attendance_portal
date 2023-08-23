@@ -1,0 +1,102 @@
+{
+  "typeExpenseData":[
+    {"expenseName": "OPD", "eligibility": "Permanent, Band NM, 6 & 7, All Dept", "tenure": "3 months from DOJ", "limit": "1 gross pay", "additionalInfo": "Against OPD treatment as per actual in a year, covers spouse, children & parents"},
+    {"expenseName": "Travelling", "eligibility": "Permanent, All Bands, All Dept", "tenure": "3 months from DOJ", "limit": "As per actual", "additionalInfo": ""},
+    {"expenseName": "Miscellaneous", "eligibility": "Permanent, All Bands, All Dept", "tenure": "3 months from DOJ", "limit": "As per actual", "additionalInfo": ""}
+  ],
+  "businessTravelData":[
+    {"travelType": "Seminar", "eligibility": "Permanent, All Band, All Dept", "entitlement": "50% of Travel Allow", "additionalInfo": ""},
+    {"travelType": "Training", "eligibility": "Permanent, All Band, All Dept", "entitlement": "50% of Travel Allow", "additionalInfo": ""},
+    {"travelType": "Company Business", "eligibility": "Permanent, All Band, All Dept", "entitlement": "100% of Travel Allow", "additionalInfo": "For journeys exceeding 6 hours"}
+  ],
+  "classOfTravelData":[
+    {"eligibility": "Permanent, Band 1, 2, All Dept", "classOfTravel": "Business Class (Domestic & Int’l) & ACC by Train"},
+    {"eligibility": "Permanent, Band 3 & 4.1, All Dept", "classOfTravel": "Economy Plus Class (Domestic & Int’l) & ACC by Train"},
+    {"eligibility": "Permanent, Band 4.2 & 5, All Dept", "classOfTravel": "Economy Class (Domestic & Int’l) & ACC by Train"}
+  ],
+  "domesticTablesData":[
+    {"city": "Karachi", "domesticBodyData": [
+      {"eligibility": "Permanent, Band 1, 2", "accommodation": "Sherton, PC, Marriot"},
+      {"eligibility": "Permanent, Band 3 & 4.1", "accommodation": "Marriott, Avari Towers"},
+      {"eligibility": "Permanent, Band 4.2 & 5", "accommodation": "Beach Luxury"},
+      {"eligibility": "Permanent, Band 6 & 7", "accommodation": "Al-Harmain"}
+    ]},
+    {"city": "Lahore", "domesticBodyData": [
+      {"eligibility": "Permanent, Band 1, 2", "accommodation": "PC New Wing"},
+      {"eligibility": "Permanent, Band 3 & 4.1", "accommodation": "PC Old Wing, Avari, Holiday Inn"},
+      {"eligibility": "Permanent, Band 4.2 & 5", "accommodation": "Nishat Suites, Hotel One, Marionette"},
+      {"eligibility": "Permanent, Band 6 & 7", "accommodation": "Best Western"}
+    ]},
+    {"city": "Islamabad", "domesticBodyData": [
+      {"eligibility": "Permanent, Band 1, 2", "accommodation": "Serena"},
+      {"eligibility": "Permanent, Band 3 & 4.1", "accommodation": "PC, Avari, Marriott, Holiday Inn"},
+      {"eligibility": "Permanent, Band 4.2 & 5", "accommodation": "Best Western"},
+      {"eligibility": "Permanent, Band 6 & 7", "accommodation": "Margala"}
+    ]}
+  ],
+  "internationalTablesData":[
+    {"city": "Dubai", "internationalBodyData": [
+      {"eligibility": "Permanent, Band 1, 2", "accommodation": "Gloria Hotel"},
+      {"eligibility": "Permanent, Band 3, 4 & 5", "accommodation": "Radisson Blu"},
+      {"eligibility": "Permanent, Band 6 & 7", "accommodation": "H72 Hues / The Act Hote"}
+    ]},
+    {"city": "Sharjah", "internationalBodyData": [
+      {"eligibility": "Permanent, Band 1, 2", "accommodation": "Gloria Hotel"},
+      {"eligibility": "Permanent, Band 3, 4 & 5", "accommodation": "Radisson Blu"},
+      {"eligibility": "Permanent, Band 6 & 7", "accommodation": "H72 Hues / The Act Hote"}
+    ]},
+    {"city": "Abu Dhabi", "internationalBodyData": [
+      {"eligibility": "Permanent, Band 1, 2", "accommodation": "H72 Hues / The Act Hotel"},
+      {"eligibility": "Permanent, Band 3, 4 & 5", "accommodation": "Golden Tulip Hotel"},
+      {"eligibility": "Permanent, Band 6 & 7", "accommodation": "H72 Hues / The Act Hotel"}
+    ]}
+  ],
+  "personalArrangementData":[
+    {"eligibility": "Permanent, Band 1, 2, All Dept", "domestic": "PKR 5000/day", "international": "$ 200/day", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 3, 4.1, All Dept", "domestic": "PKR 4000/day", "international": "$ 150/day", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 4.2, 5,6 & 7, All Dept", "domestic": "PKR 2000/day", "international": "$ 50/day", "additionalInfo": ""}
+  ],
+  "dailyAllowanceData":[
+    {"eligibility": "Permanent, Band 1, 2, All Dept", "domestic": "On Actual", "international": "On Actual", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 3, 4.1, All Dept", "domestic": "1,300", "international": "On Actual", "additionalInfo": ""},
+    {"eligibility": "Permanent, Band 4.2, 5,6 & 7, All Dept", "domestic": "1,200", "international": "On Actual", "additionalInfo": ""}
+  ],
+  "kilometerAllowanceData":[
+    {"category": "Public Transport", "eligibility": "Permanent, All Band", "entitlement": "PKR 8/km", "additionalInfo": ""},
+    {"category": "Motorbike", "eligibility": "Permanent, All Band", "entitlement": "PKR 8/km", "additionalInfo": ""},
+    {"category": "Personal Car", "eligibility": "Permanent, All Band", "entitlement": "PKR 15/km", "additionalInfo": ""}
+  ],
+  "approvalExpenseData":[
+    {"approvalExpenseHeading": "1st Approval"},
+    {"approvalExpenseHeading": "2nd Approval"},
+    {"approvalExpenseHeading": "3rd Approval"},
+    {"approvalExpenseHeading": "4th Approval"}
+  ],
+  "approvalExpenseTypeData":[
+    {"approvalExpenseTypeColumn":[
+      {"approvalType": "LM"},
+      {"approvalType": "LM"},
+      {"approvalType": "HR"},
+      {"approvalType": "HR"}
+    ]}
+  ],
+  "approvalTravelData":[
+    {"approvalTravelHeading": "1st Approval"},
+    {"approvalTravelHeading": "2nd Approval"},
+    {"approvalTravelHeading": "3rd Approval"},
+    {"approvalTravelHeading": "4th Approval"}
+  ],
+  "approvalTravelTypeData":[
+    {"approvalTravelTypeColumn":[
+      {"approvalType": "LM"},
+      {"approvalType": "LM"},
+      {"approvalType": "HR"},
+      {"approvalType": "HR"}
+    ]}
+  ],
+  "transferAllowanceData":[
+    {"transferType": "Transfer Grant", "eligibility": "Permanent, All Band, All Dept", "tenure": "3 month from DOJ", "limit": "1 basic pay", "additionalInfo": "For each move"},
+    {"transferType": "Retirement Transfer Allow", "eligibility": "Permanent, All Band, All Dept", "tenure": "3 month from DOJ", "limit": "1 basic pay", "additionalInfo": "for final time at the time of retirement"},
+    {"transferType": "Transfer Accommodation", "eligibility": "Permanent, All Band, All Dept", "tenure": "3 month from DOJ", "limit": "", "additionalInfo": "Temporary Up to 6 months - fixed allow for the period and Permanent for > 6 months, fixed monthly allow for 1 to 3 years"}
+  ]
+}
